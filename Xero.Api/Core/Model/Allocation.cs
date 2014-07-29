@@ -14,11 +14,5 @@ namespace Xero.Api.Core.Model
 
         [DataMember(EmitDefaultValue = false)]
         public Invoice Invoice { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
-        public decimal Amount { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
-        public CreditNote CreditNote { get; set; }
     }    
 }

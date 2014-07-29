@@ -17,7 +17,7 @@ namespace Xero.Api.Core.Endpoints
 
         public ContactsEndpoint Page(int page)
         {
-            AddParameter("page", page);
+            Parameter("page", page);
             return this;
         }
 
@@ -31,7 +31,7 @@ namespace Xero.Api.Core.Endpoints
         {
             if (include)
             {
-                AddParameter("includeArchived", true);
+                Parameter("includeArchived", true);
             }
 
             return this;

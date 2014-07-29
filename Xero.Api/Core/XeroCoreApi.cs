@@ -39,7 +39,6 @@ namespace Xero.Api.Core
         }
 
         public AccountsEndpoint Accounts { get; private set; }
-        public AllocationsEndpoint Allocations { get; private set; }
         public AttachmentsEndpoint Attachments { get; private set; }
         public BankTransactionsEndpoint BankTransactions { get; private set; }
         public BankTransfersEndpoint BankTransfers { get; private set; }
@@ -54,7 +53,6 @@ namespace Xero.Api.Core
         public JournalsEndpoint Journals { get; private set; }
         public ManualJournalsEndpoint ManualJournals { get; private set; }
         public PaymentsEndpoint Payments { get; private set; }
-        public PdfEndpoint PdfFiles { get; private set; }
         public ReceiptsEndpoint Receipts { get; private set; }
         public RepeatingInvoicesEndpoint RepeatingInvoices { get; private set; }
         public ReportsEndpoint Reports { get; private set; }
@@ -62,14 +60,12 @@ namespace Xero.Api.Core
         public TaxRatesEndpoint TaxRates { get; private set; }
         public TrackingCategoriesEndpoint TrackingCategories { get; private set; }
         public UsersEndpoint Users { get; private set; }
-        
 
         private void Connect()
         {
             OrganisationEndpoint = new OrganisationEndpoint(Client);
 
             Accounts = new AccountsEndpoint(Client);
-            Allocations = new AllocationsEndpoint(Client);
             Attachments = new AttachmentsEndpoint(Client);
             BankTransactions = new BankTransactionsEndpoint(Client);
             BankTransfers = new BankTransfersEndpoint(Client);
@@ -84,7 +80,6 @@ namespace Xero.Api.Core
             Journals = new JournalsEndpoint(Client);
             ManualJournals = new ManualJournalsEndpoint(Client);
             Payments = new PaymentsEndpoint(Client);
-            PdfFiles = new PdfEndpoint(Client);
             Receipts = new ReceiptsEndpoint(Client);
             RepeatingInvoices = new RepeatingInvoicesEndpoint(Client);
             Reports = new ReportsEndpoint(Client);

@@ -22,7 +22,7 @@ namespace CoreTests.Integration.Invoices
         public void description_only_items_work()
         {
             const InvoiceType expected = InvoiceType.AccountsPayable;
-            var type = Given_a_description_only_invoice().Type;
+            var type = Given_a_description_only_invoice(expected).Type;
 
             Assert.AreEqual(expected, type);
         }
@@ -35,7 +35,8 @@ namespace CoreTests.Integration.Invoices
 
             Assert.AreEqual(expected, type);
         }
-        
+
+
         [Test]
         public void multiple_lineitems()
         {
@@ -65,9 +66,11 @@ namespace CoreTests.Integration.Invoices
 
             Assert.True(invoice.Id != Guid.Empty);
             Assert.AreEqual(InvoiceType.AccountsReceivable, invoice.Type);
-            Assert.AreEqual(2, invoice.Items.Count());            
+            Assert.True(invoice.Items.Count() == 2);
         }
-        
+
+
+
         [Test]
         public void multiple_invoices()
         {
@@ -132,31 +135,6 @@ namespace CoreTests.Integration.Invoices
             }).ToList();
 
             Assert.AreEqual(25.6591m, invoices.First().Items.First().UnitAmount);
-        }
-
-        [Test]
-        public void low_precision_unit()
-        {
-            var invoices = Api.Invoices.UseFourDecimalPlaces(false).Create(new[]
-            {
-                new Invoice
-                {
-                    Contact = new Contact { Name = "ABC Limited" },
-                    Type = InvoiceType.AccountsReceivable,
-                    Items = new List<LineItem>
-                    {
-                        new LineItem
-                        {
-                            AccountCode = "200",
-                            Description = "Good value item",
-                            UnitAmount = 25.6591m,
-                            Quantity = 1m
-                        }
-                    }
-                },                
-            }).ToList();
-
-            Assert.AreEqual(25.66m, invoices.First().Items.First().UnitAmount);
         }
     }
 }

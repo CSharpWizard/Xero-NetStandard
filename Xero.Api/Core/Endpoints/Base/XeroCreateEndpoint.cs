@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using Xero.Api.Common;
 using Xero.Api.Infrastructure.Http;
@@ -33,15 +33,12 @@ namespace Xero.Api.Core.Endpoints.Base
 
         protected IEnumerable<TResult> Put(TRequest data)
         {
-            try
+            if (UseFourDp)
             {
-                Client.Parameters = Parameters;
-                return Client.Put<TResult, TResponse>(ApiEndpointUrl, data);
+                Client.Parameters = new NameValueCollection { { "unitdp", "4" } };
             }
-            finally
-            {
-                ClearQueryString();            
-            }
+
+            return Client.Put<TResult, TResponse>(ApiEndpointUrl, data);
         }        
     }
 }

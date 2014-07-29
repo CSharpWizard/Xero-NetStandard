@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Specialized;
 using System.Linq;
-using HttpUtility = Xero.Api.Infrastructure.ThirdParty.HttpUtility.HttpUtility;
+using System.Web;
 
 namespace Xero.Api.Common
 {

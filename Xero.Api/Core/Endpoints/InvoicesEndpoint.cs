@@ -17,7 +17,7 @@ namespace Xero.Api.Core.Endpoints
 
         public InvoicesEndpoint Page(int page)
         {
-            AddParameter("page", page);
+            Parameter("page", page);
             return this;
         }
 
@@ -25,6 +25,6 @@ namespace Xero.Api.Core.Endpoints
         {
             base.ClearQueryString();
             Page(1);
-        }        
+        }
     }
 }
