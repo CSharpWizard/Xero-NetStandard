@@ -55,11 +55,10 @@
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Integration\Accounts\Find.cs" />
+    <Compile Include="Integration\Allocations\Add.cs" />
     <Compile Include="Integration\BankTransactions\BankTransactionTest.cs" />
     <Compile Include="Integration\BankTransactions\Create.cs" />
     <Compile Include="Integration\BankTransactions\Find.cs" />
@@ -87,10 +86,12 @@
     <Compile Include="Integration\ManualJournals\Find.cs" />
     <Compile Include="Integration\ManualJournals\ManualJournalsTest.cs" />
     <Compile Include="Integration\ManualJournals\Update.cs" />
+    <Compile Include="Integration\Organisation\Find.cs" />
     <Compile Include="Integration\Payments\Create.cs" />
     <Compile Include="Integration\Payments\CreateForeignCurrency.cs" />
     <Compile Include="Integration\Payments\Find.cs" />
     <Compile Include="Integration\Payments\PaymentsTest.cs" />
+    <Compile Include="Integration\Pdf\Get.cs" />
     <Compile Include="Integration\Receipts\Create.cs" />
     <Compile Include="Integration\Receipts\Update.cs" />
     <Compile Include="Integration\Receipts\ReceiptTest.cs" />
@@ -110,6 +111,9 @@
     <Compile Include="Unit\QueryStrings.cs" />
     <Compile Include="ApiWrapperTest.cs" />
     <Compile Include="Integration\General\QueryStrings.cs" />
+    <Compile Include="Unit\SalesTaxBasisTypeTest.cs" />
+    <Compile Include="Unit\SalesTaxPeriodTypeTest.cs" />
+    <Compile Include="Unit\TrackingCategories.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Xero.Api.Example.Applications\Xero.Api.Example.Applications.csproj">

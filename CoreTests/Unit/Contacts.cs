@@ -5,15 +5,8 @@ namespace CoreTests.Unit
     [TestFixture]
     public class Contacts : ApiWrapperTest
     {
-        [SetUp]
-        public void Setup()
-        {
-            Api.Invoices.ClearQueryString();
-            Api.ExpenseClaims.ClearQueryString();
-        }
-
         [Test]
-        public void contact_include_archived()
+        public void include_archived()
         {
             const string expected = "page=1&includeArchived=true";
 
@@ -24,12 +17,22 @@ namespace CoreTests.Unit
         }
 
         [Test]
-        public void contact_exclude_archived()
+        public void exclude_archived_explict()
         {
             const string expected = "page=1";
 
             var query = Api.Contacts.IncludeArchived(false)
                 .QueryString;
+
+            Assert.AreEqual(expected, query);
+        }
+
+        [Test]
+        public void exclude_archived_implict()
+        {
+            const string expected = "page=1";
+
+            var query = Api.Contacts.QueryString;
 
             Assert.AreEqual(expected, query);
         }

@@ -39,7 +39,6 @@ namespace Xero.Api.Infrastructure.Http
         public DateTime? ModifiedSince { get; set; }
         public string Where { get; set; }
         public string Order { get; set; }
-        public bool Use4DecimalPlaces { get; set; }
         public NameValueCollection Parameters { get; set; }
 
         public string UserAgent
@@ -62,7 +61,7 @@ namespace Xero.Api.Infrastructure.Http
         internal IEnumerable<TResult> Post<TResult, TResponse>(string endpoint, byte[] data, string mimeType)
             where TResponse : IXeroResponse<TResult>, new()
         {
-            return Read<TResult, TResponse>(Client.Post(endpoint, data, mimeType));
+            return Read<TResult, TResponse>(Client.Post(endpoint, data, mimeType, new QueryGenerator(null, null, Parameters).UrlEncodedQueryString));
         }
 
         public IEnumerable<TResult> Post<TResult, TResponse>(string endPoint, object data)
