@@ -35,9 +35,6 @@ namespace Xero.Api.Core.Model
         public DateTime? DueDate { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public DateTime? ExpectedPaymentDate { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
         public decimal? SubTotal { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
@@ -69,9 +66,6 @@ namespace Xero.Api.Core.Model
 
         [DataMember(EmitDefaultValue = false)]
         public string Url { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
-        public string Reference { get; set; }
 
         [DataMember(Name = "LineItems", EmitDefaultValue = false)]
         public List<LineItem> Items { get; set; }

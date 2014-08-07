@@ -9,17 +9,7 @@ namespace Xero.Api.Core.Endpoints
     {
         public TrackingCategoriesEndpoint(XeroHttpClient client) :
             base(client, "/api.xro/2.0/TrackingCategories")
-        {            
-        }
-
-        public TrackingCategoriesEndpoint IncludeArchived(bool include)
         {
-            if (include)
-            {
-                AddParameter("includeArchived", true);
-            }
-
-            return this;
         }
     }
 }

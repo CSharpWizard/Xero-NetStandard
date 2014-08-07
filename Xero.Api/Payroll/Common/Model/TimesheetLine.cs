@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Xero.Api.Common;
 
@@ -14,6 +15,6 @@ namespace Xero.Api.Payroll.Common.Model
         public Guid TrackingItemID { get; set; }
 
         [DataMember]
-        public NumberOfUnits NumberOfUnits { get; set; }        
-    }
+        public List<decimal> NumberOfUnits { get; set; }        
+    }    
 }
