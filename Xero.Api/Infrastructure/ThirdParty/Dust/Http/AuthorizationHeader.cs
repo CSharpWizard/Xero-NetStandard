@@ -26,8 +26,7 @@ namespace Xero.Api.Infrastructure.ThirdParty.Dust.Http {
 					Timestamp,
 					Nonce,
 					Version,
-                    Verifier,
-                    Callback
+                    Verifier
 				);
 			}
 		}
@@ -51,11 +50,6 @@ namespace Xero.Api.Infrastructure.ThirdParty.Dust.Http {
 		private string Signature {
 			get { return ToString(_oAuthParameters.Signature); }
 		}
-
-        private string Callback
-        {
-            get { return ToString(_oAuthParameters.Callback); }
-        }
 
 		private string SignatureMethod {
 			get { return ToString(_oAuthParameters.SignatureMethod); }
@@ -95,11 +89,10 @@ namespace Xero.Api.Infrastructure.ThirdParty.Dust.Http {
 	    }
 	    
 		private bool HasRealm {
-			get { return !string.IsNullOrWhiteSpace(_realm); }
+			get { return _realm != null; }
 		}
 
 		private string ToString(Parameter parameter) {
-            if (string.IsNullOrWhiteSpace(parameter.Value)) return string.Empty;
 			return string.Format(
 				"{0}=\"{1}\"", 
 				parameter.Name, 
