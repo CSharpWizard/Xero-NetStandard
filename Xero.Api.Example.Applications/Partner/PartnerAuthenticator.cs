@@ -34,7 +34,7 @@ namespace Xero.Api.Example.Applications.Partner
 
         protected override string AuthorizeUser(IToken token)
         {
-            if (CallBackUri != "oob")
+            if (CallBackUri.Equals("oob"))
             {
                 Process.Start(new UriBuilder(Tokens.AuthorizeUri)
                 {
@@ -48,9 +48,9 @@ namespace Xero.Api.Example.Applications.Partner
             return string.Empty;
         }
 
-        protected override string CreateSignature(IToken token, string verb, Uri uri, string verifier)
+        protected override string CreateSignature(IToken token, string verb, Uri uri, string verifier, string callback)
         {
-            return new RsaSha1Signer().CreateSignature(_signingCertificate, token, uri, verb, verifier);
+            return new RsaSha1Signer().CreateSignature(_signingCertificate, token, uri, verb, verifier, callback);
         }
     }
 }
