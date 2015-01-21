@@ -53,9 +53,6 @@ namespace Xero.Api.Core.Model
         public string CurrencyCode { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public decimal? CurrencyRate { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
         public DateTime? FullyPaidOnDate { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
