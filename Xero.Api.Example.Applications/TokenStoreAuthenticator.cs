@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Security.Cryptography.X509Certificates;
 using Xero.Api.Infrastructure.Interfaces;
 using Xero.Api.Infrastructure.OAuth;
 
@@ -7,37 +6,18 @@ namespace Xero.Api.Example.Applications
 {
     public abstract class TokenStoreAuthenticator : IAuthenticator
     {
-        private readonly string _tokenUri;
         protected string CallBackUri { get; set; }
         protected string BaseUri { get; set; }
         protected string VerifierUri { get; set; }
         protected ITokenStore Store { get; set; }
-
-        private OAuthTokens _tokens;
-        protected OAuthTokens Tokens 
-        {
-            get 
-            {
-                if (_tokens == null)
-                {
-                    _tokens = new OAuthTokens(BaseUri, _tokenUri, GetClientCertificate());      
-                }
-
-                return _tokens;
-            } 
-        }
+        protected OAuthTokens Tokens { get; set; }
 
         protected TokenStoreAuthenticator(string baseUri, string tokenUri, string callBackUri, ITokenStore store)
         {
-            _tokenUri = tokenUri;
             CallBackUri = callBackUri;
             BaseUri = baseUri;
-            Store = store;                      
-        }
-
-        protected virtual X509Certificate2 GetClientCertificate()
-        {
-            return null;            
+            Store = store;
+            Tokens = new OAuthTokens(baseUri, tokenUri);            
         }
 
         public string GetSignature(IConsumer consumer, IUser user, Uri uri, string verb, IConsumer consumer1)

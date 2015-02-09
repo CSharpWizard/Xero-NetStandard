@@ -5,7 +5,6 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Xero.Api.Core.Model;
 using Xero.Api.Infrastructure.Interfaces;
@@ -21,7 +20,7 @@ namespace Xero.Api.Infrastructure.Http
     {
         private readonly string _baseUri;
         private readonly IAuthenticator _auth;
-        
+        private readonly ICertificateAuthenticator _certAuth;
         private readonly Dictionary<string, string> _headers;
 
         public DateTime? ModifiedSince { get; set; }
@@ -47,23 +46,18 @@ namespace Xero.Api.Infrastructure.Http
             _auth = auth;
         }
 
-//        public HttpClient(string baseUri, ICertificateAuthenticator auth, IConsumer consumer, IUser user)
-//            : this(baseUri, consumer, user)
-//        {
-//            _certAuth = auth;
-//            _auth = auth;
-//        }
+        public HttpClient(string baseUri, ICertificateAuthenticator auth, IConsumer consumer, IUser user)
+            : this(baseUri, consumer, user)
+        {
+            _certAuth = auth;
+            _auth = auth;
+        }
 
         public string UserAgent
         {
             get; set;
         }
 
-        public X509Certificate ClientCertificate
-        {
-            get;
-            set;
-        }
 
         public Response Post(string endpoint, string data, string contentType = "application/xml", string query = null)
         {
@@ -176,9 +170,9 @@ namespace Xero.Api.Infrastructure.Http
 
             request.UserAgent = !string.IsNullOrWhiteSpace(UserAgent) ? UserAgent : "Xero Api wrapper - " + Consumer.ConsumerKey;
             
-            if (ClientCertificate != null)
+            if (_certAuth != null)
             {
-                request.ClientCertificates.Add(ClientCertificate);
+                request.ClientCertificates.Add(_certAuth.Certificate);
             }
 
             return request;
