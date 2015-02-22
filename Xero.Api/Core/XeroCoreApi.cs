@@ -309,6 +309,6 @@ namespace Xero.Api.Core
         {
             return Setup.Update(item);
         }
-        
-    }
+
+      }
 }
