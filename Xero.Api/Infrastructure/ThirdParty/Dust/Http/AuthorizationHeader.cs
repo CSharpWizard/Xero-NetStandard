@@ -28,8 +28,7 @@ namespace Xero.Api.Infrastructure.ThirdParty.Dust.Http {
 					Timestamp,
 					Nonce,
 					Version,
-                    Verifier,
-                    Callback
+                    Verifier
 				);
 			}
 		}
@@ -80,11 +79,6 @@ namespace Xero.Api.Infrastructure.ThirdParty.Dust.Http {
         private string Session
         {
             get { return ToString(_oAuthParameters.Session); }
-        }
-
-        private string Callback
-        {
-            get { return ToString(_oAuthParameters.Callback); }
         }
 
         public bool HasVerifier

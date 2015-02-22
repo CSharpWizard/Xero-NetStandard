@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using Xero.Api.Common;
 
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class Option : IHasId
+    public class Option
     {
         [DataMember(Name = "TrackingOptionID", EmitDefaultValue = false)]
         public Guid Id { get; set; }

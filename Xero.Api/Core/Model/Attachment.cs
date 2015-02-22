@@ -1,13 +1,12 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.Serialization;
-using Xero.Api.Common;
 using Xero.Api.Core.File;
 
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public sealed class Attachment : BinaryFile, IHasId
+    public sealed class Attachment : BinaryFile
     {
         public Attachment(FileInfo fileInfo) : base(fileInfo)
         {
