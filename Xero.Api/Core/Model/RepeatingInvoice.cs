@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
-using Xero.Api.Common;
 using Xero.Api.Core.Model.Status;
 using Xero.Api.Core.Model.Types;
 
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class RepeatingInvoice : IHasId
+    public class RepeatingInvoice
     {
         [DataMember(Name = "RepeatingInvoiceID", EmitDefaultValue = false)]
         public Guid Id { set; get; }

@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using Xero.Api.Common;
 
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class BankTransfer : IHasId
+    public class BankTransfer
     {
         [DataMember(Name = "BankTransferID", EmitDefaultValue = false)]
         public Guid Id { get; set; }

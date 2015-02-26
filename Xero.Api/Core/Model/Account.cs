@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using Xero.Api.Common;
 using Xero.Api.Core.Model.Status;
 using Xero.Api.Core.Model.Types;
 
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class Account : IHasId
+    public class Account
     {
         [DataMember(Name = "AccountID", EmitDefaultValue = false)]
         public Guid Id { get; set; }

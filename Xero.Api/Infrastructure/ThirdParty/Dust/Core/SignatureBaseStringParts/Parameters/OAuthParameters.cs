@@ -12,8 +12,7 @@ namespace Xero.Api.Infrastructure.ThirdParty.Dust.Core.SignatureBaseStringParts.
 	    private string _signature;
     	private readonly string _version;
         private readonly string _nonce, _timestamp, _verifier, _session;
-        private readonly bool _renewToken;
-        private readonly string _callback;
+        private bool _renewToken;
 
 	    public static OAuthParameters Empty = new OAuthParameters(
 	        new ConsumerKey(string.Empty), 
@@ -21,8 +20,8 @@ namespace Xero.Api.Infrastructure.ThirdParty.Dust.Core.SignatureBaseStringParts.
 	        string.Empty, 
 	        new DefaultTimestampSequence(), 
 	        new DefaultNonceSequence(), 
-	        string.Empty,
-	        null
+	        string.Empty, 
+	        null            
         );
 
 	    public OAuthParameters(
@@ -35,8 +34,7 @@ namespace Xero.Api.Infrastructure.ThirdParty.Dust.Core.SignatureBaseStringParts.
 			string version,
             string verifier = null,
             string session = null,
-            bool renewToken = false,
-            string callback = null
+            bool renewToken = false
 		)
         {
     	    _key = key;
@@ -50,7 +48,6 @@ namespace Xero.Api.Infrastructure.ThirdParty.Dust.Core.SignatureBaseStringParts.
     	    _nonce = nonces.Next();
     	    _timestamp = timestamps.Next();
 	        _renewToken = renewToken;
-	        _callback = callback;
         }
 
 	    internal Parameters List() {
@@ -75,11 +72,6 @@ namespace Xero.Api.Infrastructure.ThirdParty.Dust.Core.SignatureBaseStringParts.
                     if (_renewToken && (!string.IsNullOrWhiteSpace(_session)))
                     {
                         it.Add(Session);
-                    }
-
-                    if (!string.IsNullOrWhiteSpace(_callback))
-                    {
-                        it.Add(Callback);
                     }
                 });
     	}
@@ -124,11 +116,6 @@ namespace Xero.Api.Infrastructure.ThirdParty.Dust.Core.SignatureBaseStringParts.
         internal Parameter Session
         {
             get { return new Parameter(Name.Session, _session); }
-        }
-
-        internal Parameter Callback
-        {
-            get { return new Parameter(Name.Callback, _callback); }
         }
     }
 }

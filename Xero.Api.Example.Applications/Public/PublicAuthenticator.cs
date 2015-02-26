@@ -7,26 +7,30 @@ namespace Xero.Api.Example.Applications.Public
 {
     public class PublicAuthenticator : TokenStoreAuthenticator
     {
-        public PublicAuthenticator(string baseUri, string tokenUri, string callBackUrl, ITokenStore store) 
-            : base(baseUri, tokenUri, callBackUrl, store)
+        public PublicAuthenticator(string baseUri, string tokenUri, string callBackUrl, ITokenStore store) : base(baseUri, tokenUri, callBackUrl, store)
         {            
         }
 
         protected override string AuthorizeUser(IToken token)
         {
-            var authorizeUrl = GetAuthorizeUrl(token);
+            if (CallBackUri.Equals("oob"))
+            {
+                Process.Start(new UriBuilder(Tokens.AuthorizeUri)
+                {                     
+                    Query = "oauth_token=" + token.TokenKey
+                }.Uri.ToString());
 
-            Process.Start(authorizeUrl);
+                Console.WriteLine("Enter the PIN given on the web page");
+                return Console.ReadLine();
+            }
 
-            Console.WriteLine("Enter the PIN given on the web page");
-
-            return Console.ReadLine();
+            return string.Empty;
         }
 
-        protected override string CreateSignature(IToken token, string verb, Uri uri, string verifier,
-            bool renewToken = false, string callback = null)
+        protected override string CreateSignature(IToken token, string verb, Uri uri, string verifier, 
+            bool renewToken = false)
         {
-            return new HmacSha1Signer().CreateSignature(token, uri, verb, verifier, callback);
+            return new HmacSha1Signer().CreateSignature(token, uri, verb, verifier);
         }
 
         protected override IToken RenewToken(IToken sessionToken, IConsumer consumer)
