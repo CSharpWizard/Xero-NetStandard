@@ -11,13 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xero.Api.Example.TokenStore
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xero.Api.Example.Creation", "Xero.Api.Example.Creation\Xero.Api.Example.Creation.csproj", "{557D6222-DF69-4134-A31A-E762EAF3DE21}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F04ACADE-6201-4EDE-9916-41FCB0DF02F8}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B2DF83D4-97EB-46C3-8511-6EFF7D6D7D38}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollTests.US", "PayrollTests.US\PayrollTests.US.csproj", "{92FA4885-5E34-4C28-9573-5FBA9AE91EC6}"
@@ -29,6 +22,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xero.Api.Example.Applications", "Xero.Api.Example.Applications\Xero.Api.Example.Applications.csproj", "{D799E8CC-0917-465D-80DF-F8355201D13F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreTests", "CoreTests\CoreTests.csproj", "{6E24F214-40CC-4891-8028-A068CD7CD4BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B5782FC4-AA35-44B2-97BC-9E1CAEFC346F}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xero.Api.Example.TrackingCategories", "Xero.Api.Example.TrackingCategories\Xero.Api.Example.TrackingCategories.csproj", "{8622936C-E31D-4F5E-AB9D-708AB257BD5B}"
 EndProject
