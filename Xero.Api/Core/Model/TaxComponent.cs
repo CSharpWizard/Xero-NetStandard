@@ -3,7 +3,7 @@
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class TaxComponent : CoreData
+    public class TaxComponent
     {
         [DataMember]
         public string Name { get; set; }

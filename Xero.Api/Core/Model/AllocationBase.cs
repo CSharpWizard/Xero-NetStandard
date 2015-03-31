@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public abstract class AllocationBase : CoreData
+    public abstract class AllocationBase
     {
         [DataMember(EmitDefaultValue = false)]
         public decimal AppliedAmount { get; set; }

@@ -3,7 +3,7 @@
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class Balance : CoreData
+    public class Balance
     {
         [DataMember(EmitDefaultValue = false)]
         public decimal Outstanding { get; set; }

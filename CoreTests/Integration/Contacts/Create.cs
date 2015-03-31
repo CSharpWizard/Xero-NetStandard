@@ -24,19 +24,19 @@ namespace CoreTests.Integration.Contacts
             {
                 new Contact
                 {
-                    Name = "John " + Random.GetRandomString(10)
+                    Name = "John " + Guid.NewGuid().ToString("N")
                 },
                 new Contact
                 {
-                    Name = "Paul" + Random.GetRandomString(10)
+                    Name = "Paul" + Guid.NewGuid().ToString("N")
                 },
                 new Contact
                 {
-                    Name = "George" + Random.GetRandomString(10)
+                    Name = "George" + Guid.NewGuid().ToString("N")
                 },
                 new Contact
                 {
-                    Name = "Ringo" + Random.GetRandomString(10)
+                    Name = "Ringo" + Guid.NewGuid().ToString("N")
                 }
             });
 
@@ -46,18 +46,13 @@ namespace CoreTests.Integration.Contacts
         [Test]
         public void create_complex_contact()
         {
-            Api.Contacts.SummarizeErrors(true);
-
-            var expectedAccountNumber = "AccountNumber" + Random.GetRandomString(10);
-
-
             var contact = Api.Create(new Contact
             {
-                Name = "24 locks " + Random.GetRandomString(10),
+                Name = "24 locks " + Guid.NewGuid().ToString("N"),
                 FirstName = "Ben",
                 LastName = "Bowden",
                 EmailAddress = "ben.bowden@24locks.com",
-                AccountNumber = expectedAccountNumber,
+                AccountNumber = "AccountNumber",
 
                 ContactPersons = new List<ContactPerson>
                 {
@@ -73,7 +68,7 @@ namespace CoreTests.Integration.Contacts
 
             Assert.AreEqual("Ben", contact.FirstName);
             Assert.AreEqual("John", contact.ContactPersons[0].FirstName);
-            Assert.AreEqual(expectedAccountNumber, contact.AccountNumber);
+            Assert.AreEqual("AccountNumber", contact.AccountNumber);
         }
     }
 }

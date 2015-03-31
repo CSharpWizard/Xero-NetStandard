@@ -3,7 +3,7 @@
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class Balances : CoreData
+    public class Balances
     {
         [DataMember(EmitDefaultValue = false)]
         public Balance AccountsReceivable { get; set; }
