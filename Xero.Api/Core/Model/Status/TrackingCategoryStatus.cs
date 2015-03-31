@@ -6,12 +6,6 @@ namespace Xero.Api.Core.Model.Status
     public enum TrackingCategoryStatus
     {
         [EnumMember(Value = "ACTIVE")]
-        Active,
-      
-        [EnumMember(Value = "ARCHIVED")]
-        Archived,
- 
-        [EnumMember(Value = "DELETED")]
-        Deleted
+        Active        
     }
 }
