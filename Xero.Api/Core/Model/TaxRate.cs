@@ -6,7 +6,7 @@ using Xero.Api.Core.Model.Types;
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class TaxRate : CoreData
+    public class TaxRate
     {
         [DataMember]
         public string Name { get; set; }

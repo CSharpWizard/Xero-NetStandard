@@ -4,12 +4,12 @@ using Xero.Api.Core.Model.Types;
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class Terms : CoreData
+    public class Terms
     {
         [DataMember(EmitDefaultValue = false)]
         public int Day { get; set; }
 
-        [DataMember(Name = "Type")]
+        [DataMember]
         public PaymentTermType TermType { get; set; }
     }
 }

@@ -7,7 +7,7 @@ using Xero.Api.Core.Model.Types;
 namespace Xero.Api.Core.Model
 {
     [DataContract(Name = "JournalLine", Namespace = "")]
-    public class Line : CoreData, IHasId
+    public class Line : IHasId
     {
         [DataMember(Name = "JournalLineID", EmitDefaultValue = false)]
         public Guid Id { get; set; }

@@ -6,7 +6,7 @@ using Xero.Api.Common;
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class ContactGroup : CoreData, IHasId
+    public class ContactGroup : IHasId
     {
         [DataMember(Name = "ContactGroupID", EmitDefaultValue = false)]
         public Guid Id { get; set; }

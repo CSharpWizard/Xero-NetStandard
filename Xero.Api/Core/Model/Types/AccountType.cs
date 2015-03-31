@@ -23,8 +23,6 @@ namespace Xero.Api.Core.Model.Types
         Expense,
         [EnumMember(Value = "FIXED")]
         Fixed,
-        [EnumMember(Value = "INVENTORY")]
-        Inventory,
         [EnumMember(Value = "LIABILITY")]
         Liability,
         [EnumMember(Value = "NONCURRENT")]
