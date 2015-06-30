@@ -73,12 +73,6 @@ namespace Xero.Api.Core.Model
         public string SalesAccountCode { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public List<DefaultTrackingCategory> SalesTrackingCategories { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
-        public List<DefaultTrackingCategory> PurchasesTrackingCategories { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
         public BrandingTheme BrandingTheme { get; set; }
 
         [DataMember(EmitDefaultValue = false)]

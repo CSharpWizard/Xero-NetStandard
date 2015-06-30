@@ -7,7 +7,7 @@ using Xero.Api.Infrastructure.Http;
 namespace Xero.Api.Core.Endpoints
 {
     public class AccountsEndpoint
-        : XeroUpdateEndpoint<AccountsEndpoint, Account, AccountsRequest, AccountsResponse>
+        : XeroCreateEndpoint<AccountsEndpoint, Account, AccountsRequest, AccountsResponse>
     {
         public AccountsEndpoint(XeroHttpClient client) :
             base(client, "/api.xro/2.0/Accounts")
