@@ -61,6 +61,7 @@ namespace PayrollTests.AU.Integration.Employees
                 {
                     Type = SuperfundType.Regulated,
                     Abn = 78984178687,
+                    Spin = "PSL0002AU"
                 }).Id;
             }
         }
