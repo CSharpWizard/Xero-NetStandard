@@ -18,6 +18,7 @@ namespace PayrollTests.AU.Integration.SuperFunds
             {
                 Type = SuperfundType.Regulated,
                 Abn = 78984178687,
+                Spin = "PSL0002AU"
             });
 
             Assert.IsTrue(sf.Id != Guid.Empty);

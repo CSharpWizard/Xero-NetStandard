@@ -17,11 +17,7 @@ namespace Xero.Api.Payroll.Australia.Model
 
         [DataMember(Name = "SPIN")]
         // Superannuation Product Identification Number 
-        public string Spin { get; private set; }
-        
-        [DataMember(Name = "USI")]
-        //Unique superannuation identifier
-        public string Usi { get; set; }
+        public string Spin { get; set; }
         
         [DataMember]
         public SuperfundType Type { get; set; }
@@ -37,9 +33,6 @@ namespace Xero.Api.Payroll.Australia.Model
 
         [DataMember]
         public long EmployerNumber { get; set; }
-        
-        [DataMember]
-        public string  ElectronicServiceAddress { get; set; }
 
         [DataMember]
         public string Name { get; set; }

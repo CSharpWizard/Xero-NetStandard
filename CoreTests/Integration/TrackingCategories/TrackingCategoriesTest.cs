@@ -114,7 +114,7 @@ namespace CoreTests.Integration.TrackingCategories
                 DueDate = DateTime.UtcNow.AddDays(90),
                 LineAmountTypes = LineAmountType.Inclusive,
                 Status = status,
-				LineItems = new List<LineItem>
+                Items = new List<LineItem>
                 {
                     new LineItem
                     {

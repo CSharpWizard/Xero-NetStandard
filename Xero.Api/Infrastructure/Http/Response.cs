@@ -6,8 +6,6 @@ namespace Xero.Api.Infrastructure.Http
 {
     internal class Response
     {
-	    private string _body;
-
         internal Response(HttpWebResponse inner)
         {
             StatusCode = inner.StatusCode;
@@ -28,20 +26,14 @@ namespace Xero.Api.Infrastructure.Http
         {
             get
             {
-	            if (_body != null)
-		            return _body;
-
-				//Cache the body so it can be examined more than once when debugging
                 using (var rdr = new StreamReader(Stream))
                 {
                     var result = rdr.ReadToEnd();
 
                     Stream.Seek(0, SeekOrigin.Begin);
                         
-                    _body = result;
+                    return result;
                 }
-
-	            return _body;
             }
         }
 

@@ -45,7 +45,7 @@ namespace CoreTests.Integration.Payments
                 DueDate = DateTime.UtcNow.AddDays(90),
                 LineAmountTypes = LineAmountType.Inclusive,
                 Status = InvoiceStatus.Authorised,
-				LineItems = new List<LineItem>
+                Items = new List<LineItem>
                 {
                     new LineItem
                     {

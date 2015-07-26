@@ -21,6 +21,9 @@ namespace Xero.Api.Payroll.Australia.Model
         public bool Remainder { get; set; }
 
         [DataMember]
+        public decimal? Percentage { get; set; }
+
+        [DataMember]
         public decimal? Amount { get; set; }
     } 
 }
