@@ -8,7 +8,7 @@ using Xero.Api.Core.Model.Types;
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class Invoice : CoreData, IHasId
+    public class Invoice : HasUpdatedDate, IHasId
     {
         [DataMember(Name = "InvoiceID", EmitDefaultValue = false)]
         public Guid Id { get; set; }
@@ -79,10 +79,17 @@ namespace Xero.Api.Core.Model
         [DataMember(EmitDefaultValue = false)]
         public string Reference { get; set; }
 
-        [DataMember(Name = "LineItems", EmitDefaultValue = false)]
-        public List<LineItem> Items { get; set; }
+		[Obsolete("Use LineItems instead. This property will being removed to bring consistency across models that hold line items")]
+        public List<LineItem> Items 
+		{
+			get { return LineItems; }
+			set { LineItems = value; }
+        }
 
-        [DataMember(EmitDefaultValue = false)]
+	    [DataMember(EmitDefaultValue = false)]
+	    public List<LineItem> LineItems { get; set; }
+
+	    [DataMember(EmitDefaultValue = false)]
         public bool? SentToContact { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
