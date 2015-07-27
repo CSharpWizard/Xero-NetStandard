@@ -13,11 +13,5 @@ namespace Xero.Api.Core.Endpoints
             : base(client, "/api.xro/2.0/BankTransactions")
         {
         }
-
-        public BankTransactionsEndpoint Page(int page)
-        {
-            AddParameter("page", page);
-            return this;
-        }
     }
 }
