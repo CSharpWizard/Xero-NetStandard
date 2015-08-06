@@ -38,14 +38,6 @@ namespace CoreTests.Integration.Invoices
         }
 
         [Test]
-        public void lineItemId_is_returned()
-        {
-            var invoce = Given_an_invoice();
-
-            Assert.NotNull(invoce.LineItems.FirstOrDefault().LineItemId);
-        }
-
-        [Test]
         public void multiple_lineitems()
         {
             var invoice = Api.Create(new Invoice
