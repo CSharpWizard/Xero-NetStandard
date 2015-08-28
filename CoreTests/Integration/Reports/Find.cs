@@ -24,18 +24,5 @@ namespace CoreTests.Integration.Reports
             Assert.IsNotNull(reports);
         }
 
-        [Test]
-        public void find_PL_report()
-        {
-            var reports = Api.Reports.ProfitAndLoss(DateTime.Now.AddDays(-50));
-            Assert.IsNotNull(reports);
-        }
-
-        [Test]
-        public void find_BudgetSummary_report()
-        {
-            var reports = Api.Reports.BudgetSummary(DateTime.Now.AddDays(-50));
-            Assert.IsNotNull(reports);
-        }
     }
 }
