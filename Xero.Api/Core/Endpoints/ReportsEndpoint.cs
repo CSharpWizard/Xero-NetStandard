@@ -133,8 +133,7 @@ namespace Xero.Api.Core.Endpoints
         }
 
         public Report ProfitAndLoss(DateTime? date, DateTime? from = null, DateTime? to = null,
-            Guid? trackingCategory = null, Guid? trackingOption = null, Guid? trackingCategory2 = null, 
-            Guid? trackingOption2 = null, bool? standardLayout = null)
+            Guid? trackingCategory = null, Guid? trackingOption = null, bool? standardLayout = null)
         {
             var parameters = new NameValueCollection();
 
@@ -143,8 +142,6 @@ namespace Xero.Api.Core.Endpoints
             parameters.Add("toDate", to);
             parameters.Add("trackingCategoryID", trackingCategory);
             parameters.Add("trackingOptionID", trackingOption);
-            parameters.Add("trackingCategoryID2", trackingCategory2);
-            parameters.Add("trackingOptionID2", trackingOption2);
             parameters.Add("standardLayout", standardLayout);
 
             AddParameters(parameters);
