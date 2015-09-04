@@ -101,8 +101,5 @@ namespace Xero.Api.Core.Model
         [DataMember(EmitDefaultValue = false)]
         public List<Overpayment> Overpayments { get; set; }
 
-        [DataMember(EmitDefaultValue = false)]
-        public List<Payment> Payments { get; set; }
-
     }
 }
