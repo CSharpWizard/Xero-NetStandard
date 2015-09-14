@@ -45,7 +45,7 @@ namespace Xero.Api.Core.Model
         [DataMember(EmitDefaultValue = false)]
         public Overpayment Overpayment { get; set; }
 
-        [DataMember(EmitDefaultValue = false)]
+        [DataMember]
         public Account Account { get; set; }
     }
 }
