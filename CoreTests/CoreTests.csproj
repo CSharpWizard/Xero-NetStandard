@@ -96,11 +96,6 @@
     <Compile Include="Integration\Items\Create.cs" />
     <Compile Include="Integration\Items\Update.cs" />
     <Compile Include="Integration\Journals\Find.cs" />
-    <Compile Include="Integration\LinkedTransactions\Create.cs" />
-    <Compile Include="Integration\LinkedTransactions\Delete.cs" />
-    <Compile Include="Integration\LinkedTransactions\Find.cs" />
-    <Compile Include="Integration\LinkedTransactions\LinkedTransactionTest.cs" />
-    <Compile Include="Integration\LinkedTransactions\Update.cs" />
     <Compile Include="Integration\ManualJournals\Create.cs" />
     <Compile Include="Integration\ManualJournals\Find.cs" />
     <Compile Include="Integration\ManualJournals\ManualJournalsTest.cs" />
@@ -108,6 +103,7 @@
     <Compile Include="Integration\Organisation\Find.cs" />
     <Compile Include="Integration\Payments\Create.cs" />
     <Compile Include="Integration\Payments\CreateForeignCurrency.cs" />
+    <Compile Include="Integration\Payments\Delete.cs" />
     <Compile Include="Integration\Payments\Find.cs" />
     <Compile Include="Integration\Payments\PaymentsTest.cs" />
     <Compile Include="Integration\Pdf\Get.cs" />
