@@ -45,8 +45,5 @@ namespace Xero.Api.Core.Model
         [DataMember(Name = "LineAmount", EmitDefaultValue = false)]
         public decimal Amount { get; set; }
 
-        [DataMember(EmitDefaultValue = false)]
-        public string Description { get; set; }
-
     }
 }
