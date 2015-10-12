@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using Xero.Api.Common;
-using Xero.Api.Core.Model.Types;
 
 namespace Xero.Api.Core.Model
 {
@@ -26,11 +25,5 @@ namespace Xero.Api.Core.Model
 
         [DataMember(Name = "JournalLines", EmitDefaultValue = false)]
         public List<Line> Lines { get; set; }
-
-        [DataMember(Name = "SourceID", EmitDefaultValue = false)]
-        public string SourceId { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
-        public SourceType? SourceType { get; set; }
     }
 }
