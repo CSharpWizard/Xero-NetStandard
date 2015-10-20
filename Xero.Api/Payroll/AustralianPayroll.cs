@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Xero.Api.Infrastructure.Interfaces;
-using Xero.Api.Infrastructure.RateLimiter;
 using Xero.Api.Payroll.Australia.Endpoints;
 using Xero.Api.Payroll.Australia.Model;
 using Xero.Api.Payroll.Common;
@@ -12,26 +11,14 @@ namespace Xero.Api.Payroll
 {
     public class AustralianPayroll : PayrollApi
     {
-        public AustralianPayroll(string baseUri, IAuthenticator auth, IConsumer consumer, IUser user,
-            IJsonObjectMapper readMapper, IXmlObjectMapper writeMapper)
-            : this(baseUri, auth, consumer, user, readMapper, writeMapper, null)
-        {
-        }
-
-        public AustralianPayroll(string baseUri, IAuthenticator auth, IConsumer consumer, IUser user, IJsonObjectMapper readMapper, IXmlObjectMapper writeMapper, IRateLimiter rateLimiter)
-            : base(baseUri, auth, consumer, user, readMapper, writeMapper, rateLimiter)
+        public AustralianPayroll(string baseUri, IAuthenticator auth, IConsumer consumer, IUser user, IJsonObjectMapper readMapper, IXmlObjectMapper writeMapper)
+            : base(baseUri, auth, consumer, user, readMapper, writeMapper)
         {
             Connect();
         }
 
-        public AustralianPayroll(string baseUri, ICertificateAuthenticator auth, IConsumer consumer, IUser user,
-            IJsonObjectMapper readMapper, IXmlObjectMapper writeMapper)
-            : this(baseUri, auth, consumer, user, readMapper, writeMapper, null)
-        {
-        }
-
-        public AustralianPayroll(string baseUri, ICertificateAuthenticator auth, IConsumer consumer, IUser user, IJsonObjectMapper readMapper, IXmlObjectMapper writeMapper, IRateLimiter rateLimiter)
-            : base(baseUri, auth, consumer, user, readMapper, writeMapper, rateLimiter)
+        public AustralianPayroll(string baseUri, ICertificateAuthenticator auth, IConsumer consumer, IUser user, IJsonObjectMapper readMapper, IXmlObjectMapper writeMapper)
+            : base(baseUri, auth, consumer, user, readMapper, writeMapper)
         {
             Connect();
         }
