@@ -1,6 +1,5 @@
 ﻿using Xero.Api.Infrastructure.Http;
 using Xero.Api.Infrastructure.Interfaces;
-using Xero.Api.Infrastructure.RateLimiter;
 
 namespace Xero.Api.Common
 {
@@ -16,16 +15,16 @@ namespace Xero.Api.Common
             BaseUri = baseUri;
         }
 
-        protected XeroApi(string baseUri, IAuthenticator auth, IConsumer consumer, IUser user, IJsonObjectMapper readMapper, IXmlObjectMapper writeMapper, IRateLimiter rateLimiter)
+        protected XeroApi(string baseUri, IAuthenticator auth, IConsumer consumer, IUser user, IJsonObjectMapper readMapper, IXmlObjectMapper writeMapper)
             : this(baseUri)
         {
-            Client = new XeroHttpClient(baseUri, auth, consumer, user, readMapper, writeMapper, rateLimiter);
+            Client = new XeroHttpClient(baseUri, auth, consumer, user, readMapper, writeMapper);
         }
 
-        protected XeroApi(string baseUri, ICertificateAuthenticator auth, IConsumer consumer, IUser user, IJsonObjectMapper readMapper, IXmlObjectMapper writeMapper, IRateLimiter rateLimiter)
+        protected XeroApi(string baseUri, ICertificateAuthenticator auth, IConsumer consumer, IUser user, IJsonObjectMapper readMapper, IXmlObjectMapper writeMapper)
             : this(baseUri)
         {
-            Client = new XeroHttpClient(baseUri, auth, consumer, user, readMapper, writeMapper, rateLimiter);
+            Client = new XeroHttpClient(baseUri, auth, consumer, user, readMapper, writeMapper);
         }
 
         public string UserAgent

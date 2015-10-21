@@ -1,7 +1,6 @@
 ﻿using Xero.Api.Core;
 using Xero.Api.Infrastructure.Interfaces;
 using Xero.Api.Infrastructure.OAuth;
-using Xero.Api.Infrastructure.RateLimiter;
 using Xero.Api.Serialization;
 
 namespace Xero.Api.Example.Applications.Public
@@ -11,7 +10,7 @@ namespace Xero.Api.Example.Applications.Public
         private static readonly DefaultMapper Mapper = new DefaultMapper();
         private static readonly Settings ApplicationSettings = new Settings();
 
-        public Core(ITokenStore store, IUser user, bool includeRateLimiter = false) :
+        public Core(ITokenStore store, IUser user) :
             base(ApplicationSettings.Uri,
                 new PublicAuthenticator(
                     ApplicationSettings.Uri,
@@ -23,8 +22,7 @@ namespace Xero.Api.Example.Applications.Public
                     ApplicationSettings.Secret),
                 user,
                 Mapper,
-                Mapper,
-                includeRateLimiter ? new RateLimiter() : null)
+                Mapper)
         {
         }
     }
