@@ -15,7 +15,6 @@ namespace Xero.Api.Infrastructure.Exceptions
                 ValidationErrors = new List<ValidationError>();
                 foreach (var ve in apiException
                     .Elements
-                    .Where(x => x.ValidationErrors != null)
                     .SelectMany(e => e.ValidationErrors))
                 {
                     ValidationErrors.Add(ve);
