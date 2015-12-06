@@ -73,6 +73,7 @@ namespace Xero.Api.Serialization
             JsConfig<ManualJournalStatus>.DeSerializeFn = EnumDeserializer<ManualJournalStatus>;
             JsConfig<OrganisationStatus>.DeSerializeFn = EnumDeserializer<OrganisationStatus>;
             JsConfig<PaymentStatus>.DeSerializeFn = EnumDeserializer<PaymentStatus>;
+            JsConfig<PurchaseOrderStatus>.DeSerializeFn = EnumDeserializer<PurchaseOrderStatus>;
             JsConfig<ReceiptStatus>.DeSerializeFn = EnumDeserializer<ReceiptStatus>;
             JsConfig<TaxRateStatus>.DeSerializeFn = EnumDeserializer<TaxRateStatus>;
             JsConfig<TrackingCategoryStatus>.DeSerializeFn = EnumDeserializer<TrackingCategoryStatus>;
@@ -85,11 +86,9 @@ namespace Xero.Api.Serialization
             JsConfig<InvoiceType>.DeSerializeFn = EnumDeserializer<InvoiceType>;
             JsConfig<OrganisationType>.DeSerializeFn = EnumDeserializer<OrganisationType>;
             JsConfig<OrganisationVersion>.DeSerializeFn = EnumDeserializer<OrganisationVersion>;
-            JsConfig<OverpaymentType>.DeSerializeFn = EnumDeserializer<OverpaymentType>;
             JsConfig<PaymentTermType>.DeSerializeFn = EnumDeserializer<PaymentTermType>;
             JsConfig<PaymentType>.DeSerializeFn = EnumDeserializer<PaymentType>;
             JsConfig<PhoneType>.DeSerializeFn = EnumDeserializer<PhoneType>;
-            JsConfig<PrepaymentType>.DeSerializeFn = EnumDeserializer<PrepaymentType>;
             JsConfig<ReportTaxType>.DeSerializeFn = EnumDeserializer<ReportTaxType>;
             JsConfig<SalesTaxBasisType>.DeSerializeFn = SalesTaxBasis;
             JsConfig<SalesTaxPeriodType>.DeSerializeFn = SalesTaxPeriod;
