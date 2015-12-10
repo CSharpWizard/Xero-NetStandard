@@ -48,9 +48,6 @@ namespace Xero.Api.Core.Model
 
         [DataMember(EmitDefaultValue = false)]
         public decimal? Total { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
-        public decimal? TotalDiscount { get; set; }
         
         [DataMember(EmitDefaultValue = false)]
         public string CurrencyCode { get; set; }

@@ -19,8 +19,7 @@ namespace Xero.Api.Example.Applications.Partner
                     store,
                     ApplicationSettings.SigningCertificatePath,
                     ApplicationSettings.ParterCertificatePath,
-                    ApplicationSettings.ParterCertificatePassword,
-                    ApplicationSettings.SigningCertificatePassword),
+                    ApplicationSettings.ParterCertificatePassword),
                 new Consumer(
                     ApplicationSettings.Key,
                     ApplicationSettings.Secret),
