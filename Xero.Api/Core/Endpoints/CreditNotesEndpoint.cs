@@ -6,14 +6,8 @@ using Xero.Api.Infrastructure.Http;
 
 namespace Xero.Api.Core.Endpoints
 {
-    public interface ICreditNotesEndpoint :
-        IXeroUpdateEndpoint<CreditNotesEndpoint, CreditNote, CreditNotesRequest, CreditNotesResponse>
-    {
-        
-    }
-
     public class CreditNotesEndpoint
-        : FourDecimalPlacesEndpoint<CreditNotesEndpoint, CreditNote, CreditNotesRequest, CreditNotesResponse>, ICreditNotesEndpoint
+        : FourDecimalPlacesEndpoint<CreditNotesEndpoint, CreditNote, CreditNotesRequest, CreditNotesResponse>
     {
         public CreditNotesEndpoint(XeroHttpClient client) :
             base(client, "/api.xro/2.0/CreditNotes")

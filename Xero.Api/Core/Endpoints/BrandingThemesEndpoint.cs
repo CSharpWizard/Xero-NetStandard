@@ -5,13 +5,7 @@ using Xero.Api.Infrastructure.Http;
 
 namespace Xero.Api.Core.Endpoints
 {
-    public interface IBrandingThemesEndpoint :
-        IXeroReadEndpoint<BrandingThemesEndpoint, BrandingTheme, BrandingThemesResponse>
-    {
-        
-    }
-
-    public class BrandingThemesEndpoint : XeroReadEndpoint<BrandingThemesEndpoint, BrandingTheme, BrandingThemesResponse>, IBrandingThemesEndpoint
+    public class BrandingThemesEndpoint : XeroReadEndpoint<BrandingThemesEndpoint, BrandingTheme, BrandingThemesResponse>
     {
         public BrandingThemesEndpoint(XeroHttpClient client)
             : base(client, "/api.xro/2.0/BrandingThemes")

@@ -1,5 +1,4 @@
-﻿using Xero.Api.Common;
-using Xero.Api.Core.Endpoints.Base;
+﻿using Xero.Api.Core.Endpoints.Base;
 using Xero.Api.Core.Model;
 using Xero.Api.Core.Request;
 using Xero.Api.Core.Response;
@@ -7,15 +6,8 @@ using Xero.Api.Infrastructure.Http;
 
 namespace Xero.Api.Core.Endpoints
 {
-    public interface IContactsEndpoint
-        : IXeroUpdateEndpoint<ContactsEndpoint, Contact, ContactsRequest, ContactsResponse>,
-        IPageableEndpoint<IContactsEndpoint>
-    {
-        IContactsEndpoint IncludeArchived(bool include);
-    }
-
     public class ContactsEndpoint
-        : XeroUpdateEndpoint<ContactsEndpoint, Contact, ContactsRequest, ContactsResponse>, IContactsEndpoint
+        : XeroUpdateEndpoint<ContactsEndpoint, Contact, ContactsRequest, ContactsResponse>
     {
         internal ContactsEndpoint(XeroHttpClient client)
             : base(client, "/api.xro/2.0/Contacts")
@@ -23,7 +15,7 @@ namespace Xero.Api.Core.Endpoints
             Page(1);
         }
 
-        public IContactsEndpoint Page(int page)
+        public ContactsEndpoint Page(int page)
         {
             AddParameter("page", page);
             return this;
@@ -35,7 +27,7 @@ namespace Xero.Api.Core.Endpoints
             Page(1);
         }
 
-        public IContactsEndpoint IncludeArchived(bool include)
+        public ContactsEndpoint IncludeArchived(bool include)
         {
             if (include)
             {
