@@ -7,7 +7,7 @@ using Xero.Api.Infrastructure.Interfaces;
 
 namespace Xero.Api.Common
 {
-    public abstract class XeroReadEndpoint<T, TResult, TResponse> : IXeroReadEndpoint<T, TResult, TResponse> 
+    public abstract class XeroReadEndpoint<T, TResult, TResponse>
         where T : XeroReadEndpoint<T, TResult, TResponse>
         where TResponse : IXeroResponse<TResult>, new()
     {
@@ -69,12 +69,12 @@ namespace Xero.Api.Common
             return (T)this;
         }
 
-        public virtual IEnumerable<TResult> Find()
+        public IEnumerable<TResult> Find()
         {
             return Get(ApiEndpointUrl, null);
         }
 
-        public virtual TResult Find(Guid child)
+        public TResult Find(Guid child)
         {
             return Find(child.ToString("D"));
         }

@@ -6,13 +6,8 @@ using Xero.Api.Infrastructure.Http;
 
 namespace Xero.Api.Core.Endpoints
 {
-    public interface ITaxRatesEndpoint : IXeroUpdateEndpoint<TaxRatesEndpoint, TaxRate, TaxRatesRequest, TaxRatesResponse>
-    {
-
-    }
-
     public class TaxRatesEndpoint
-        : XeroUpdateEndpoint<TaxRatesEndpoint, TaxRate, TaxRatesRequest, TaxRatesResponse>, ITaxRatesEndpoint
+        : XeroUpdateEndpoint<TaxRatesEndpoint, TaxRate, TaxRatesRequest, TaxRatesResponse>
     {
         internal TaxRatesEndpoint(XeroHttpClient client)
             : base(client, "/api.xro/2.0/TaxRates")
