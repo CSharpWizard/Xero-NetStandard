@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Xero.Api.Infrastructure.Http;
 using Xero.Api.Infrastructure.Interfaces;
 
 namespace Xero.Api.Common

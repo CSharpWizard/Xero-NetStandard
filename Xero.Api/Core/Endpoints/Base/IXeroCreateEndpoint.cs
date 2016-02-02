@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Xero.Api.Common;
 using Xero.Api.Infrastructure.Interfaces;
 
