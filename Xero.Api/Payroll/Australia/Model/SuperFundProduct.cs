@@ -8,7 +8,7 @@ namespace Xero.Api.Payroll.Australia.Model
     {
         [DataMember(Name = "ABN")]
         // Australian Business Number
-        public string Abn { get; set; }
+        public long Abn { get; set; }
 
         [DataMember(Name = "SPIN")]
         // Superannuation Product Identification Number 

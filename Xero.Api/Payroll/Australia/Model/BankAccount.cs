@@ -12,7 +12,7 @@ namespace Xero.Api.Payroll.Australia.Model
         public string AccountName { get; set; }
 
         [DataMember(Name = "BSB")]
-        public string BankStateBranch { get; set; }
+        public int BankStateBranch { get; set; }
 
         [DataMember]
         public string AccountNumber { get; set; }
