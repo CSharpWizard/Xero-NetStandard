@@ -39,6 +39,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Resources\cert\public_privatekey.txt" />
+    <Content Include="Resources\images\connect_xero_button_blue - Copy.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\images\connect_xero_button_blue.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -94,6 +97,12 @@
     <Compile Include="Integration\Invoices\InvoicesTest.cs" />
     <Compile Include="Integration\Invoices\SummarizeErrors.cs" />
     <Compile Include="Integration\Items\Create.cs" />
+    <Compile Include="Integration\Items\TrackedItems\Create.cs" />
+    <Compile Include="Integration\Items\TrackedItems\Find.cs" />
+    <Compile Include="Integration\Items\TrackedItems\TrackedInventoryTest.cs" />
+    <Compile Include="Integration\Items\TrackedItems\Update.cs" />
+    <Compile Include="Integration\Items\TrackedItems\Using_tracked_items.cs" />
+    <Compile Include="Integration\Items\Delete.cs" />
     <Compile Include="Integration\Items\Update.cs" />
     <Compile Include="Integration\Journals\Find.cs" />
     <Compile Include="Integration\LinkedTransactions\Create.cs" />
@@ -114,6 +123,8 @@
     <Compile Include="Integration\Pdf\Get.cs" />
     <Compile Include="Integration\Overpayments\Find.cs" />
     <Compile Include="Integration\Prepayments\Find.cs" />
+    <Compile Include="Integration\PurchaseOrders\Create.cs" />
+    <Compile Include="Integration\PurchaseOrders\Find.cs" />
     <Compile Include="Integration\Receipts\Create.cs" />
     <Compile Include="Integration\Receipts\Update.cs" />
     <Compile Include="Integration\Receipts\ReceiptTest.cs" />
@@ -137,6 +148,7 @@
     <Compile Include="Integration\Attachments\Attachments.cs" />
     <Compile Include="Integration\General\Errors.cs" />
     <Compile Include="Integration\TaxRates\Create.cs" />
+    <Compile Include="Unit\RateLimiterTest.cs" />
     <Compile Include="Unit\SummarizeErrors.cs" />
     <Compile Include="Unit\UrlEncoder.cs" />
     <Compile Include="Unit\Contacts.cs" />

@@ -25,6 +25,9 @@ namespace Xero.Api.Core.Model
         public AccountType Type { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
+        public BankAccountType? BankAccountType { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
         public string TaxType { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
@@ -56,5 +59,9 @@ namespace Xero.Api.Core.Model
 
         [DataMember(EmitDefaultValue = false)]
         public bool? HasAttachments { get; set; }
+
+        [DataMember(EmitDefaultValue = false)]
+        public DateTime UpdatedDateUTC { get; set; }
+
     }
 }

@@ -1,6 +1,6 @@
-﻿Xero-Net
+Xero-Net
 ========
-[![xero-api-sdk MyGet Build Status](https://www.myget.org/BuildSource/Badge/xero-api-sdk?identifier=e3806217-d545-47e3-9cb3-65ece45015fd)](https://www.myget.org/)
+[![xero-api-sdk MyGet Build Status](https://www.myget.org/BuildSource/Badge/xero-api-sdk?identifier=045754d8-de3f-4f0c-960a-ae6e16608e24)](https://www.myget.org/)
 
 A skinny wrapper of the Xero API. Supports Payroll. All third party libraries are included as source code.
 
@@ -48,6 +48,7 @@ There are different way to install this library:
 * Reports - Find
 * Setup - Create and Update
 * Tax Rates - Create, Find and Update
+* Tracked Inventory - Create and Update Tracked Inventory Items. Purchase, sell, and adjust inventory
 * Tracking Categories - Find
 * Users - Find
 
@@ -81,7 +82,7 @@ There are different way to install this library:
 * You will need an instance of the API per organisation / connection. The connection is stored as part of the API instance.
 
 ## Samples
-There are samples for each of the API endpoints. These have been done as console application and also a collection of NUnit tests. See the README for each of the executable and test assemblies.
+There are samples for each of the API endpoints. These have been done as console application and also a collection of NUnit tests. See the README for each of the executable and test assemblies. The test projects contain lots of useful examples of how to use this library to interact with the Xero API.
 
 ##Querying
 There are simple filters on different endpoints.
@@ -187,7 +188,7 @@ The examples are
 
 ##Serialization
 
-All communication with the [Xero API](http://deverloper.xero.com) is compressed at source. Writing to the API is done with XML. The data model classes have be attributed to give a small XML payload. All communication back from the API is JSON. These details are transparent to the user of the class library.
+All communication with the [Xero API](http://developer.xero.com) is compressed at source. Writing to the API is done with XML. The data model classes have be attributed to give a small XML payload. All communication back from the API is JSON. These details are transparent to the user of the class library.
 
 ##Usage
 To get going quickly:
