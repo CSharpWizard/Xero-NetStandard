@@ -6,17 +6,17 @@ namespace CoreTests
 {
     public class ApiWrapperTest
     {
-        private IXeroCoreApi _api;
+        private XeroCoreApi _api;
 
         protected Account BankAccount { get; set; }
         protected Account Account { get; set; }
         
-        protected IXeroCoreApi Api
+        protected XeroCoreApi Api
         {
             get { return _api ?? (_api = CreateCoreApi()); }
         }
 
-        private static IXeroCoreApi CreateCoreApi()
+        private static XeroCoreApi CreateCoreApi()
         {
             return new Xero.Api.Example.Applications.Private.Core
             {

@@ -12,9 +12,9 @@ namespace Xero.Api.Core.Model.Types
         [EnumMember(Value = "BANKCURRENCYGAIN")]
         BankCurrencyGain,
         [EnumMember(Value = "GST")]
-        GST,
+        Tax,
         [EnumMember(Value = "GSTONIMPORTS")]
-        GSTOnImports,
+        TaxOnImports,
         [EnumMember(Value = "HISTORICAL")]
         Historical,
         [EnumMember(Value = "REALISEDCURRENCYGAIN")]
@@ -31,5 +31,5 @@ namespace Xero.Api.Core.Model.Types
         UnrealisedCurrencyGain,
         [EnumMember(Value = "WAGEPAYABLES")]
         WagePayables,
-    } 
+    }
 }

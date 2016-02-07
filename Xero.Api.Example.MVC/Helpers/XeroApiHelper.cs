@@ -30,7 +30,6 @@ namespace Xero.Api.Example.MVC.Helpers
             var basePartnerApiUrl = "https://api-partner.network.xero.com";
 
             var signingCertificatePath = @"C:\Dev\your_public_privatekey.pfx";
-            var signingCertificatePassword = "Your_signing_cert_password - leave empty if you didn't set one when creating the cert";
             var clientCertificatePath = @"C:\Dev\your_entrust_cert.p12";
             var clientCertificatePassword = "your_entrust_cert_password";
 
@@ -56,8 +55,8 @@ namespace Xero.Api.Example.MVC.Helpers
             var partnerConsumer = new Consumer(partnerConsumerKey, partnerConsumerSecret);
 
             var partnerAuthenticator = new PartnerMvcAuthenticator(basePartnerApiUrl, baseApiUrl, callbackUrl,
-                    memoryStore, signingCertificatePath, clientCertificatePath, clientCertificatePassword, 
-                    partnerConsumer, requestTokenStore, signingCertificatePassword);
+                    memoryStore, signingCertificatePath, clientCertificatePath, clientCertificatePassword,
+                    partnerConsumer, requestTokenStore);
 
             var partnerApplicationSettings = new ApplicationSettings
             {
@@ -88,7 +87,7 @@ namespace Xero.Api.Example.MVC.Helpers
             return (IMvcAuthenticator)_applicationSettings.Authenticator;
         }
 
-        public static IXeroCoreApi CoreApi()
+        public static XeroCoreApi CoreApi()
         {
             if (_applicationSettings.Authenticator is ICertificateAuthenticator)
             {

@@ -54,8 +54,5 @@ namespace Xero.Api.Core.Model
 
         [DataMember(EmitDefaultValue = false)]
         public List<PrepaymentAllocation> Allocations { get; set; }
-
-        [DataMember(EmitDefaultValue = false)]
-        public List<Payment> Payments { get; set; }
     }
 }

@@ -15,8 +15,5 @@ namespace Xero.Api.Core.Model
 
         [DataMember]
         public string Option { get; set; }
-
-        [DataMember(Name = "TrackingOptionID")]
-        public Guid OptionId { get; set; }
     }
 }
