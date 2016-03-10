@@ -92,7 +92,7 @@ namespace Xero.Api.Core
         public ITaxRatesEndpoint TaxRates { get; private set; }
         public ITrackingCategoriesEndpoint TrackingCategories { get; private set; }
         public IUsersEndpoint Users { get; private set; }
-
+        
 
         private void Connect()
         {
@@ -140,198 +140,69 @@ namespace Xero.Api.Core
             }
         }
 
-        #region Accounts
-
-        public IEnumerable<Account> Create(IEnumerable<Account> items)
+        public IEnumerable<Invoice> Create(IEnumerable<Invoice> items)
         {
-            return Accounts.Create(items);
+            return Invoices.Create(items);
         }
-
-        public IEnumerable<Account> Update(IEnumerable<Account> items)
-        {
-            return Accounts.Update(items);
-        }
-
-        public Account Create(Account item)
-        {
-            return Accounts.Create(item);
-        }
-
-        public Account Update(Account item)
-        {
-            return Accounts.Update(item);
-        }
-
-        #endregion
-
-        #region BankTransactions
-
-        public IEnumerable<BankTransaction> Create(IEnumerable<BankTransaction> items)
-        {
-            return BankTransactions.Create(items);
-        }
-
-        public IEnumerable<BankTransaction> Update(IEnumerable<BankTransaction> items)
-        {
-            return BankTransactions.Update(items);
-        }
-
-        public BankTransaction Create(BankTransaction item)
-        {
-            return BankTransactions.Create(item);
-        }
-
-        public BankTransaction Update(BankTransaction item)
-        {
-            return BankTransactions.Update(item);
-        }
-
-        #endregion
-
-        #region BankTransfers
-
-        public IEnumerable<BankTransfer> Create(IEnumerable<BankTransfer> items)
-        {
-            return BankTransfers.Create(items);
-        }
-
-        public BankTransfer Create(BankTransfer item)
-        {
-            return BankTransfers.Create(item);
-        }
-
-        #endregion
-
-        #region Contacts
 
         public IEnumerable<Contact> Create(IEnumerable<Contact> items)
         {
             return Contacts.Create(items);
         }
-
-        public IEnumerable<Contact> Update(IEnumerable<Contact> items)
-        {
-            return Contacts.Update(items);
-        }
-
-        public Contact Create(Contact item)
-        {
-            return Contacts.Create(item);
-        }
-
-        public Contact Update(Contact item)
-        {
-            return Contacts.Update(item);
-        }
-
-        #endregion
         
-        #region ContactGroups
-
-        public IEnumerable<ContactGroup> Create(IEnumerable<ContactGroup> items)
+        public IEnumerable<Account> Create(IEnumerable<Account> items)
         {
-            return ContactGroups.Create(items);
+            return Accounts.Create(items);
         }
-
-        public IEnumerable<ContactGroup> Update(IEnumerable<ContactGroup> items)
-        {
-            return ContactGroups.Update(items);
-        }
-
-        public ContactGroup Create(ContactGroup item)
-        {
-            return ContactGroups.Create(item);
-        }
-
-        public ContactGroup Update(ContactGroup item)
-        {
-            return ContactGroups.Update(item);
-        }
-
-        #endregion
-
-        #region CreditNotes
-
-        public IEnumerable<CreditNote> Create(IEnumerable<CreditNote> items)
-        {
-            return CreditNotes.Create(items);
-        }
-
-        public IEnumerable<CreditNote> Update(IEnumerable<CreditNote> items)
-        {
-            return CreditNotes.Update(items);
-        }
-
-        public CreditNote Create(CreditNote item)
-        {
-            return CreditNotes.Create(item);
-        }
-
-        public CreditNote Update(CreditNote item)
-        {
-            return CreditNotes.Update(item);
-        }
-
-        #endregion
-
-        #region Employees
 
         public IEnumerable<Employee> Create(IEnumerable<Employee> items)
         {
             return Employees.Create(items);
         }
 
-        public IEnumerable<Employee> Update(IEnumerable<Employee> items)
-        {
-            return Employees.Update(items);
-        }
-
-        public Employee Create(Employee item)
-        {
-            return Employees.Create(item);
-        }
-
-        public Employee Update(Employee item)
-        {
-            return Employees.Update(item);
-        }
-
-        #endregion
-
-        #region ExpenseClaims
-
         public IEnumerable<ExpenseClaim> Create(IEnumerable<ExpenseClaim> items)
         {
             return ExpenseClaims.Create(items);
         }
 
-        public IEnumerable<ExpenseClaim> Update(IEnumerable<ExpenseClaim> items)
+        public IEnumerable<Receipt> Create(IEnumerable<Receipt> items)
         {
-            return ExpenseClaims.Update(items);
+            return Receipts.Create(items);
         }
 
-        public ExpenseClaim Create(ExpenseClaim item)
+        public IEnumerable<CreditNote> Create(IEnumerable<CreditNote> items)
         {
-            return ExpenseClaims.Create(item);
+            return CreditNotes.Create(items);
         }
 
-        public ExpenseClaim Update(ExpenseClaim item)
+        public IEnumerable<Item> Create(IEnumerable<Item> items)
         {
-            return ExpenseClaims.Update(item);
+            return Items.Create(items);
         }
 
-        #endregion
-
-        #region Invoices
-
-        public IEnumerable<Invoice> Create(IEnumerable<Invoice> items)
+        public IEnumerable<ManualJournal> Create(IEnumerable<ManualJournal> items)
         {
-            return Invoices.Create(items);
+            return ManualJournals.Create(items);
         }
 
-        public IEnumerable<Invoice> Update(IEnumerable<Invoice> items)
+        public IEnumerable<Payment> Create(IEnumerable<Payment> items)
         {
-            return Invoices.Update(items);
+            return Payments.Create(items);
+        }
+
+        public IEnumerable<TaxRate> Create(IEnumerable<TaxRate> items)
+        {
+            return TaxRates.Create(items);
+        }
+
+        public IEnumerable<BankTransaction> Create(IEnumerable<BankTransaction> items)
+        {
+            return BankTransactions.Create(items);
+        }
+
+        public IEnumerable<BankTransfer> Create(IEnumerable<BankTransfer> items)
+        {
+            return BankTransfers.Create(items);
         }
 
         public Invoice Create(Invoice item)
@@ -339,143 +210,24 @@ namespace Xero.Api.Core
             return Invoices.Create(item);
         }
 
-        public Invoice Update(Invoice item)
+        public Contact Create(Contact item)
         {
-            return Invoices.Update(item);
+            return Contacts.Create(item);
         }
 
-        #endregion
-
-        #region Items
-
-        public IEnumerable<Item> Create(IEnumerable<Item> items)
+        public Account Create(Account item)
         {
-            return Items.Create(items);
+            return Accounts.Create(item);
         }
 
-        public IEnumerable<Item> Update(IEnumerable<Item> items)
+        public Employee Create(Employee item)
         {
-            return Items.Update(items);
+            return Employees.Create(item);
         }
 
-        public Item Create(Item item)
+        public ExpenseClaim Create(ExpenseClaim item)
         {
-            return Items.Create(item);
-        }
-
-        public Item Update(Item item)
-        {
-            return Items.Update(item);
-        }
-
-        #endregion
-
-        #region LinkedTransactions
-
-        public IEnumerable<LinkedTransaction> Create(IEnumerable<LinkedTransaction> items)
-        {
-            return LinkedTransactions.Create(items);
-        }
-
-        public IEnumerable<LinkedTransaction> Update(IEnumerable<LinkedTransaction> items)
-        {
-            return LinkedTransactions.Update(items);
-        }
-
-        public LinkedTransaction Create(LinkedTransaction item)
-        {
-            return LinkedTransactions.Create(item);
-        }
-
-        public LinkedTransaction Update(LinkedTransaction item)
-        {
-            return LinkedTransactions.Update(item);
-        }
-
-        #endregion
-
-        #region ManualJournals
-
-        public IEnumerable<ManualJournal> Create(IEnumerable<ManualJournal> items)
-        {
-            return ManualJournals.Create(items);
-        }
-
-        public IEnumerable<ManualJournal> Update(IEnumerable<ManualJournal> items)
-        {
-            return ManualJournals.Update(items);
-        }
-
-        public ManualJournal Create(ManualJournal item)
-        {
-            return ManualJournals.Create(item);
-        }
-
-        public ManualJournal Update(ManualJournal item)
-        {
-            return ManualJournals.Update(item);
-        }
-
-        #endregion
-
-        #region Payments
-
-        public IEnumerable<Payment> Create(IEnumerable<Payment> items)
-        {
-            return Payments.Create(items);
-        }
-
-        public IEnumerable<Payment> Update(IEnumerable<Payment> items)
-        {
-            return Payments.Update(items);
-        }
-
-        public Payment Create(Payment item)
-        {
-            return Payments.Create(item);
-        }
-
-        public Payment Update(Payment item)
-        {
-            return Payments.Update(item);
-        }
-
-        #endregion
-
-        #region PurchaseOrders
-
-        public IEnumerable<PurchaseOrder> Create(IEnumerable<PurchaseOrder> items)
-        {
-            return PurchaseOrders.Create(items);
-        }
-
-        public IEnumerable<PurchaseOrder> Update(IEnumerable<PurchaseOrder> items)
-        {
-            return PurchaseOrders.Update(items);
-        }
-
-        public PurchaseOrder Create(PurchaseOrder item)
-        {
-            return PurchaseOrders.Create(item);
-        }
-
-        public PurchaseOrder Update(PurchaseOrder item)
-        {
-            return PurchaseOrders.Update(item);
-        }
-
-        #endregion
-
-        #region Receipts
-
-        public IEnumerable<Receipt> Create(IEnumerable<Receipt> items)
-        {
-            return Receipts.Create(items);
-        }
-
-        public IEnumerable<Receipt> Update(IEnumerable<Receipt> items)
-        {
-            return Receipts.Update(items);
+            return ExpenseClaims.Create(item);
         }
 
         public Receipt Create(Receipt item)
@@ -483,37 +235,24 @@ namespace Xero.Api.Core
             return Receipts.Create(item);
         }
 
-        public Receipt Update(Receipt item)
+        public CreditNote Create(CreditNote item)
         {
-            return Receipts.Update(item);
+            return CreditNotes.Create(item);
         }
 
-        #endregion
-
-        #region Setups
-
-        public ImportSummary Create(Setup item)
+        public Item Create(Item item)
         {
-            return Setup.Create(item);
+            return Items.Create(item);
         }
 
-        public ImportSummary Update(Setup item)
+        public ManualJournal Create(ManualJournal item)
         {
-            return Setup.Update(item);
+            return ManualJournals.Create(item);
         }
 
-        #endregion
-
-        #region TaxRates
-
-        public IEnumerable<TaxRate> Create(IEnumerable<TaxRate> items)
+        public Payment Create(Payment item)
         {
-            return TaxRates.Create(items);
-        }
-
-        public IEnumerable<TaxRate> Update(IEnumerable<TaxRate> items)
-        {
-            return TaxRates.Update(items);
+            return Payments.Create(item);
         }
 
         public TaxRate Create(TaxRate item)
@@ -521,28 +260,84 @@ namespace Xero.Api.Core
             return TaxRates.Create(item);
         }
 
+        public BankTransaction Create(BankTransaction item)
+        {
+            return BankTransactions.Create(item);
+        }
+
+        public BankTransfer Create(BankTransfer item)
+        {
+            return BankTransfers.Create(item);
+        }
+
+        public ImportSummary Create(Setup item)
+        {
+            return Setup.Create(item);
+        }
+
+        public Invoice Update(Invoice item)
+        {
+            return Invoices.Update(item);
+        }
+
+        public Contact Update(Contact item)
+        {
+            return Contacts.Update(item);
+        }
+
+        public ContactGroup Update(ContactGroup item)
+        {
+            return ContactGroups.Update(item);
+        }
+
+        public Employee Update(Employee item)
+        {
+            return Employees.Update(item);
+        }
+
+        public ExpenseClaim Update(ExpenseClaim item)
+        {
+            return ExpenseClaims.Update(item);
+        }
+
+        public Receipt Update(Receipt item)
+        {
+            return Receipts.Update(item);
+        }
+
+        public CreditNote Update(CreditNote item)
+        {
+            return CreditNotes.Update(item);
+        }
+
+        public Item Update(Item item)
+        {
+            return Items.Update(item);
+        }
+
+        public ManualJournal Update(ManualJournal item)
+        {
+            return ManualJournals.Update(item);
+        }
+
+        public BankTransaction Update(BankTransaction item)
+        {
+            return BankTransactions.Update(item);
+        }
+
+        public BankTransfer Update(BankTransfer item)
+        {
+            return BankTransfers.Update(item);
+        }
+
         public TaxRate Update(TaxRate item)
         {
             return TaxRates.Update(item);
         }
 
-        #endregion
-
-        #region TrackingCategories
-
-        public IEnumerable<TrackingCategory> Create(IEnumerable<TrackingCategory> items)
+        public ImportSummary Update(Setup item)
         {
-            return TrackingCategories.Create(items);
-        }
-
-        public IEnumerable<TrackingCategory> Update(IEnumerable<TrackingCategory> items)
-        {
-            return TrackingCategories.Update(items);
-        }
-
-        public TrackingCategory Create(TrackingCategory item)
-        {
-            return TrackingCategories.Create(item);
+            return Setup.Update(item);
         }
 
         public TrackingCategory Update(TrackingCategory item)
@@ -550,6 +345,28 @@ namespace Xero.Api.Core
             return TrackingCategories.Update(item);
         }
 
-        #endregion
+        public void SummarizeErrors(bool summarize)
+        {
+            Accounts.SummarizeErrors(summarize);
+            BankTransactions.SummarizeErrors(summarize);
+            BankTransfers.SummarizeErrors(summarize);
+            Contacts.SummarizeErrors(summarize);
+            ContactGroups.SummarizeErrors(summarize);
+            CreditNotes.SummarizeErrors(summarize);
+            Employees.SummarizeErrors(summarize);
+            Employees.SummarizeErrors(summarize);
+            Files.SummarizeErrors(summarize);
+            Folders.SummarizeErrors(summarize);
+            Inbox.SummarizeErrors(summarize);
+            Invoices.SummarizeErrors(summarize);
+            Items.SummarizeErrors(summarize);
+            LinkedTransactions.SummarizeErrors(summarize);
+            ManualJournals.SummarizeErrors(summarize);
+            Payments.SummarizeErrors(summarize);
+            PurchaseOrders.SummarizeErrors(summarize);
+            Receipts.SummarizeErrors(summarize);
+            TaxRates.SummarizeErrors(summarize);
+            TrackingCategories.SummarizeErrors(summarize);
+        }
     }
 }

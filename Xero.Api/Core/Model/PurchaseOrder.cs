@@ -10,7 +10,7 @@ namespace Xero.Api.Core.Model
     [DataContract(Namespace = "")]
     public class PurchaseOrder : HasUpdatedDate, IHasId
     {
-        [DataMember(Name = "PurchaseOrderID", EmitDefaultValue = false)]
+        [DataMember(Name = "PurchaseOrderId", EmitDefaultValue = false)]
         public Guid Id { get; set; }
 
         [DataMember(Name = "PurchaseOrderNumber", EmitDefaultValue = false)]
