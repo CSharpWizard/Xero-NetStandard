@@ -37,7 +37,7 @@ namespace Xero.Api.Core.Model
         [DataMember(EmitDefaultValue = false, Name = "Tracking")]
         public ItemTracking Tracking { get; set; }
 
-        [DataMember(EmitDefaultValue = false, Name = "LineItemID")]
+        [DataMember(EmitDefaultValue = false)]
         public Guid LineItemId { get; set; }
     }
 }
