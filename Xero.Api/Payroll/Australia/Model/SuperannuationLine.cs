@@ -7,7 +7,7 @@ namespace Xero.Api.Payroll.Australia.Model
     [DataContract(Namespace = "")]
     public class SuperannuationLine
     {
-        [DataMember(Name = "SuperMembershipID", EmitDefaultValue = false)]
+        [DataMember(Name = "SuperMembershipID")]
         public Guid SuperMembershipId { get; set; }
 
         [DataMember]

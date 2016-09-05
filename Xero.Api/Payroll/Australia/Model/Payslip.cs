@@ -24,7 +24,7 @@ namespace Xero.Api.Payroll.Australia.Model
         public decimal Wages { get; set; }
 
         [DataMember]
-        public List<PayslipEarningsLine> EarningsLines { get; set; }
+        public List<EarningsLine> EarningsLines { get; set; }
 
         [DataMember]
         public List<DeductionLine> DeductionLines { get; set; }
@@ -46,9 +46,5 @@ namespace Xero.Api.Payroll.Australia.Model
 
         [DataMember]
         public List<TaxLine> TaxLines { get; set; }
-
-        [DataMember(EmitDefaultValue = false, Name = "PayRunID")]
-        public Guid PayRunId { get; set; }
-
     }
 }
