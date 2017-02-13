@@ -16,8 +16,7 @@
     <tags>xero api sdk</tags>
     <dependencies>
         <group>
-            <dependency id="System.Data.SQLite" version="[1.0,)"/>
-            <dependency id="NewtonSoft.Json" version="[9.0.1,)"/>            
+            <dependency id="System.Data.SQLite" version="[1.0,)"/>            
         </group>
     </dependencies>
   </metadata>
