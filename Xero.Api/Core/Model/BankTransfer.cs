@@ -5,7 +5,7 @@ using Xero.Api.Common;
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class BankTransfer : HasUpdatedDate, IHasId, IHasAttachment
+    public class BankTransfer : HasUpdatedDate, IHasId
     {
         [DataMember(Name = "BankTransferID", EmitDefaultValue = false)]
         public Guid Id { get; set; }

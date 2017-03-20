@@ -8,7 +8,7 @@ using Xero.Api.Core.Model.Types;
 namespace Xero.Api.Core.Model
 {
     [DataContract(Namespace = "")]
-    public class PurchaseOrder : HasUpdatedDate, IHasId, IHasAttachment
+    public class PurchaseOrder : HasUpdatedDate, IHasId
     {
         [DataMember(Name = "PurchaseOrderID", EmitDefaultValue = false)]
         public Guid Id { get; set; }
