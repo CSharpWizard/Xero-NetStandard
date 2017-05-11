@@ -11,7 +11,7 @@ namespace Xero.Api.Payroll.Australia.Model
         public List<Account> Accounts { get; set; }
 
         [DataMember(EmitDefaultValue = false)]
-        public PayrollSettingsTrackingCategories TrackingCategories { get; set; }
+        public List<TrackingCategory> TrackingCategories { get; set; }
 
         [DataMember]
         public int DaysInPayrollYear { get; set; }
