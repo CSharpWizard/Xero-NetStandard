@@ -18,7 +18,7 @@ namespace CoreTests.Integration.Invoices
             return Given_an_invoice(type, InvoiceStatus.Authorised);
         }
 
-        public Invoice Given_an_invoice(InvoiceType type = InvoiceType.AccountsPayable, InvoiceStatus status = InvoiceStatus.Draft, string invoiceNumber = null)
+        public Invoice Given_an_invoice(InvoiceType type = InvoiceType.AccountsPayable, InvoiceStatus status = InvoiceStatus.Draft)
         {
             return Api.Create(new Invoice
             {
@@ -28,7 +28,6 @@ namespace CoreTests.Integration.Invoices
                 DueDate = DateTime.UtcNow.AddDays(90),
                 LineAmountTypes = LineAmountType.Inclusive,
                 Status = status,
-                Number = invoiceNumber,
 				LineItems = new List<LineItem>
                 {
                     new LineItem
