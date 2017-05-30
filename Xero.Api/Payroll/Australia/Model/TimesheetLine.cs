@@ -11,7 +11,7 @@ namespace Xero.Api.Payroll.Australia.Model
         [DataMember(Name = "EarningsRateID")]
         public Guid EarningsRateId { get; set; }
 
-        [DataMember(Name = "TrackingItemID", EmitDefaultValue = false)]
+        [DataMember(Name = "TrackingItemID")]
         public Guid TrackingItemID { get; set; }
 
         [DataMember]
