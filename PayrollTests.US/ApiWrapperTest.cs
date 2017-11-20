@@ -13,10 +13,7 @@ namespace PayrollTests.US
 
         private static AmericanPayroll CreateApi()
         {
-            return new Xero.Api.Infrastructure.Applications.Private.AmericanPayroll
-            {
-                UserAgent = "Xero API - Integration tests (US Payroll)"
-            };
+            return new Xero.Api.Infrastructure.Applications.Private.AmericanPayroll();
         }
     }
 }
