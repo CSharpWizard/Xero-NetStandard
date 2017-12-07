@@ -5,7 +5,7 @@ using Xero.Api.Infrastructure.Http;
 
 namespace Xero.Api.Core.Endpoints
 {
-    public interface IPrepaymentsEndpoint : IXeroReadEndpoint<PrepaymentsEndpoint, Prepayment, PrepaymentsResponse>, IPageableEndpoint<PrepaymentsEndpoint>
+    public interface IPrepaymentsEndpoint : IXeroReadEndpoint<PrepaymentsEndpoint, Prepayment, PrepaymentsResponse>
     {
     }
 
@@ -14,11 +14,6 @@ namespace Xero.Api.Core.Endpoints
         public PrepaymentsEndpoint(XeroHttpClient client)
             : base(client, "/api.xro/2.0/Prepayments")
         {
-        }
-
-        public PrepaymentsEndpoint Page(int page)
-        {
-            return AddParameter("page", page);
         }
     }
 }
