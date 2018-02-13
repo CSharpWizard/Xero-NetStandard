@@ -14,7 +14,7 @@ namespace Xero.Api.Core
 {
     public class XeroCoreApi : XeroApi, IXeroCoreApi
     {
-        
+        private IOrganisationEndpoint OrganisationEndpoint { get; set; }
 
         public XeroCoreApi(IAuthenticator auth,ApplicationSettings applicationSettings, IUser user = null, IRateLimiter rateLimiter = null)
             : base(applicationSettings.BaseUrl, auth, new Consumer(applicationSettings.Key, applicationSettings.Secret), user, rateLimiter)
@@ -55,7 +55,6 @@ namespace Xero.Api.Core
         public IJournalsEndpoint Journals { get; protected set; }
         public ILinkedTransactionsEndpoint LinkedTransactions { get; private set; }
         public IManualJournalsEndpoint ManualJournals { get; private set; }
-        public IOrganisationEndpoint Organisations { get; set; }
         public IOverpaymentsEndpoint Overpayments { get; private set; }
         public IPaymentsEndpoint Payments { get; private set; }
         public PdfEndpoint PdfFiles { get; private set; }
@@ -72,7 +71,7 @@ namespace Xero.Api.Core
 
         private void Connect()
         {
-            Organisations = new OrganisationEndpoint(Client);
+            OrganisationEndpoint = new OrganisationEndpoint(Client);
 
             Accounts = new AccountsEndpoint(Client);
             Allocations = new AllocationsEndpoint(Client);
@@ -111,7 +110,7 @@ namespace Xero.Api.Core
 
         public async Task<Organisation> FindOrganisationAsync()
         {
-            return (await Organisations.FindAsync()).FirstOrDefault();
+            return (await OrganisationEndpoint.FindAsync()).FirstOrDefault();
         }
 
         // Note: Due to the immutability of endpoints, If you want to use filtering etc you will need to make requests via the endpoints themselves, not using the sugar methods below
