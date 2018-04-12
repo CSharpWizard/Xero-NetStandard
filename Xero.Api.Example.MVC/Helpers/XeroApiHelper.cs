@@ -50,7 +50,7 @@ namespace Xero.Api.Example.MVC.Helpers
             return Authenticator;
         }
 
-        public static IMvcAuthenticator MvcAuthenticator(XeroApiSettings applicationSettings)
+        public static IMvcAuthenticator MvcAuthenticator(ApplicationSettings applicationSettings)
         {
             
             // Set up some token stores to hold request and access tokens
@@ -74,7 +74,7 @@ namespace Xero.Api.Example.MVC.Helpers
             return new XeroCoreApi(Authenticator as IAuthenticator, User());
         }
 
-        public static IXeroCoreApi CoreApi(XeroApiSettings applicationSettings)
+        public static IXeroCoreApi CoreApi(ApplicationSettings applicationSettings)
         {
             return new XeroCoreApi(Authenticator as IAuthenticator,applicationSettings, User());
         }

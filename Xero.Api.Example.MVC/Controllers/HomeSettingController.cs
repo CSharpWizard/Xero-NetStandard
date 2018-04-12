@@ -14,8 +14,8 @@ namespace Xero.Api.Example.MVC.Controllers
     {
         private IMvcAuthenticator _authenticator;
         private ApiUser _user;
-        private XeroApiSettings _applicationSettings;
-        public HomeSettingController(IOptions<XeroApiSettings> applicationSettings)
+        private ApplicationSettings _applicationSettings;
+        public HomeSettingController(IOptions<ApplicationSettings> applicationSettings)
         {
             _user = XeroApiHelper.User();
             _applicationSettings = applicationSettings.Value;

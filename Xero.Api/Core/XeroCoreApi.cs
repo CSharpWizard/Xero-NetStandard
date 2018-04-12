@@ -16,14 +16,14 @@ namespace Xero.Api.Core
     {
         private IOrganisationEndpoint OrganisationEndpoint { get; set; }
 
-        public XeroCoreApi(IAuthenticator auth, IXeroApiSettings applicationSettings, IUser user = null, IRateLimiter rateLimiter = null)
-            : base(applicationSettings.BaseUrl, auth, new Consumer(applicationSettings.ConsumerKey, applicationSettings.ConsumerSecret), user, rateLimiter)
+        public XeroCoreApi(IAuthenticator auth,ApplicationSettings applicationSettings, IUser user = null, IRateLimiter rateLimiter = null)
+            : base(applicationSettings.BaseUrl, auth, new Consumer(applicationSettings.Key, applicationSettings.Secret), user, rateLimiter)
         {
             Connect();
         }
 
         public XeroCoreApi(IAuthenticator auth, IUser user = null, IRateLimiter rateLimiter = null)
-            : this(auth, new XeroApiSettings(), user, rateLimiter)
+            : this(auth, new ApplicationSettings(), user, rateLimiter)
         {
             Connect();
         }
@@ -48,6 +48,7 @@ namespace Xero.Api.Core
         public IExpenseClaimsEndpoint ExpenseClaims { get; private set; }
         public IFilesEndpoint Files { get; private set; }
         public IFoldersEndpoint Folders { get; private set; }
+        public IHistoryAndNotesEndpoint HistoryAndNotes { get; private set; }
         public IInboxEndpoint Inbox { get; private set; }
         public IAssociationsEndpoint Associations { get; private set; }
         public IInvoicesEndpoint Invoices { get; private set; }
@@ -87,6 +88,7 @@ namespace Xero.Api.Core
             ExpenseClaims = new ExpenseClaimsEndpoint(Client);
             Files = new FilesEndpoint(Client);
             Folders = new FoldersEndpoint(Client);
+            HistoryAndNotes = new HistoryAndNotesEndpoint(Client);
             Inbox = new InboxEndpoint(Client);
             Associations = new AssociationsEndpoint(Client);
             Invoices = new InvoicesEndpoint(Client);
