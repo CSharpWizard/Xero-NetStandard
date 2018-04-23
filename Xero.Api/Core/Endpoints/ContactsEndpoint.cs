@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Xero.Api.Common;
+﻿using Xero.Api.Common;
 using Xero.Api.Core.Endpoints.Base;
 using Xero.Api.Core.Model;
 using Xero.Api.Core.Request;
@@ -16,7 +12,6 @@ namespace Xero.Api.Core.Endpoints
         IPageableEndpoint<IContactsEndpoint>
     {
         IContactsEndpoint IncludeArchived(bool include);
-        Task<ContactCisSetting> GetCisSettingsAsync(Guid id);
     }
 
     public class ContactsEndpoint
@@ -36,13 +31,6 @@ namespace Xero.Api.Core.Endpoints
         public IContactsEndpoint IncludeArchived(bool include)
         {
             return include ? AddParameter("includeArchived", true) : this;
-        }
-
-        public async Task<ContactCisSetting> GetCisSettingsAsync(Guid id)
-        {
-            var contactCisSettings = await Client.GetAsync<ContactCisSetting, ContactCisSettingsResponse>($"/api.xro/2.0/contacts/{id}/cissettings");
-
-            return contactCisSettings.FirstOrDefault();
         }
 
         public override void ClearQueryString()
