@@ -17,7 +17,6 @@ namespace Xero.Api.Core.Endpoints
     {
         IContactsEndpoint IncludeArchived(bool include);
         Task<ContactCisSetting> GetCisSettingsAsync(Guid id);
-        IContactsEndpoint Ids(IEnumerable<Guid> ids);
     }
 
     public class ContactsEndpoint
@@ -44,11 +43,6 @@ namespace Xero.Api.Core.Endpoints
             var contactCisSettings = await Client.GetAsync<ContactCisSetting, ContactCisSettingsResponse>($"/api.xro/2.0/contacts/{id}/cissettings");
 
             return contactCisSettings.FirstOrDefault();
-        }
-
-        public IContactsEndpoint Ids(IEnumerable<Guid> ids)
-        {
-            return AddParameter("ids", string.Join(",", ids));
         }
 
         public override void ClearQueryString()
