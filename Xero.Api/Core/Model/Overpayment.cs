@@ -46,9 +46,6 @@ namespace Xero.Api.Core.Model
         [DataMember(EmitDefaultValue = false)]
         public OverpaymentType Type { get; set; }
 
-        [DataMember(EmitDefaultValue = false)]
-        public decimal? AppliedAmount { get; set; }
-
         [DataMember]
         public Decimal RemainingCredit { get; set; }
 
