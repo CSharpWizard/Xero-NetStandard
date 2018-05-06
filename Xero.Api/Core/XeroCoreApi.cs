@@ -14,16 +14,16 @@ namespace Xero.Api.Core
 {
     public class XeroCoreApi : XeroApi, IXeroCoreApi
     {
-        private IOrganisationEndpoint OrganisationEndpoint { get; set; }
+        
 
-        public XeroCoreApi(IAuthenticator auth, IXeroApiSettings applicationSettings, IUser user = null, IRateLimiter rateLimiter = null)
-            : base(applicationSettings.BaseUrl, auth, new Consumer(applicationSettings.ConsumerKey, applicationSettings.ConsumerSecret), user, rateLimiter)
+        public XeroCoreApi(IAuthenticator auth,ApplicationSettings applicationSettings, IUser user = null, IRateLimiter rateLimiter = null)
+            : base(applicationSettings.BaseUrl, auth, new Consumer(applicationSettings.Key, applicationSettings.Secret), user, rateLimiter)
         {
             Connect();
         }
 
         public XeroCoreApi(IAuthenticator auth, IUser user = null, IRateLimiter rateLimiter = null)
-            : this(auth, new XeroApiSettings(), user, rateLimiter)
+            : this(auth, new ApplicationSettings(), user, rateLimiter)
         {
             Connect();
         }
@@ -48,6 +48,7 @@ namespace Xero.Api.Core
         public IExpenseClaimsEndpoint ExpenseClaims { get; private set; }
         public IFilesEndpoint Files { get; private set; }
         public IFoldersEndpoint Folders { get; private set; }
+        public IHistoryAndNotesEndpoint HistoryAndNotes { get; private set; }
         public IInboxEndpoint Inbox { get; private set; }
         public IAssociationsEndpoint Associations { get; private set; }
         public IInvoicesEndpoint Invoices { get; private set; }
@@ -55,6 +56,7 @@ namespace Xero.Api.Core
         public IJournalsEndpoint Journals { get; protected set; }
         public ILinkedTransactionsEndpoint LinkedTransactions { get; private set; }
         public IManualJournalsEndpoint ManualJournals { get; private set; }
+        public IOrganisationEndpoint Organisations { get; set; }
         public IOverpaymentsEndpoint Overpayments { get; private set; }
         public IPaymentsEndpoint Payments { get; private set; }
         public PdfEndpoint PdfFiles { get; private set; }
@@ -71,7 +73,7 @@ namespace Xero.Api.Core
 
         private void Connect()
         {
-            OrganisationEndpoint = new OrganisationEndpoint(Client);
+            Organisations = new OrganisationEndpoint(Client);
 
             Accounts = new AccountsEndpoint(Client);
             Allocations = new AllocationsEndpoint(Client);
@@ -87,6 +89,7 @@ namespace Xero.Api.Core
             ExpenseClaims = new ExpenseClaimsEndpoint(Client);
             Files = new FilesEndpoint(Client);
             Folders = new FoldersEndpoint(Client);
+            HistoryAndNotes = new HistoryAndNotesEndpoint(Client);
             Inbox = new InboxEndpoint(Client);
             Associations = new AssociationsEndpoint(Client);
             Invoices = new InvoicesEndpoint(Client);
@@ -110,7 +113,7 @@ namespace Xero.Api.Core
 
         public async Task<Organisation> FindOrganisationAsync()
         {
-            return (await OrganisationEndpoint.FindAsync()).FirstOrDefault();
+            return (await Organisations.FindAsync()).FirstOrDefault();
         }
 
         // Note: Due to the immutability of endpoints, If you want to use filtering etc you will need to make requests via the endpoints themselves, not using the sugar methods below

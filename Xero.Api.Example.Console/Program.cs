@@ -10,25 +10,9 @@ namespace Xero.Api.Example.Console
     {
         static void Main(string[] args)
         {
-            var api = Initialise();
-            
+            var api = PrivateApp();
+
             new Lister(api).List();
-        }
-
-        private static IXeroCoreApi Initialise()
-        {
-            var settings = new XeroApiSettings();
-
-            switch (settings.AppType.ToLower())
-            {
-                case "private":
-                    return PrivateApp();
-                case "public":
-                    return PublicApp();
-                case "partner":
-                    return PartnerApp();
-                default: throw new ApplicationException("AppType did not match one of: private, public, partner");
-            }
         }
 
         private static IXeroCoreApi PrivateApp()

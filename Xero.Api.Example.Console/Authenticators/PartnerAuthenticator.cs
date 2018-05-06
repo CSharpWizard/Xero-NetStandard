@@ -6,13 +6,9 @@ namespace Xero.Api.Example.Console.Authenticators
 {
     public class PartnerAuthenticator : PartnerAuthenticatorBase
     {
-        public PartnerAuthenticator(ITokenStore store)
-            : this(store, new XeroApiSettings())
-        {
-        }
 
-        public PartnerAuthenticator(ITokenStore store, IXeroApiSettings xeroApiSettings) 
-            : base(store, xeroApiSettings)
+        public PartnerAuthenticator(ITokenStore store) 
+            : base(store)
         {
         }
 

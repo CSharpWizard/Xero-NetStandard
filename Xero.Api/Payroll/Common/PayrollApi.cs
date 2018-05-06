@@ -7,10 +7,10 @@ namespace Xero.Api.Payroll.Common
 {
     public abstract class PayrollApi : XeroApi
     {
-        private static readonly XeroApiSettings ApplicationSettings = new XeroApiSettings();
+        private static readonly ApplicationSettings ApplicationSettings = new ApplicationSettings();
 
         protected PayrollApi(IAuthenticator auth, IUser user = null, IRateLimiter rateLimiter = null)
-            : base(ApplicationSettings.BaseUrl, auth, new Consumer(ApplicationSettings.ConsumerKey, ApplicationSettings.ConsumerSecret), user, rateLimiter)
+            : base(ApplicationSettings.BaseUrl, auth, new Consumer(ApplicationSettings.Key, ApplicationSettings.Secret), user, rateLimiter)
         {
         }
     }

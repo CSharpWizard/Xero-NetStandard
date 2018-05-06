@@ -1,20 +1,25 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using Xero.Api.Example.MVC.Authenticators;
 using Xero.Api.Example.MVC.Helpers;
 using Xero.Api.Infrastructure.OAuth;
-using IMvcAuthenticator = Xero.Api.Example.MVC.Authenticators.IMvcAuthenticator;
 
 namespace Xero.Api.Example.MVC.Controllers
 {
-    public class HomeController : Controller
+    public class HomeSettingController : Controller
     {
         private IMvcAuthenticator _authenticator;
         private ApiUser _user;
-
-        public HomeController()
+        private ApplicationSettings _applicationSettings;
+        public HomeSettingController(IOptions<ApplicationSettings> applicationSettings)
         {
             _user = XeroApiHelper.User();
-
-            _authenticator = XeroApiHelper.MvcAuthenticator();
+            _applicationSettings = applicationSettings.Value;
+            _authenticator = XeroApiHelper.MvcAuthenticator(_applicationSettings);
         }
 
         public IActionResult Index()
