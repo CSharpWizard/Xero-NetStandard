@@ -26,22 +26,22 @@ namespace Xero.Api.Core.Endpoints
         {
             var endpoint = string.Format("/api.xro/2.0/Items/{0}", itemToDelete.Id);
 
-            var response = await Client.DeleteAsync(endpoint).ConfigureAwait(false);
+            var response = await Client.DeleteAsync(endpoint);
 
-            await HandleResponseAsync(response).ConfigureAwait(false);
+            await HandleResponseAsync(response);
         }
 
         private async Task<ItemsResponse> HandleResponseAsync(HttpResponseMessage response)
         {
             if (response.StatusCode == HttpStatusCode.OK)
             {
-                var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+                var body = await response.Content.ReadAsStringAsync();
 
                 var result = Client.JsonMapper.From<ItemsResponse>(body);
                 return result;
             }
 
-            await Client.HandleErrorsAsync(response).ConfigureAwait(false);
+            await Client.HandleErrorsAsync(response);
 
             return null;
         }

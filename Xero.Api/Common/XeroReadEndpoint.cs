@@ -76,17 +76,17 @@ namespace Xero.Api.Common
 
         public virtual async Task<IEnumerable<TResult>> FindAsync()
         {
-            return await GetAsync(ApiEndpointUrl, null).ConfigureAwait(false);
+            return await GetAsync(ApiEndpointUrl, null);
         }
 
         public virtual async Task<TResult> FindAsync(Guid child)
         {
-            return await FindAsync(child.ToString("D")).ConfigureAwait(false);
+            return await FindAsync(child.ToString("D"));
         }
 
         public async Task<TResult> FindAsync(string child)
         {
-            var results = await GetAsync(ApiEndpointUrl, "/" + child).ConfigureAwait(false);
+            var results = await GetAsync(ApiEndpointUrl, "/" + child);
 
             return results.FirstOrDefault();
         }
@@ -170,7 +170,7 @@ namespace Xero.Api.Common
             try
             {
                 endpoint = endpoint + (child ?? string.Empty);
-                return await Client.GetAsync<TResult, TResponse>(endpoint, Parameters, _query, _orderBy, _modifiedSince).ConfigureAwait(false);
+                return await Client.GetAsync<TResult, TResponse>(endpoint, Parameters, _query, _orderBy, _modifiedSince);
             }
             finally
             {

@@ -31,17 +31,17 @@ namespace Xero.Api.Infrastructure.OAuth
 
         public async Task<IToken> GetRequestTokenAsync(IConsumer consumer, string header)
         {
-            return await GetTokenAsync(new Token { ConsumerKey = consumer.ConsumerKey, ConsumerSecret = consumer.ConsumerSecret }, RequestTokenEndpoint, header).ConfigureAwait(false);
+            return await GetTokenAsync(new Token { ConsumerKey = consumer.ConsumerKey, ConsumerSecret = consumer.ConsumerSecret }, RequestTokenEndpoint, header);
         }
 
         public async Task<IToken> GetAccessTokenAsync(IToken token, string header)
         {
-            return await GetTokenAsync(token, AccessTokenEndpoint, header).ConfigureAwait(false);
+            return await GetTokenAsync(token, AccessTokenEndpoint, header);
         }
 
         public async Task<IToken> RenewAccessTokenAsync(IToken token, string header)
         {
-            return await GetTokenAsync(token, AccessTokenEndpoint, header).ConfigureAwait(false);
+            return await GetTokenAsync(token, AccessTokenEndpoint, header);
         }
 
         public async Task<IToken> GetTokenAsync(IToken consumer, string endpoint, string header)
@@ -52,8 +52,8 @@ namespace Xero.Api.Infrastructure.OAuth
 
             request.Headers.Add("Authorization", header);
 
-            var response = await _httpClient.SendAsync(request).ConfigureAwait(false);
-            var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var response = await _httpClient.SendAsync(request);
+            var body = await response.Content.ReadAsStringAsync();
 
 
             if (response.StatusCode != HttpStatusCode.OK)

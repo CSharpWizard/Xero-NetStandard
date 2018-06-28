@@ -22,27 +22,27 @@ namespace Xero.Api.Core.Endpoints
         {
             var endpoint = string.Format("/api.xro/2.0/CreditNotes/{0}/Allocations", allocation.CreditNote.Id);
 
-            return await AddAsync(allocation, endpoint).ConfigureAwait(false) as CreditNoteAllocation;
+            return await AddAsync(allocation, endpoint) as CreditNoteAllocation;
         }
 
         public async Task<PrepaymentAllocation> AddAsync(PrepaymentAllocation allocation)
         {
             var endpoint = string.Format("/api.xro/2.0/Prepayments/{0}/Allocations", allocation.Prepayment.Id);
 
-            return await AddAsync(allocation, endpoint).ConfigureAwait(false) as PrepaymentAllocation;
+            return await AddAsync(allocation, endpoint) as PrepaymentAllocation;
         }
 
         public async Task<OverpaymentAllocation> AddAsync(OverpaymentAllocation allocation)
         {
             var endpoint = string.Format("/api.xro/2.0/Overpayments/{0}/Allocations", allocation.Overpayment.Id);
 
-            return await AddAsync(allocation, endpoint).ConfigureAwait(false) as OverpaymentAllocation;
+            return await AddAsync(allocation, endpoint) as OverpaymentAllocation;
         }
 
         private async Task<AllocationsResponse<T>> HandleResponseAsync<T>(HttpResponseMessage response)
             where T : AllocationBase
         {
-            var body = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var body = await response.Content.ReadAsStringAsync();
 
             if (response.StatusCode == HttpStatusCode.OK)
             {
@@ -50,7 +50,7 @@ namespace Xero.Api.Core.Endpoints
                 return result;
             }
 
-            await _client.HandleErrorsAsync(response).ConfigureAwait(false);
+            await _client.HandleErrorsAsync(response);
 
             return null;
         }
@@ -58,9 +58,9 @@ namespace Xero.Api.Core.Endpoints
         public async Task<AllocationBase> AddAsync<T>(T allocation, string endpoint)
             where T : AllocationBase
         {
-            var response = await _client.PutAsync(endpoint, new List<T> {allocation}).ConfigureAwait(false);
+            var response = await _client.PutAsync(endpoint, new List<T> {allocation});
 
-            var result = await HandleResponseAsync<T>(response).ConfigureAwait(false);
+            var result = await HandleResponseAsync<T>(response);
 
             return result.Allocations.FirstOrDefault();
         }

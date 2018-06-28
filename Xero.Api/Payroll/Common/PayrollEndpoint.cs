@@ -23,27 +23,27 @@ namespace Xero.Api.Payroll.Common
             var request = new TRequest();
             request.AddRange(items);
 
-            return await PostAsync(request).ConfigureAwait(false);
+            return await PostAsync(request);
         }
 
         public async Task<TResult> CreateAsync(TResult item)
         {
-            return (await CreateAsync(new [] { item }).ConfigureAwait(false)).First();
+            return (await CreateAsync(new [] { item })).First();
         }
 
         public async Task<IEnumerable<TResult>> UpdateAsync(IEnumerable<TResult> items)
         {
-            return await CreateAsync(items).ConfigureAwait(false);
+            return await CreateAsync(items);
         }
 
         public async Task<TResult> UpdateAsync(TResult item)
         {
-            return (await UpdateAsync(new[] { item }).ConfigureAwait(false)).First();
+            return (await UpdateAsync(new[] { item })).First();
         }
 
         protected async Task<IEnumerable<TResult>> PostAsync(TRequest data)
         {
-            return await Client.PostAsync<TResult, TResponse>(ApiEndpointUrl, data).ConfigureAwait(false);
+            return await Client.PostAsync<TResult, TResponse>(ApiEndpointUrl, data);
         }
 
         public T Page(int page)
