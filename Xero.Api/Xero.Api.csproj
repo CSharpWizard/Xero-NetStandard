@@ -6,13 +6,14 @@
     <Authors>Xero</Authors>
     <Owners>Xero</Owners>
     <Copyright>Copyright © Xero 2017</Copyright>
-    <Version>1.0.5</Version>
+    <Version>1.0.7</Version>
     <Description>This is a .NETStandard SDK library, used to communicate with the Xero API. See https://github.com/XeroAPI/Xero-NetStandard for more information</Description>
     <PackageTags>xero;api;sdk</PackageTags>
-    <PackageReleaseNotes>Up to date with https://github.com/XeroAPI/Xero-NetStandard/releases/tag/v1.0.5</PackageReleaseNotes>
+    <PackageReleaseNotes>Up to date with https://github.com/XeroAPI/Xero-NetStandard/releases/tag/v1.0.7</PackageReleaseNotes>
     <PackageIconUrl>https://secure.gravatar.com/avatar/7fff030fb8040a5157c3fd463858167f.png?s=128</PackageIconUrl>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="ConfigureAwaitChecker.Analyzer" Version="1.0.1" PrivateAssets="All" />
     <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="ServiceStack.Text.Core" Version="1.0.44" />
