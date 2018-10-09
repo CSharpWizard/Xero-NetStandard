@@ -5,44 +5,34 @@ namespace Xero.Api
 {
     public class XeroApiSettings : IXeroApiSettings
     {
+        public IConfigurationSection ApiSettings { get; set; }
+
         public XeroApiSettings(string path)
         {
             var builder = new ConfigurationBuilder()
                 .AddJsonFile(path)
                 .Build();
 
-            var apiSettings = builder.GetSection("XeroApi");
-
-            BaseUrl = apiSettings["BaseUrl"];
-            CallbackUrl = apiSettings["CallbackUrl"];
-            ConsumerKey = apiSettings["ConsumerKey"];
-            ConsumerSecret = apiSettings["ConsumerSecret"];
-            SigningCertificatePath = apiSettings["SigningCertPath"];
-            SigningCertificatePassword = apiSettings["SigningCertPassword"];
-
-            if (!Enum.TryParse(apiSettings["AppType"], true, out XeroApiAppType appType))
-            {
-                throw new ArgumentOutOfRangeException(nameof(apiSettings), apiSettings["AppType"], "AppType did not match one of: private, public, partner");
-            }
-
-            AppType = appType;
+            ApiSettings = builder.GetSection("XeroApi");
         }
         public XeroApiSettings() : this("appsettings.json")
         {
         }
 
-        public string BaseUrl { get; }
+        public string BaseUrl => ApiSettings["BaseUrl"];
 
-        public string CallbackUrl { get; }
+        public string CallbackUrl => ApiSettings["CallbackUrl"];
 
-        public string ConsumerKey { get; }
+        public string ConsumerKey => ApiSettings["ConsumerKey"];
 
-        public string ConsumerSecret { get; }
+        public string ConsumerSecret => ApiSettings["ConsumerSecret"];
 
-        public string SigningCertificatePath { get; }
+        public string SigningCertificatePath => ApiSettings["SigningCertPath"];
 
-        public string SigningCertificatePassword { get; }
+        public string SigningCertificatePassword => ApiSettings["SigningCertPassword"];
 
-        public XeroApiAppType AppType { get; }
+        public string AppType => ApiSettings["AppType"];
+
+        public bool IsPartnerApp => AppType?.Equals("partner", StringComparison.OrdinalIgnoreCase) ?? false;
     }
 }

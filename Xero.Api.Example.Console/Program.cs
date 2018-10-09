@@ -19,13 +19,13 @@ namespace Xero.Api.Example.Console
         {
             var settings = new XeroApiSettings();
 
-            switch (settings.AppType)
+            switch (settings.AppType.ToLower())
             {
-                case XeroApiAppType.Private:
+                case "private":
                     return PrivateApp();
-                case XeroApiAppType.Public:
+                case "public":
                     return PublicApp();
-                case XeroApiAppType.Partner:
+                case "partner":
                     return PartnerApp();
                 default: throw new ApplicationException("AppType did not match one of: private, public, partner");
             }

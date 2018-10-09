@@ -8,8 +8,10 @@ namespace Xero.Api.Infrastructure.Authenticators
 {
     public abstract class TokenStoreAuthenticatorBase : IAuthenticator
     {
-        protected readonly string BaseUri;
-        protected readonly string CallBackUri;
+        protected readonly IXeroApiSettings ApplicationSettings;
+
+        protected string BaseUri => ApplicationSettings.BaseUrl;
+        protected string CallBackUri => ApplicationSettings.CallbackUrl;
         protected ITokenStoreAsync Store { get; set; }
 
         private OAuthTokens _tokens;
@@ -20,8 +22,7 @@ namespace Xero.Api.Infrastructure.Authenticators
         protected TokenStoreAuthenticatorBase(ITokenStoreAsync store, IXeroApiSettings applicationSettings)
         {
             Store = store;
-            BaseUri = applicationSettings.BaseUrl;
-            CallBackUri = applicationSettings.CallbackUrl;
+            ApplicationSettings = applicationSettings;
         }
 
         protected abstract string AuthorizeUser(IToken oauthToken, string scope = null, bool redirectOnError = false);
