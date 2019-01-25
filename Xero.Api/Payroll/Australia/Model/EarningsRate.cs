@@ -17,7 +17,7 @@ namespace Xero.Api.Payroll.Australia.Model
         [DataMember]
         public EarningsType EarningsType { get; set; }
 
-        [DataMember]
+        [DataMember(EmitDefaultValue = false)]
         public RateType RateType { get; set; }
 
         [DataMember]
