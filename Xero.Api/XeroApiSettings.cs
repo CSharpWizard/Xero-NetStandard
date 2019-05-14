@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Microsoft.Extensions.Configuration;
 
 namespace Xero.Api
@@ -10,19 +10,8 @@ namespace Xero.Api
             var builder = new ConfigurationBuilder()
                 .AddJsonFile(path)
                 .Build();
-                
-            Load(builder);
-        }
-        public XeroApiSettings(IConfiguration config)
-        {
-            Load(config);
-        }        
-        public XeroApiSettings() : this("appsettings.json")
-        {
-        }
-        private void Load(IConfiguration config)
-        {
-            var apiSettings = config.GetSection("XeroApi");
+
+            var apiSettings = builder.GetSection("XeroApi");
 
             BaseUrl = apiSettings["BaseUrl"];
             CallbackUrl = apiSettings["CallbackUrl"];
@@ -36,21 +25,24 @@ namespace Xero.Api
                 throw new ArgumentOutOfRangeException(nameof(apiSettings), apiSettings["AppType"], "AppType did not match one of: private, public, partner");
             }
 
-            AppType = appType;        
+            AppType = appType;
         }
-        
-        public string BaseUrl { private set; get; }
+        public XeroApiSettings() : this("appsettings.json")
+        {
+        }
 
-        public string CallbackUrl { private set; get; }
+        public string BaseUrl { get; }
 
-        public string ConsumerKey { private set; get; }
+        public string CallbackUrl { get; }
 
-        public string ConsumerSecret { private set; get; }
+        public string ConsumerKey { get; }
 
-        public string SigningCertificatePath { private set; get; }
+        public string ConsumerSecret { get; }
 
-        public string SigningCertificatePassword { private set; get; }
+        public string SigningCertificatePath { get; }
 
-        public XeroApiAppType AppType { private set; get; }
+        public string SigningCertificatePassword { get; }
+
+        public XeroApiAppType AppType { get; }
     }
 }
