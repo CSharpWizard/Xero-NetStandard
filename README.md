@@ -19,18 +19,11 @@ A wrapper of the Xero API in the .NetStandard 2.0 framework. Supports Accounting
 
 ## Installation
 
-You can install the Xero SDK package directly from NuGet, use 
-```sh
-dotnet add package Xero.Api.SDK.Core
-```
+There are different ways to install this library:
 
-or using the Package Manager Console inside Visual Studio
-
-```sh
-Install-Package Xero.Api.SDK.Core
-```
-
-or you can download the source code from https://github.com/XeroAPI/Xero-NetStandard and compile it by yourself.
+1. Download the source code from github and compile yourself: **https://github.com/XeroAPI/Xero-NetStandard**
+2. Download directly into Visual Studio using the NuGet powershell command: **PM&gt; Install-Package Xero.Api.SDK.Core**
+3. Add the package using the .NET CLI: **dotnet add Xero.Api.SDK.Core**
 
 ## What is supported?
 ### Core
