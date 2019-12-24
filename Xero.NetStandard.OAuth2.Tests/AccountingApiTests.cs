@@ -4,7 +4,8 @@ using System.IO;
 using Xero.NetStandard.OAuth2.Api;
 using Xero.NetStandard.OAuth2.Model;
 using System.Threading.Tasks;
- 
+using System.Net;
+using System.Collections.Generic;
 
 namespace Xero.NetStandard.OAuth2.Tests
 {
@@ -31,7 +32,7 @@ namespace Xero.NetStandard.OAuth2.Tests
         {
             Guid invoiceID = Guid.NewGuid();
             var response = await _accountingApi.GetInvoiceAsync(AccessToken, TenantId, invoiceID);
-            
+
             Assert.IsType<Invoices>(response);
         }
         [Fact]
@@ -39,17 +40,41 @@ namespace Xero.NetStandard.OAuth2.Tests
         {
             Guid invoiceID = Guid.NewGuid();
             var response = await _accountingApi.GetInvoiceAsync(AccessToken, TenantId, invoiceID);
-            Assert.True(response._Invoices[0].DueDate>DateTime.MinValue);
+            Assert.True(response._Invoices[0].DueDate > DateTime.MinValue);
+        }
+        [Fact]
+        public async Task GetInvoiceReturnsLineItem()
+        {
+            Guid invoiceID = Guid.NewGuid();
+            var response = await _accountingApi.GetInvoiceAsync(AccessToken, TenantId, invoiceID);
+            Assert.IsType<List<LineItem>>(response._Invoices[0].LineItems);
         }
 
         [Fact]
-        public async Task test()
+        public async Task GetInvoiceReturnsContact()
+        {
+            Guid invoiceID = Guid.NewGuid();
+            var response = await _accountingApi.GetInvoiceAsync(AccessToken, TenantId, invoiceID);
+            Assert.IsType<Contact>(response._Invoices[0].Contact);
+        }
+
+        [Fact]
+        public async Task GetAccountDeserializesResponse()
+        {
+            var response = await _accountingApi.GetAccountsAsync(AccessToken, TenantId);
+            Assert.IsType<Accounts>(response);
+        }
+
+        [Fact]
+        public async Task CreateInvoiceReturns200Response()
         {
             var invoice = new Invoice();
-            invoice.Reference = "blahblah";
-            var response = await _accountingApi.CreateInvoiceAsync(AccessToken, TenantId, invoice);
-           // var test2 = AutoFaker.Generate<Invoice>();
-           
+            invoice.InvoiceNumber = "123";
+            var response = await _accountingApi.CreateInvoiceAsyncWithHttpInfo(AccessToken, TenantId, invoice);
+            Assert.True(response.StatusCode.Equals(HttpStatusCode.OK));
         }
+
+
+
     }
 }
