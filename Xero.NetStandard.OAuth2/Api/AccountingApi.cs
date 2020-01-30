@@ -78,6 +78,29 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (Attachments)</returns>
         System.Threading.Tasks.Task<ApiResponse<Attachments>> CreateAccountAttachmentByFileNameAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid accountID, string fileName, byte[] body);
         /// <summary>
+        /// Allows you to create a spend or receive money transaction
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="bankTransaction"></param>
+        /// <returns>Task of BankTransactions</returns>
+        System.Threading.Tasks.Task<BankTransactions> CreateBankTransactionAsync (string accessToken, string xeroTenantId, BankTransaction bankTransaction);
+
+        /// <summary>
+        /// Allows you to create a spend or receive money transaction
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="bankTransaction"></param>
+        /// <returns>Task of ApiResponse (BankTransactions)</returns>
+        System.Threading.Tasks.Task<ApiResponse<BankTransactions>> CreateBankTransactionAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransaction bankTransaction);
+        /// <summary>
         /// Allows you to createa an Attachment on BankTransaction by Filename
         /// </summary>
         /// <remarks>
@@ -130,7 +153,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (HistoryRecords)</returns>
         System.Threading.Tasks.Task<ApiResponse<HistoryRecords>> CreateBankTransactionHistoryRecordAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid bankTransactionID, HistoryRecords historyRecords);
         /// <summary>
-        /// Allows you to create one or more spend or receive money transaction
+        /// Allows you to create a spend or receive money transaction
         /// </summary>
         /// <remarks>
         /// 
@@ -143,7 +166,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<BankTransactions> CreateBankTransactionsAsync (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null);
 
         /// <summary>
-        /// Allows you to create one or more spend or receive money transaction
+        /// Allows you to create a spend or receive money transaction
         /// </summary>
         /// <remarks>
         /// 
@@ -238,9 +261,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="batchPayments">Request of type BatchPayments containing a Payments array with one or more Payment objects</param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
         /// <returns>Task of BatchPayments</returns>
-        System.Threading.Tasks.Task<BatchPayments> CreateBatchPaymentAsync (string accessToken, string xeroTenantId, BatchPayments batchPayments, bool? summarizeErrors = null);
+        System.Threading.Tasks.Task<BatchPayments> CreateBatchPaymentAsync (string accessToken, string xeroTenantId, BatchPayments batchPayments);
 
         /// <summary>
         /// Create one or many BatchPayments for invoices
@@ -251,9 +273,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="batchPayments">Request of type BatchPayments containing a Payments array with one or more Payment objects</param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
         /// <returns>Task of ApiResponse (BatchPayments)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BatchPayments>> CreateBatchPaymentAsyncWithHttpInfo (string accessToken, string xeroTenantId, BatchPayments batchPayments, bool? summarizeErrors = null);
+        System.Threading.Tasks.Task<ApiResponse<BatchPayments>> CreateBatchPaymentAsyncWithHttpInfo (string accessToken, string xeroTenantId, BatchPayments batchPayments);
         /// <summary>
         /// Allows you to create a history record for a Batch Payment
         /// </summary>
@@ -304,6 +325,29 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="paymentService"></param>
         /// <returns>Task of ApiResponse (PaymentServices)</returns>
         System.Threading.Tasks.Task<ApiResponse<PaymentServices>> CreateBrandingThemePaymentServicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid brandingThemeID, PaymentService paymentService);
+        /// <summary>
+        /// Allows you to create a single contact in a Xero organisation
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="contact"></param>
+        /// <returns>Task of Contacts</returns>
+        System.Threading.Tasks.Task<Contacts> CreateContactAsync (string accessToken, string xeroTenantId, Contact contact);
+
+        /// <summary>
+        /// Allows you to create a single contact in a Xero organisation
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="contact"></param>
+        /// <returns>Task of ApiResponse (Contacts)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Contacts>> CreateContactAsyncWithHttpInfo (string accessToken, string xeroTenantId, Contact contact);
         /// <summary>
         /// 
         /// </summary>
@@ -430,6 +474,29 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (Contacts)</returns>
         System.Threading.Tasks.Task<ApiResponse<Contacts>> CreateContactsAsyncWithHttpInfo (string accessToken, string xeroTenantId, Contacts contacts, bool? summarizeErrors = null);
         /// <summary>
+        /// Allows you to create a credit note
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="creditNote">an array of Credit Notes with a single CreditNote object.</param>
+        /// <returns>Task of CreditNotes</returns>
+        System.Threading.Tasks.Task<CreditNotes> CreateCreditNoteAsync (string accessToken, string xeroTenantId, CreditNote creditNote);
+
+        /// <summary>
+        /// Allows you to create a credit note
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="creditNote">an array of Credit Notes with a single CreditNote object.</param>
+        /// <returns>Task of ApiResponse (CreditNotes)</returns>
+        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> CreateCreditNoteAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNote creditNote);
+        /// <summary>
         /// Allows you to create Allocation on CreditNote
         /// </summary>
         /// <remarks>
@@ -555,7 +622,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (Currencies)</returns>
         System.Threading.Tasks.Task<ApiResponse<Currencies>> CreateCurrencyAsyncWithHttpInfo (string accessToken, string xeroTenantId, Currency currency);
         /// <summary>
-        /// Allows you to create a single new employees used in Xero payrun
+        /// Allows you to create new employees used in Xero payrun
         /// </summary>
         /// <remarks>
         /// 
@@ -567,7 +634,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<Employees> CreateEmployeeAsync (string accessToken, string xeroTenantId, Employee employee);
 
         /// <summary>
-        /// Allows you to create a single new employees used in Xero payrun
+        /// Allows you to create new employees used in Xero payrun
         /// </summary>
         /// <remarks>
         /// 
@@ -649,6 +716,29 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (ExpenseClaims)</returns>
         System.Threading.Tasks.Task<ApiResponse<ExpenseClaims>> CreateExpenseClaimsAsyncWithHttpInfo (string accessToken, string xeroTenantId, ExpenseClaims expenseClaims);
         /// <summary>
+        /// Allows you to create any sales invoices or purchase bills
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="invoice"></param>
+        /// <returns>Task of Invoices</returns>
+        System.Threading.Tasks.Task<Invoices> CreateInvoiceAsync (string accessToken, string xeroTenantId, Invoice invoice);
+
+        /// <summary>
+        /// Allows you to create any sales invoices or purchase bills
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="invoice"></param>
+        /// <returns>Task of ApiResponse (Invoices)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Invoices>> CreateInvoiceAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoice invoice);
+        /// <summary>
         /// Allows you to create an Attachment on invoices or purchase bills by it&#39;s filename
         /// </summary>
         /// <remarks>
@@ -701,7 +791,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (HistoryRecords)</returns>
         System.Threading.Tasks.Task<ApiResponse<HistoryRecords>> CreateInvoiceHistoryAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid invoiceID, HistoryRecords historyRecords);
         /// <summary>
-        /// Allows you to create one or more sales invoices or purchase bills
+        /// Allows you to create any sales invoices or purchase bills
         /// </summary>
         /// <remarks>
         /// 
@@ -714,7 +804,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<Invoices> CreateInvoicesAsync (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null);
 
         /// <summary>
-        /// Allows you to create one or more sales invoices or purchase bills
+        /// Allows you to create any sales invoices or purchase bills
         /// </summary>
         /// <remarks>
         /// 
@@ -726,7 +816,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (Invoices)</returns>
         System.Threading.Tasks.Task<ApiResponse<Invoices>> CreateInvoicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null);
         /// <summary>
-        /// Allows you to create a single item
+        /// Allows you to create an item
         /// </summary>
         /// <remarks>
         /// 
@@ -738,7 +828,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<Items> CreateItemAsync (string accessToken, string xeroTenantId, Item item);
 
         /// <summary>
-        /// Allows you to create a single item
+        /// Allows you to create an item
         /// </summary>
         /// <remarks>
         /// 
@@ -774,7 +864,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (HistoryRecords)</returns>
         System.Threading.Tasks.Task<ApiResponse<HistoryRecords>> CreateItemHistoryAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid itemID, HistoryRecords historyRecords);
         /// <summary>
-        /// Allows you to create one or more items
+        /// Allows you to create an item
         /// </summary>
         /// <remarks>
         /// 
@@ -787,7 +877,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<Items> CreateItemsAsync (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null);
 
         /// <summary>
-        /// Allows you to create one or more items
+        /// Allows you to create an item
         /// </summary>
         /// <remarks>
         /// 
@@ -822,7 +912,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (LinkedTransactions)</returns>
         System.Threading.Tasks.Task<ApiResponse<LinkedTransactions>> CreateLinkedTransactionAsyncWithHttpInfo (string accessToken, string xeroTenantId, LinkedTransaction linkedTransaction);
         /// <summary>
-        /// Allows you to create a single manual journal
+        /// Allows you to create a manual journal
         /// </summary>
         /// <remarks>
         /// 
@@ -834,7 +924,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<ManualJournals> CreateManualJournalAsync (string accessToken, string xeroTenantId, ManualJournal manualJournal);
 
         /// <summary>
-        /// Allows you to create a single manual journal
+        /// Allows you to create a manual journal
         /// </summary>
         /// <remarks>
         /// 
@@ -872,7 +962,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (Attachments)</returns>
         System.Threading.Tasks.Task<ApiResponse<Attachments>> CreateManualJournalAttachmentByFileNameAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid manualJournalID, string fileName, byte[] body);
         /// <summary>
-        /// Allows you to create multiple manual journals
+        /// Allows you to create a manual journal
         /// </summary>
         /// <remarks>
         /// 
@@ -884,7 +974,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<ManualJournals> CreateManualJournalsAsync (string accessToken, string xeroTenantId, ManualJournals manualJournals);
 
         /// <summary>
-        /// Allows you to create multiple manual journals
+        /// Allows you to create a manual journal
         /// </summary>
         /// <remarks>
         /// 
@@ -895,7 +985,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (ManualJournals)</returns>
         System.Threading.Tasks.Task<ApiResponse<ManualJournals>> CreateManualJournalsAsyncWithHttpInfo (string accessToken, string xeroTenantId, ManualJournals manualJournals);
         /// <summary>
-        /// Allows you to create a single allocations for overpayments
+        /// Allows you to retrieve Allocations for overpayments
         /// </summary>
         /// <remarks>
         /// 
@@ -908,7 +998,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<Allocations> CreateOverpaymentAllocationAsync (string accessToken, string xeroTenantId, Guid overpaymentID, Allocation allocation);
 
         /// <summary>
-        /// Allows you to create a single allocations for overpayments
+        /// Allows you to retrieve Allocations for overpayments
         /// </summary>
         /// <remarks>
         /// 
@@ -920,7 +1010,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (Allocations)</returns>
         System.Threading.Tasks.Task<ApiResponse<Allocations>> CreateOverpaymentAllocationAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid overpaymentID, Allocation allocation);
         /// <summary>
-        /// Allows you to create a single allocation for an overpayment
+        /// Allows you to retrieve Allocations for overpayments
         /// </summary>
         /// <remarks>
         /// 
@@ -933,7 +1023,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<Allocations> CreateOverpaymentAllocationsAsync (string accessToken, string xeroTenantId, Guid overpaymentID, Allocations allocations);
 
         /// <summary>
-        /// Allows you to create a single allocation for an overpayment
+        /// Allows you to retrieve Allocations for overpayments
         /// </summary>
         /// <remarks>
         /// 
@@ -970,7 +1060,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (HistoryRecords)</returns>
         System.Threading.Tasks.Task<ApiResponse<HistoryRecords>> CreateOverpaymentHistoryAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid overpaymentID, HistoryRecords historyRecords);
         /// <summary>
-        /// Allows you to create a single payment for invoices or credit notes
+        /// Allows you to create payments for invoices and credit notes
         /// </summary>
         /// <remarks>
         /// 
@@ -982,7 +1072,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<Payments> CreatePaymentAsync (string accessToken, string xeroTenantId, Payment payment);
 
         /// <summary>
-        /// Allows you to create a single payment for invoices or credit notes
+        /// Allows you to create payments for invoices and credit notes
         /// </summary>
         /// <remarks>
         /// 
@@ -1041,7 +1131,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (PaymentServices)</returns>
         System.Threading.Tasks.Task<ApiResponse<PaymentServices>> CreatePaymentServiceAsyncWithHttpInfo (string accessToken, string xeroTenantId, PaymentServices paymentServices);
         /// <summary>
-        /// Allows you to create multiple payments for invoices or credit notes
+        /// Allows you to create payments for invoices and credit notes
         /// </summary>
         /// <remarks>
         /// 
@@ -1053,7 +1143,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<Payments> CreatePaymentsAsync (string accessToken, string xeroTenantId, Payments payments);
 
         /// <summary>
-        /// Allows you to create multiple payments for invoices or credit notes
+        /// Allows you to create payments for invoices and credit notes
         /// </summary>
         /// <remarks>
         /// 
@@ -1114,6 +1204,29 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (HistoryRecords)</returns>
         System.Threading.Tasks.Task<ApiResponse<HistoryRecords>> CreatePrepaymentHistoryAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid prepaymentID, HistoryRecords historyRecords);
         /// <summary>
+        /// Allows you to create a single purchase order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="purchaseOrder"></param>
+        /// <returns>Task of PurchaseOrders</returns>
+        System.Threading.Tasks.Task<PurchaseOrders> CreatePurchaseOrderAsync (string accessToken, string xeroTenantId, PurchaseOrder purchaseOrder);
+
+        /// <summary>
+        /// Allows you to create a single purchase order
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="purchaseOrder"></param>
+        /// <returns>Task of ApiResponse (PurchaseOrders)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PurchaseOrders>> CreatePurchaseOrderAsyncWithHttpInfo (string accessToken, string xeroTenantId, PurchaseOrder purchaseOrder);
+        /// <summary>
         /// Allows you to create HistoryRecord for purchase orders
         /// </summary>
         /// <remarks>
@@ -1139,7 +1252,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (HistoryRecords)</returns>
         System.Threading.Tasks.Task<ApiResponse<HistoryRecords>> CreatePurchaseOrderHistoryAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid purchaseOrderID, HistoryRecords historyRecords);
         /// <summary>
-        /// Allows you to create one or more purchase orders
+        /// Allows you to create purchase orders
         /// </summary>
         /// <remarks>
         /// 
@@ -1152,7 +1265,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<PurchaseOrders> CreatePurchaseOrdersAsync (string accessToken, string xeroTenantId, PurchaseOrders purchaseOrders, bool? summarizeErrors = null);
 
         /// <summary>
-        /// Allows you to create one or more purchase orders
+        /// Allows you to create purchase orders
         /// </summary>
         /// <remarks>
         /// 
@@ -4747,7 +4860,7 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <returns>Task of ApiResponse (Attachments)</returns>
         System.Threading.Tasks.Task<ApiResponse<Attachments>> UpdateInvoiceAttachmentByFileNameAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid invoiceID, string fileName, byte[] body);
         /// <summary>
-        /// Allows you to update a specified item
+        /// Allows you to udpate a specified item
         /// </summary>
         /// <remarks>
         /// 
@@ -4760,7 +4873,7 @@ namespace Xero.NetStandard.OAuth2.Api
         System.Threading.Tasks.Task<Items> UpdateItemAsync (string accessToken, string xeroTenantId, Guid itemID, Items items);
 
         /// <summary>
-        /// Allows you to update a specified item
+        /// Allows you to udpate a specified item
         /// </summary>
         /// <remarks>
         /// 
@@ -4848,131 +4961,6 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="body">Byte array of file in body of request</param>
         /// <returns>Task of ApiResponse (Attachments)</returns>
         System.Threading.Tasks.Task<ApiResponse<Attachments>> UpdateManualJournalAttachmentByFileNameAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid manualJournalID, string fileName, byte[] body);
-        /// <summary>
-        /// Allows you to update or create one or more spend or receive money transaction
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="bankTransactions"></param>
-        /// <param name="summarizeErrors">response format that shows validation errors for each bank transaction (optional, default to false)</param>
-        /// <returns>Task of BankTransactions</returns>
-        System.Threading.Tasks.Task<BankTransactions> UpdateOrCreateBankTransactionsAsync (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null);
-
-        /// <summary>
-        /// Allows you to update or create one or more spend or receive money transaction
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="bankTransactions"></param>
-        /// <param name="summarizeErrors">response format that shows validation errors for each bank transaction (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (BankTransactions)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BankTransactions>> UpdateOrCreateBankTransactionsAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null);
-        /// <summary>
-        /// Allows you to update OR create one or more contacts in a Xero organisation
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="contacts"></param>
-        /// <param name="summarizeErrors">response format that shows validation errors for each bank transaction (optional, default to false)</param>
-        /// <returns>Task of Contacts</returns>
-        System.Threading.Tasks.Task<Contacts> UpdateOrCreateContactsAsync (string accessToken, string xeroTenantId, Contacts contacts, bool? summarizeErrors = null);
-
-        /// <summary>
-        /// Allows you to update OR create one or more contacts in a Xero organisation
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="contacts"></param>
-        /// <param name="summarizeErrors">response format that shows validation errors for each bank transaction (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (Contacts)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Contacts>> UpdateOrCreateContactsAsyncWithHttpInfo (string accessToken, string xeroTenantId, Contacts contacts, bool? summarizeErrors = null);
-        /// <summary>
-        /// Allows you to update OR create one or more credit notes
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="creditNotes">an array of Credit Notes with a single CreditNote object.</param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of CreditNotes</returns>
-        System.Threading.Tasks.Task<CreditNotes> UpdateOrCreateCreditNotesAsync (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null);
-
-        /// <summary>
-        /// Allows you to update OR create one or more credit notes
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="creditNotes">an array of Credit Notes with a single CreditNote object.</param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> UpdateOrCreateCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null);
-        /// <summary>
-        /// Allows you to update OR create one or more sales invoices or purchase bills
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="invoices"></param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of Invoices</returns>
-        System.Threading.Tasks.Task<Invoices> UpdateOrCreateInvoicesAsync (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null);
-
-        /// <summary>
-        /// Allows you to update OR create one or more sales invoices or purchase bills
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="invoices"></param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (Invoices)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Invoices>> UpdateOrCreateInvoicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null);
-        /// <summary>
-        /// Allows you to update or create one or more purchase orders
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="purchaseOrders"></param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of PurchaseOrders</returns>
-        System.Threading.Tasks.Task<PurchaseOrders> UpdateOrCreatePurchaseOrdersAsync (string accessToken, string xeroTenantId, PurchaseOrders purchaseOrders, bool? summarizeErrors = null);
-
-        /// <summary>
-        /// Allows you to update or create one or more purchase orders
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="purchaseOrders"></param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (PurchaseOrders)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PurchaseOrders>> UpdateOrCreatePurchaseOrdersAsyncWithHttpInfo (string accessToken, string xeroTenantId, PurchaseOrders purchaseOrders, bool? summarizeErrors = null);
         /// <summary>
         /// Allows you to update a specified purchase order
         /// </summary>
@@ -5433,6 +5421,81 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
+        /// Allows you to create a spend or receive money transaction 
+        /// </summary>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="bankTransaction"></param>
+        /// <returns>Task of BankTransactions</returns>
+        public async System.Threading.Tasks.Task<BankTransactions> CreateBankTransactionAsync (string accessToken, string xeroTenantId, BankTransaction bankTransaction)
+        {
+             Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions> localVarResponse = await CreateBankTransactionAsyncWithHttpInfo(accessToken, xeroTenantId, bankTransaction);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Allows you to create a spend or receive money transaction 
+        /// </summary>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="bankTransaction"></param>
+        /// <returns>Task of ApiResponse (BankTransactions)</returns>
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions>> CreateBankTransactionAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransaction bankTransaction)
+        {
+            // verify the required parameter 'xeroTenantId' is set
+            if (xeroTenantId == null)
+                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'xeroTenantId' when calling AccountingApi->CreateBankTransaction");
+
+            // verify the required parameter 'bankTransaction' is set
+            if (bankTransaction == null)
+                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'bankTransaction' when calling AccountingApi->CreateBankTransaction");
+
+
+            Xero.NetStandard.OAuth2.Client.RequestOptions requestOptions = new Xero.NetStandard.OAuth2.Client.RequestOptions();
+
+            String[] @contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] @accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var cType in @contentTypes)
+                requestOptions.HeaderParameters.Add("Content-Type", cType);
+            
+            foreach (var accept in @accepts)
+                requestOptions.HeaderParameters.Add("Accept", accept);
+            
+            if (xeroTenantId != null)
+                requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
+            requestOptions.Data = bankTransaction;
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(accessToken))
+            {
+                requestOptions.HeaderParameters.Add("Authorization", "Bearer " + accessToken);
+            }
+            // make the HTTP request
+
+      
+
+            var response = await this.AsynchronousClient.PutAsync<BankTransactions>("/BankTransactions", requestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception exception = this.ExceptionFactory("CreateBankTransaction", response);
+                if (exception != null) throw exception;
+            }
+
+            return response;
+        }
+
+
+        /// <summary>
         /// Allows you to createa an Attachment on BankTransaction by Filename 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -5607,7 +5670,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create one or more spend or receive money transaction 
+        /// Allows you to create a spend or receive money transaction 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -5622,7 +5685,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create one or more spend or receive money transaction 
+        /// Allows you to create a spend or receive money transaction 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -5659,7 +5722,7 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (summarizeErrors != null)
             {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
+                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "SummarizeErrors", summarizeErrors))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -5681,7 +5744,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PutAsync<BankTransactions>("/BankTransactions", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<BankTransactions>("/BankTransactions", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -5948,11 +6011,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="batchPayments">Request of type BatchPayments containing a Payments array with one or more Payment objects</param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
         /// <returns>Task of BatchPayments</returns>
-        public async System.Threading.Tasks.Task<BatchPayments> CreateBatchPaymentAsync (string accessToken, string xeroTenantId, BatchPayments batchPayments, bool? summarizeErrors = null)
+        public async System.Threading.Tasks.Task<BatchPayments> CreateBatchPaymentAsync (string accessToken, string xeroTenantId, BatchPayments batchPayments)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<BatchPayments> localVarResponse = await CreateBatchPaymentAsyncWithHttpInfo(accessToken, xeroTenantId, batchPayments, summarizeErrors);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<BatchPayments> localVarResponse = await CreateBatchPaymentAsyncWithHttpInfo(accessToken, xeroTenantId, batchPayments);
              return localVarResponse.Data;
 
         }
@@ -5963,9 +6025,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="batchPayments">Request of type BatchPayments containing a Payments array with one or more Payment objects</param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
         /// <returns>Task of ApiResponse (BatchPayments)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BatchPayments>> CreateBatchPaymentAsyncWithHttpInfo (string accessToken, string xeroTenantId, BatchPayments batchPayments, bool? summarizeErrors = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BatchPayments>> CreateBatchPaymentAsyncWithHttpInfo (string accessToken, string xeroTenantId, BatchPayments batchPayments)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -5993,16 +6054,6 @@ namespace Xero.NetStandard.OAuth2.Api
             foreach (var accept in @accepts)
                 requestOptions.HeaderParameters.Add("Accept", accept);
             
-            if (summarizeErrors != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
             requestOptions.Data = batchPayments;
@@ -6188,6 +6239,81 @@ namespace Xero.NetStandard.OAuth2.Api
             if (this.ExceptionFactory != null)
             {
                 Exception exception = this.ExceptionFactory("CreateBrandingThemePaymentServices", response);
+                if (exception != null) throw exception;
+            }
+
+            return response;
+        }
+
+
+        /// <summary>
+        /// Allows you to create a single contact in a Xero organisation 
+        /// </summary>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="contact"></param>
+        /// <returns>Task of Contacts</returns>
+        public async System.Threading.Tasks.Task<Contacts> CreateContactAsync (string accessToken, string xeroTenantId, Contact contact)
+        {
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Contacts> localVarResponse = await CreateContactAsyncWithHttpInfo(accessToken, xeroTenantId, contact);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Allows you to create a single contact in a Xero organisation 
+        /// </summary>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="contact"></param>
+        /// <returns>Task of ApiResponse (Contacts)</returns>
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Contacts>> CreateContactAsyncWithHttpInfo (string accessToken, string xeroTenantId, Contact contact)
+        {
+            // verify the required parameter 'xeroTenantId' is set
+            if (xeroTenantId == null)
+                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'xeroTenantId' when calling AccountingApi->CreateContact");
+
+            // verify the required parameter 'contact' is set
+            if (contact == null)
+                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'contact' when calling AccountingApi->CreateContact");
+
+
+            Xero.NetStandard.OAuth2.Client.RequestOptions requestOptions = new Xero.NetStandard.OAuth2.Client.RequestOptions();
+
+            String[] @contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] @accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var cType in @contentTypes)
+                requestOptions.HeaderParameters.Add("Content-Type", cType);
+            
+            foreach (var accept in @accepts)
+                requestOptions.HeaderParameters.Add("Accept", accept);
+            
+            if (xeroTenantId != null)
+                requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
+            requestOptions.Data = contact;
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(accessToken))
+            {
+                requestOptions.HeaderParameters.Add("Authorization", "Bearer " + accessToken);
+            }
+            // make the HTTP request
+
+      
+
+            var response = await this.AsynchronousClient.PutAsync<Contacts>("/Contacts", requestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception exception = this.ExceptionFactory("CreateContact", response);
                 if (exception != null) throw exception;
             }
 
@@ -6580,7 +6706,7 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (summarizeErrors != null)
             {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
+                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "SummarizeErrors", summarizeErrors))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -6602,11 +6728,86 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PutAsync<Contacts>("/Contacts", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<Contacts>("/Contacts", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
                 Exception exception = this.ExceptionFactory("CreateContacts", response);
+                if (exception != null) throw exception;
+            }
+
+            return response;
+        }
+
+
+        /// <summary>
+        /// Allows you to create a credit note 
+        /// </summary>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="creditNote">an array of Credit Notes with a single CreditNote object.</param>
+        /// <returns>Task of CreditNotes</returns>
+        public async System.Threading.Tasks.Task<CreditNotes> CreateCreditNoteAsync (string accessToken, string xeroTenantId, CreditNote creditNote)
+        {
+             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await CreateCreditNoteAsyncWithHttpInfo(accessToken, xeroTenantId, creditNote);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Allows you to create a credit note 
+        /// </summary>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="creditNote">an array of Credit Notes with a single CreditNote object.</param>
+        /// <returns>Task of ApiResponse (CreditNotes)</returns>
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> CreateCreditNoteAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNote creditNote)
+        {
+            // verify the required parameter 'xeroTenantId' is set
+            if (xeroTenantId == null)
+                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'xeroTenantId' when calling AccountingApi->CreateCreditNote");
+
+            // verify the required parameter 'creditNote' is set
+            if (creditNote == null)
+                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'creditNote' when calling AccountingApi->CreateCreditNote");
+
+
+            Xero.NetStandard.OAuth2.Client.RequestOptions requestOptions = new Xero.NetStandard.OAuth2.Client.RequestOptions();
+
+            String[] @contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] @accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var cType in @contentTypes)
+                requestOptions.HeaderParameters.Add("Content-Type", cType);
+            
+            foreach (var accept in @accepts)
+                requestOptions.HeaderParameters.Add("Accept", accept);
+            
+            if (xeroTenantId != null)
+                requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
+            requestOptions.Data = creditNote;
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(accessToken))
+            {
+                requestOptions.HeaderParameters.Add("Authorization", "Bearer " + accessToken);
+            }
+            // make the HTTP request
+
+      
+
+            var response = await this.AsynchronousClient.PutAsync<CreditNotes>("/CreditNotes", requestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception exception = this.ExceptionFactory("CreateCreditNote", response);
                 if (exception != null) throw exception;
             }
 
@@ -6924,7 +7125,7 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (summarizeErrors != null)
             {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
+                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "SummarizeErrors", summarizeErrors))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -6946,7 +7147,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PutAsync<CreditNotes>("/CreditNotes", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<CreditNotes>("/CreditNotes", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -7034,7 +7235,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create a single new employees used in Xero payrun 
+        /// Allows you to create new employees used in Xero payrun 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -7048,7 +7249,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create a single new employees used in Xero payrun 
+        /// Allows you to create new employees used in Xero payrun 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -7096,7 +7297,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PostAsync<Employees>("/Employees", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PutAsync<Employees>("/Employees", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -7171,7 +7372,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PutAsync<Employees>("/Employees", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<Employees>("/Employees", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -7334,6 +7535,81 @@ namespace Xero.NetStandard.OAuth2.Api
             if (this.ExceptionFactory != null)
             {
                 Exception exception = this.ExceptionFactory("CreateExpenseClaims", response);
+                if (exception != null) throw exception;
+            }
+
+            return response;
+        }
+
+
+        /// <summary>
+        /// Allows you to create any sales invoices or purchase bills 
+        /// </summary>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="invoice"></param>
+        /// <returns>Task of Invoices</returns>
+        public async System.Threading.Tasks.Task<Invoices> CreateInvoiceAsync (string accessToken, string xeroTenantId, Invoice invoice)
+        {
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices> localVarResponse = await CreateInvoiceAsyncWithHttpInfo(accessToken, xeroTenantId, invoice);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Allows you to create any sales invoices or purchase bills 
+        /// </summary>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="invoice"></param>
+        /// <returns>Task of ApiResponse (Invoices)</returns>
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices>> CreateInvoiceAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoice invoice)
+        {
+            // verify the required parameter 'xeroTenantId' is set
+            if (xeroTenantId == null)
+                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'xeroTenantId' when calling AccountingApi->CreateInvoice");
+
+            // verify the required parameter 'invoice' is set
+            if (invoice == null)
+                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'invoice' when calling AccountingApi->CreateInvoice");
+
+
+            Xero.NetStandard.OAuth2.Client.RequestOptions requestOptions = new Xero.NetStandard.OAuth2.Client.RequestOptions();
+
+            String[] @contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] @accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var cType in @contentTypes)
+                requestOptions.HeaderParameters.Add("Content-Type", cType);
+            
+            foreach (var accept in @accepts)
+                requestOptions.HeaderParameters.Add("Accept", accept);
+            
+            if (xeroTenantId != null)
+                requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
+            requestOptions.Data = invoice;
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(accessToken))
+            {
+                requestOptions.HeaderParameters.Add("Authorization", "Bearer " + accessToken);
+            }
+            // make the HTTP request
+
+      
+
+            var response = await this.AsynchronousClient.PutAsync<Invoices>("/Invoices", requestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception exception = this.ExceptionFactory("CreateInvoice", response);
                 if (exception != null) throw exception;
             }
 
@@ -7516,7 +7792,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create one or more sales invoices or purchase bills 
+        /// Allows you to create any sales invoices or purchase bills 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -7531,7 +7807,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create one or more sales invoices or purchase bills 
+        /// Allows you to create any sales invoices or purchase bills 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -7568,7 +7844,7 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (summarizeErrors != null)
             {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
+                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "SummarizeErrors", summarizeErrors))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -7590,7 +7866,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PutAsync<Invoices>("/Invoices", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<Invoices>("/Invoices", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -7603,7 +7879,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create a single item 
+        /// Allows you to create an item 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -7617,7 +7893,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create a single item 
+        /// Allows you to create an item 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -7665,7 +7941,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PostAsync<Items>("/Items", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PutAsync<Items>("/Items", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -7761,7 +8037,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create one or more items 
+        /// Allows you to create an item 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -7776,7 +8052,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create one or more items 
+        /// Allows you to create an item 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -7813,7 +8089,7 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (summarizeErrors != null)
             {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
+                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "SummarizeErrors", summarizeErrors))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -7835,7 +8111,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PutAsync<Items>("/Items", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<Items>("/Items", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -7923,7 +8199,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create a single manual journal 
+        /// Allows you to create a manual journal 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -7937,7 +8213,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create a single manual journal 
+        /// Allows you to create a manual journal 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -7985,7 +8261,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PostAsync<ManualJournals>("/ManualJournals", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PutAsync<ManualJournals>("/ManualJournals", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -8089,7 +8365,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create multiple manual journals 
+        /// Allows you to create a manual journal 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -8103,7 +8379,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create multiple manual journals 
+        /// Allows you to create a manual journal 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -8151,7 +8427,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PutAsync<ManualJournals>("/ManualJournals", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<ManualJournals>("/ManualJournals", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -8164,7 +8440,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create a single allocations for overpayments 
+        /// Allows you to retrieve Allocations for overpayments 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -8179,7 +8455,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create a single allocations for overpayments 
+        /// Allows you to retrieve Allocations for overpayments 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -8234,7 +8510,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PostAsync<Allocations>("/Overpayments/{OverpaymentID}/Allocations", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PutAsync<Allocations>("/Overpayments/{OverpaymentID}/Allocations", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -8247,7 +8523,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create a single allocation for an overpayment 
+        /// Allows you to retrieve Allocations for overpayments 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -8262,7 +8538,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create a single allocation for an overpayment 
+        /// Allows you to retrieve Allocations for overpayments 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -8317,7 +8593,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PutAsync<Allocations>("/Overpayments/{OverpaymentID}/Allocations", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<Allocations>("/Overpayments/{OverpaymentID}/Allocations", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -8413,7 +8689,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create a single payment for invoices or credit notes 
+        /// Allows you to create payments for invoices and credit notes 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -8427,7 +8703,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create a single payment for invoices or credit notes 
+        /// Allows you to create payments for invoices and credit notes 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -8475,7 +8751,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PostAsync<Payments>("/Payments", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PutAsync<Payments>("/Payments", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -8646,7 +8922,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create multiple payments for invoices or credit notes 
+        /// Allows you to create payments for invoices and credit notes 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -8660,7 +8936,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create multiple payments for invoices or credit notes 
+        /// Allows you to create payments for invoices and credit notes 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -8708,7 +8984,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PutAsync<Payments>("/Payments", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<Payments>("/Payments", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -8887,6 +9163,81 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
+        /// Allows you to create a single purchase order 
+        /// </summary>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="purchaseOrder"></param>
+        /// <returns>Task of PurchaseOrders</returns>
+        public async System.Threading.Tasks.Task<PurchaseOrders> CreatePurchaseOrderAsync (string accessToken, string xeroTenantId, PurchaseOrder purchaseOrder)
+        {
+             Xero.NetStandard.OAuth2.Client.ApiResponse<PurchaseOrders> localVarResponse = await CreatePurchaseOrderAsyncWithHttpInfo(accessToken, xeroTenantId, purchaseOrder);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Allows you to create a single purchase order 
+        /// </summary>
+        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
+        /// <param name="purchaseOrder"></param>
+        /// <returns>Task of ApiResponse (PurchaseOrders)</returns>
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<PurchaseOrders>> CreatePurchaseOrderAsyncWithHttpInfo (string accessToken, string xeroTenantId, PurchaseOrder purchaseOrder)
+        {
+            // verify the required parameter 'xeroTenantId' is set
+            if (xeroTenantId == null)
+                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'xeroTenantId' when calling AccountingApi->CreatePurchaseOrder");
+
+            // verify the required parameter 'purchaseOrder' is set
+            if (purchaseOrder == null)
+                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'purchaseOrder' when calling AccountingApi->CreatePurchaseOrder");
+
+
+            Xero.NetStandard.OAuth2.Client.RequestOptions requestOptions = new Xero.NetStandard.OAuth2.Client.RequestOptions();
+
+            String[] @contentTypes = new String[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            String[] @accepts = new String[] {
+                "application/json"
+            };
+            
+            foreach (var cType in @contentTypes)
+                requestOptions.HeaderParameters.Add("Content-Type", cType);
+            
+            foreach (var accept in @accepts)
+                requestOptions.HeaderParameters.Add("Accept", accept);
+            
+            if (xeroTenantId != null)
+                requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
+            requestOptions.Data = purchaseOrder;
+
+            // authentication (OAuth2) required
+            // oauth required
+            if (!String.IsNullOrEmpty(accessToken))
+            {
+                requestOptions.HeaderParameters.Add("Authorization", "Bearer " + accessToken);
+            }
+            // make the HTTP request
+
+      
+
+            var response = await this.AsynchronousClient.PutAsync<PurchaseOrders>("/PurchaseOrders", requestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception exception = this.ExceptionFactory("CreatePurchaseOrder", response);
+                if (exception != null) throw exception;
+            }
+
+            return response;
+        }
+
+
+        /// <summary>
         /// Allows you to create HistoryRecord for purchase orders 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
@@ -8970,7 +9321,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to create one or more purchase orders 
+        /// Allows you to create purchase orders 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -8985,7 +9336,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to create one or more purchase orders 
+        /// Allows you to create purchase orders 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -9022,7 +9373,7 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (summarizeErrors != null)
             {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
+                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "SummarizeErrors", summarizeErrors))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -9044,7 +9395,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
       
 
-            var response = await this.AsynchronousClient.PutAsync<PurchaseOrders>("/PurchaseOrders", requestOptions, this.Configuration);
+            var response = await this.AsynchronousClient.PostAsync<PurchaseOrders>("/PurchaseOrders", requestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -12979,7 +13330,7 @@ namespace Xero.NetStandard.OAuth2.Api
             }
             if (iDs != null)
             {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("csv", "IDs", iDs))
+                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("multi", "IDs", iDs))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -14780,7 +15131,7 @@ namespace Xero.NetStandard.OAuth2.Api
             }
             if (iDs != null)
             {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("csv", "IDs", iDs))
+                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("multi", "IDs", iDs))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -14790,7 +15141,7 @@ namespace Xero.NetStandard.OAuth2.Api
             }
             if (invoiceNumbers != null)
             {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("csv", "InvoiceNumbers", invoiceNumbers))
+                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("multi", "InvoiceNumbers", invoiceNumbers))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -14800,7 +15151,7 @@ namespace Xero.NetStandard.OAuth2.Api
             }
             if (contactIDs != null)
             {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("csv", "ContactIDs", contactIDs))
+                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("multi", "ContactIDs", contactIDs))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -14810,7 +15161,7 @@ namespace Xero.NetStandard.OAuth2.Api
             }
             if (statuses != null)
             {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("csv", "Statuses", statuses))
+                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("multi", "Statuses", statuses))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -21386,7 +21737,7 @@ namespace Xero.NetStandard.OAuth2.Api
 
 
         /// <summary>
-        /// Allows you to update a specified item 
+        /// Allows you to udpate a specified item 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -21401,7 +21752,7 @@ namespace Xero.NetStandard.OAuth2.Api
         }
 
         /// <summary>
-        /// Allows you to update a specified item 
+        /// Allows you to udpate a specified item 
         /// </summary>
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
@@ -21718,441 +22069,6 @@ namespace Xero.NetStandard.OAuth2.Api
             if (this.ExceptionFactory != null)
             {
                 Exception exception = this.ExceptionFactory("UpdateManualJournalAttachmentByFileName", response);
-                if (exception != null) throw exception;
-            }
-
-            return response;
-        }
-
-
-        /// <summary>
-        /// Allows you to update or create one or more spend or receive money transaction 
-        /// </summary>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="bankTransactions"></param>
-        /// <param name="summarizeErrors">response format that shows validation errors for each bank transaction (optional, default to false)</param>
-        /// <returns>Task of BankTransactions</returns>
-        public async System.Threading.Tasks.Task<BankTransactions> UpdateOrCreateBankTransactionsAsync (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null)
-        {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions> localVarResponse = await UpdateOrCreateBankTransactionsAsyncWithHttpInfo(accessToken, xeroTenantId, bankTransactions, summarizeErrors);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Allows you to update or create one or more spend or receive money transaction 
-        /// </summary>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="bankTransactions"></param>
-        /// <param name="summarizeErrors">response format that shows validation errors for each bank transaction (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (BankTransactions)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions>> UpdateOrCreateBankTransactionsAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null)
-        {
-            // verify the required parameter 'xeroTenantId' is set
-            if (xeroTenantId == null)
-                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'xeroTenantId' when calling AccountingApi->UpdateOrCreateBankTransactions");
-
-            // verify the required parameter 'bankTransactions' is set
-            if (bankTransactions == null)
-                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'bankTransactions' when calling AccountingApi->UpdateOrCreateBankTransactions");
-
-
-            Xero.NetStandard.OAuth2.Client.RequestOptions requestOptions = new Xero.NetStandard.OAuth2.Client.RequestOptions();
-
-            String[] @contentTypes = new String[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            String[] @accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var cType in @contentTypes)
-                requestOptions.HeaderParameters.Add("Content-Type", cType);
-            
-            foreach (var accept in @accepts)
-                requestOptions.HeaderParameters.Add("Accept", accept);
-            
-            if (summarizeErrors != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (xeroTenantId != null)
-                requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
-            requestOptions.Data = bankTransactions;
-
-            // authentication (OAuth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(accessToken))
-            {
-                requestOptions.HeaderParameters.Add("Authorization", "Bearer " + accessToken);
-            }
-            // make the HTTP request
-
-      
-
-            var response = await this.AsynchronousClient.PostAsync<BankTransactions>("/BankTransactions", requestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception exception = this.ExceptionFactory("UpdateOrCreateBankTransactions", response);
-                if (exception != null) throw exception;
-            }
-
-            return response;
-        }
-
-
-        /// <summary>
-        /// Allows you to update OR create one or more contacts in a Xero organisation 
-        /// </summary>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="contacts"></param>
-        /// <param name="summarizeErrors">response format that shows validation errors for each bank transaction (optional, default to false)</param>
-        /// <returns>Task of Contacts</returns>
-        public async System.Threading.Tasks.Task<Contacts> UpdateOrCreateContactsAsync (string accessToken, string xeroTenantId, Contacts contacts, bool? summarizeErrors = null)
-        {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Contacts> localVarResponse = await UpdateOrCreateContactsAsyncWithHttpInfo(accessToken, xeroTenantId, contacts, summarizeErrors);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Allows you to update OR create one or more contacts in a Xero organisation 
-        /// </summary>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="contacts"></param>
-        /// <param name="summarizeErrors">response format that shows validation errors for each bank transaction (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (Contacts)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Contacts>> UpdateOrCreateContactsAsyncWithHttpInfo (string accessToken, string xeroTenantId, Contacts contacts, bool? summarizeErrors = null)
-        {
-            // verify the required parameter 'xeroTenantId' is set
-            if (xeroTenantId == null)
-                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'xeroTenantId' when calling AccountingApi->UpdateOrCreateContacts");
-
-            // verify the required parameter 'contacts' is set
-            if (contacts == null)
-                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'contacts' when calling AccountingApi->UpdateOrCreateContacts");
-
-
-            Xero.NetStandard.OAuth2.Client.RequestOptions requestOptions = new Xero.NetStandard.OAuth2.Client.RequestOptions();
-
-            String[] @contentTypes = new String[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            String[] @accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var cType in @contentTypes)
-                requestOptions.HeaderParameters.Add("Content-Type", cType);
-            
-            foreach (var accept in @accepts)
-                requestOptions.HeaderParameters.Add("Accept", accept);
-            
-            if (summarizeErrors != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (xeroTenantId != null)
-                requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
-            requestOptions.Data = contacts;
-
-            // authentication (OAuth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(accessToken))
-            {
-                requestOptions.HeaderParameters.Add("Authorization", "Bearer " + accessToken);
-            }
-            // make the HTTP request
-
-      
-
-            var response = await this.AsynchronousClient.PostAsync<Contacts>("/Contacts", requestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception exception = this.ExceptionFactory("UpdateOrCreateContacts", response);
-                if (exception != null) throw exception;
-            }
-
-            return response;
-        }
-
-
-        /// <summary>
-        /// Allows you to update OR create one or more credit notes 
-        /// </summary>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="creditNotes">an array of Credit Notes with a single CreditNote object.</param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of CreditNotes</returns>
-        public async System.Threading.Tasks.Task<CreditNotes> UpdateOrCreateCreditNotesAsync (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null)
-        {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await UpdateOrCreateCreditNotesAsyncWithHttpInfo(accessToken, xeroTenantId, creditNotes, summarizeErrors);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Allows you to update OR create one or more credit notes 
-        /// </summary>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="creditNotes">an array of Credit Notes with a single CreditNote object.</param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> UpdateOrCreateCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null)
-        {
-            // verify the required parameter 'xeroTenantId' is set
-            if (xeroTenantId == null)
-                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'xeroTenantId' when calling AccountingApi->UpdateOrCreateCreditNotes");
-
-            // verify the required parameter 'creditNotes' is set
-            if (creditNotes == null)
-                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'creditNotes' when calling AccountingApi->UpdateOrCreateCreditNotes");
-
-
-            Xero.NetStandard.OAuth2.Client.RequestOptions requestOptions = new Xero.NetStandard.OAuth2.Client.RequestOptions();
-
-            String[] @contentTypes = new String[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            String[] @accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var cType in @contentTypes)
-                requestOptions.HeaderParameters.Add("Content-Type", cType);
-            
-            foreach (var accept in @accepts)
-                requestOptions.HeaderParameters.Add("Accept", accept);
-            
-            if (summarizeErrors != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (xeroTenantId != null)
-                requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
-            requestOptions.Data = creditNotes;
-
-            // authentication (OAuth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(accessToken))
-            {
-                requestOptions.HeaderParameters.Add("Authorization", "Bearer " + accessToken);
-            }
-            // make the HTTP request
-
-      
-
-            var response = await this.AsynchronousClient.PostAsync<CreditNotes>("/CreditNotes", requestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception exception = this.ExceptionFactory("UpdateOrCreateCreditNotes", response);
-                if (exception != null) throw exception;
-            }
-
-            return response;
-        }
-
-
-        /// <summary>
-        /// Allows you to update OR create one or more sales invoices or purchase bills 
-        /// </summary>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="invoices"></param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of Invoices</returns>
-        public async System.Threading.Tasks.Task<Invoices> UpdateOrCreateInvoicesAsync (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null)
-        {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices> localVarResponse = await UpdateOrCreateInvoicesAsyncWithHttpInfo(accessToken, xeroTenantId, invoices, summarizeErrors);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Allows you to update OR create one or more sales invoices or purchase bills 
-        /// </summary>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="invoices"></param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (Invoices)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices>> UpdateOrCreateInvoicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null)
-        {
-            // verify the required parameter 'xeroTenantId' is set
-            if (xeroTenantId == null)
-                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'xeroTenantId' when calling AccountingApi->UpdateOrCreateInvoices");
-
-            // verify the required parameter 'invoices' is set
-            if (invoices == null)
-                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'invoices' when calling AccountingApi->UpdateOrCreateInvoices");
-
-
-            Xero.NetStandard.OAuth2.Client.RequestOptions requestOptions = new Xero.NetStandard.OAuth2.Client.RequestOptions();
-
-            String[] @contentTypes = new String[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            String[] @accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var cType in @contentTypes)
-                requestOptions.HeaderParameters.Add("Content-Type", cType);
-            
-            foreach (var accept in @accepts)
-                requestOptions.HeaderParameters.Add("Accept", accept);
-            
-            if (summarizeErrors != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (xeroTenantId != null)
-                requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
-            requestOptions.Data = invoices;
-
-            // authentication (OAuth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(accessToken))
-            {
-                requestOptions.HeaderParameters.Add("Authorization", "Bearer " + accessToken);
-            }
-            // make the HTTP request
-
-      
-
-            var response = await this.AsynchronousClient.PostAsync<Invoices>("/Invoices", requestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception exception = this.ExceptionFactory("UpdateOrCreateInvoices", response);
-                if (exception != null) throw exception;
-            }
-
-            return response;
-        }
-
-
-        /// <summary>
-        /// Allows you to update or create one or more purchase orders 
-        /// </summary>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="purchaseOrders"></param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of PurchaseOrders</returns>
-        public async System.Threading.Tasks.Task<PurchaseOrders> UpdateOrCreatePurchaseOrdersAsync (string accessToken, string xeroTenantId, PurchaseOrders purchaseOrders, bool? summarizeErrors = null)
-        {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<PurchaseOrders> localVarResponse = await UpdateOrCreatePurchaseOrdersAsyncWithHttpInfo(accessToken, xeroTenantId, purchaseOrders, summarizeErrors);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Allows you to update or create one or more purchase orders 
-        /// </summary>
-        /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="xeroTenantId">Xero identifier for Tenant</param>
-        /// <param name="purchaseOrders"></param>
-        /// <param name="summarizeErrors">shows validation errors for each credit note (optional, default to false)</param>
-        /// <returns>Task of ApiResponse (PurchaseOrders)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<PurchaseOrders>> UpdateOrCreatePurchaseOrdersAsyncWithHttpInfo (string accessToken, string xeroTenantId, PurchaseOrders purchaseOrders, bool? summarizeErrors = null)
-        {
-            // verify the required parameter 'xeroTenantId' is set
-            if (xeroTenantId == null)
-                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'xeroTenantId' when calling AccountingApi->UpdateOrCreatePurchaseOrders");
-
-            // verify the required parameter 'purchaseOrders' is set
-            if (purchaseOrders == null)
-                throw new Xero.NetStandard.OAuth2.Client.ApiException(400, "Missing required parameter 'purchaseOrders' when calling AccountingApi->UpdateOrCreatePurchaseOrders");
-
-
-            Xero.NetStandard.OAuth2.Client.RequestOptions requestOptions = new Xero.NetStandard.OAuth2.Client.RequestOptions();
-
-            String[] @contentTypes = new String[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            String[] @accepts = new String[] {
-                "application/json"
-            };
-            
-            foreach (var cType in @contentTypes)
-                requestOptions.HeaderParameters.Add("Content-Type", cType);
-            
-            foreach (var accept in @accepts)
-                requestOptions.HeaderParameters.Add("Accept", accept);
-            
-            if (summarizeErrors != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (xeroTenantId != null)
-                requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
-            requestOptions.Data = purchaseOrders;
-
-            // authentication (OAuth2) required
-            // oauth required
-            if (!String.IsNullOrEmpty(accessToken))
-            {
-                requestOptions.HeaderParameters.Add("Authorization", "Bearer " + accessToken);
-            }
-            // make the HTTP request
-
-      
-
-            var response = await this.AsynchronousClient.PostAsync<PurchaseOrders>("/PurchaseOrders", requestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception exception = this.ExceptionFactory("UpdateOrCreatePurchaseOrders", response);
                 if (exception != null) throw exception;
             }
 

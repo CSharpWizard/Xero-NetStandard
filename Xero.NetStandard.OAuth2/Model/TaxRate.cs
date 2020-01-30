@@ -222,58 +222,52 @@ namespace Xero.NetStandard.OAuth2.Model
             GSTONCAPIMPORTS = 24,
 
             /// <summary>
-            /// Enum GSTONCAPITALIMPORTS for value: GSTONCAPITALIMPORTS
-            /// </summary>
-            [EnumMember(Value = "GSTONCAPITALIMPORTS")]
-            GSTONCAPITALIMPORTS = 25,
-
-            /// <summary>
             /// Enum REVERSECHARGES for value: REVERSECHARGES
             /// </summary>
             [EnumMember(Value = "REVERSECHARGES")]
-            REVERSECHARGES = 26,
+            REVERSECHARGES = 25,
 
             /// <summary>
             /// Enum PAYMENTS for value: PAYMENTS
             /// </summary>
             [EnumMember(Value = "PAYMENTS")]
-            PAYMENTS = 27,
+            PAYMENTS = 26,
 
             /// <summary>
             /// Enum INVOICE for value: INVOICE
             /// </summary>
             [EnumMember(Value = "INVOICE")]
-            INVOICE = 28,
+            INVOICE = 27,
 
             /// <summary>
             /// Enum CASH for value: CASH
             /// </summary>
             [EnumMember(Value = "CASH")]
-            CASH = 29,
+            CASH = 28,
 
             /// <summary>
             /// Enum ACCRUAL for value: ACCRUAL
             /// </summary>
             [EnumMember(Value = "ACCRUAL")]
-            ACCRUAL = 30,
+            ACCRUAL = 29,
 
             /// <summary>
             /// Enum FLATRATECASH for value: FLATRATECASH
             /// </summary>
             [EnumMember(Value = "FLATRATECASH")]
-            FLATRATECASH = 31,
+            FLATRATECASH = 30,
 
             /// <summary>
             /// Enum FLATRATEACCRUAL for value: FLATRATEACCRUAL
             /// </summary>
             [EnumMember(Value = "FLATRATEACCRUAL")]
-            FLATRATEACCRUAL = 32,
+            FLATRATEACCRUAL = 31,
 
             /// <summary>
             /// Enum ACCRUALS for value: ACCRUALS
             /// </summary>
             [EnumMember(Value = "ACCRUALS")]
-            ACCRUALS = 33
+            ACCRUALS = 32
 
         }
 
