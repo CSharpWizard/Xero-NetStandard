@@ -117,7 +117,7 @@ namespace Xero.NetStandard.OAuth2.Model
         /// </summary>
         /// <value>The quantity of the item on hand</value>
         [DataMember(Name="QuantityOnHand", EmitDefaultValue=false)]
-        public float? QuantityOnHand { get; set; }
+        public double? QuantityOnHand { get; set; }
 
         /// <summary>
         /// Last modified date in UTC format

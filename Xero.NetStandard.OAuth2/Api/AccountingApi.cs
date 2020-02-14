@@ -139,9 +139,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactions">BankTransactions with an array of BankTransaction objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of BankTransactions</returns>
-        System.Threading.Tasks.Task<BankTransactions> CreateBankTransactionsAsync (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<BankTransactions> CreateBankTransactionsAsync (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null);
 
         /// <summary>
         /// Allows you to create one or more spend or receive money transaction
@@ -153,9 +152,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactions">BankTransactions with an array of BankTransaction objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (BankTransactions)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BankTransactions>> CreateBankTransactionsAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<BankTransactions>> CreateBankTransactionsAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null);
         /// <summary>
         /// Allows you to create a bank transfers
         /// </summary>
@@ -520,9 +518,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNotes">Credit Notes with array of CreditNote object in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of CreditNotes</returns>
-        System.Threading.Tasks.Task<CreditNotes> CreateCreditNotesAsync (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<CreditNotes> CreateCreditNotesAsync (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null);
 
         /// <summary>
         /// Allows you to create a credit note
@@ -534,9 +531,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNotes">Credit Notes with array of CreditNote object in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> CreateCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> CreateCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null);
         /// <summary>
         /// 
         /// </summary>
@@ -718,9 +714,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoices">Invoices with an array of invoice objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Invoices</returns>
-        System.Threading.Tasks.Task<Invoices> CreateInvoicesAsync (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<Invoices> CreateInvoicesAsync (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null);
 
         /// <summary>
         /// Allows you to create one or more sales invoices or purchase bills
@@ -732,9 +727,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoices">Invoices with an array of invoice objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Invoices)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Invoices>> CreateInvoicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<Invoices>> CreateInvoicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null);
         /// <summary>
         /// Allows you to create a history record for items
         /// </summary>
@@ -770,9 +764,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="items">Items with an array of Item objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Items</returns>
-        System.Threading.Tasks.Task<Items> CreateItemsAsync (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<Items> CreateItemsAsync (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null);
 
         /// <summary>
         /// Allows you to create one or more items
@@ -784,9 +777,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="items">Items with an array of Item objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Items)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Items>> CreateItemsAsyncWithHttpInfo (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<Items>> CreateItemsAsyncWithHttpInfo (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null);
         /// <summary>
         /// Allows you to create linked transactions (billable expenses)
         /// </summary>
@@ -1211,9 +1203,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receipts">Receipts with an array of Receipt object in body of request</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Receipts</returns>
-        System.Threading.Tasks.Task<Receipts> CreateReceiptAsync (string accessToken, string xeroTenantId, Receipts receipts, int? unitdp = null);
+        System.Threading.Tasks.Task<Receipts> CreateReceiptAsync (string accessToken, string xeroTenantId, Receipts receipts);
 
         /// <summary>
         /// Allows you to create draft expense claim receipts for any user
@@ -1224,9 +1215,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receipts">Receipts with an array of Receipt object in body of request</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Receipts)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Receipts>> CreateReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Receipts receipts, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<Receipts>> CreateReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Receipts receipts);
         /// <summary>
         /// Allows you to create Attachment on expense claim receipts by file name
         /// </summary>
@@ -1753,9 +1743,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactionID">Xero generated unique identifier for a bank transaction</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of BankTransactions</returns>
-        System.Threading.Tasks.Task<BankTransactions> GetBankTransactionAsync (string accessToken, string xeroTenantId, Guid bankTransactionID, int? unitdp = null);
+        System.Threading.Tasks.Task<BankTransactions> GetBankTransactionAsync (string accessToken, string xeroTenantId, Guid bankTransactionID);
 
         /// <summary>
         /// Allows you to retrieve a single spend or receive money transaction
@@ -1766,9 +1755,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactionID">Xero generated unique identifier for a bank transaction</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (BankTransactions)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BankTransactions>> GetBankTransactionAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid bankTransactionID, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<BankTransactions>> GetBankTransactionAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid bankTransactionID);
         /// <summary>
         /// Allows you to retrieve Attachments on BankTransaction by Filename
         /// </summary>
@@ -2403,9 +2391,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNoteID">Unique identifier for a Credit Note</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of CreditNotes</returns>
-        System.Threading.Tasks.Task<CreditNotes> GetCreditNoteAsync (string accessToken, string xeroTenantId, Guid creditNoteID, int? unitdp = null);
+        System.Threading.Tasks.Task<CreditNotes> GetCreditNoteAsync (string accessToken, string xeroTenantId, Guid creditNoteID);
 
         /// <summary>
         /// Allows you to retrieve a specific credit note
@@ -2416,9 +2403,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNoteID">Unique identifier for a Credit Note</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> GetCreditNoteAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid creditNoteID, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> GetCreditNoteAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid creditNoteID);
         /// <summary>
         /// Allows you to retrieve Credit Note as PDF files
         /// </summary>
@@ -2556,9 +2542,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="where">Filter by an any element (optional)</param>
         /// <param name="order">Order by an any element (optional)</param>
         /// <param name="page">e.g. page&#x3D;1 – Up to 100 credit notes will be returned in a single API call with line items shown for each credit note (optional)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of CreditNotes</returns>
-        System.Threading.Tasks.Task<CreditNotes> GetCreditNotesAsync (string accessToken, string xeroTenantId, DateTime? ifModifiedSince = null, string where = null, string order = null, int? page = null, int? unitdp = null);
+        System.Threading.Tasks.Task<CreditNotes> GetCreditNotesAsync (string accessToken, string xeroTenantId, DateTime? ifModifiedSince = null, string where = null, string order = null, int? page = null);
 
         /// <summary>
         /// Allows you to retrieve any credit notes
@@ -2572,9 +2557,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="where">Filter by an any element (optional)</param>
         /// <param name="order">Order by an any element (optional)</param>
         /// <param name="page">e.g. page&#x3D;1 – Up to 100 credit notes will be returned in a single API call with line items shown for each credit note (optional)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> GetCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, DateTime? ifModifiedSince = null, string where = null, string order = null, int? page = null, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> GetCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, DateTime? ifModifiedSince = null, string where = null, string order = null, int? page = null);
         /// <summary>
         /// Allows you to retrieve currencies for your organisation
         /// </summary>
@@ -2732,9 +2716,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoiceID">Unique identifier for an Invoice</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Invoices</returns>
-        System.Threading.Tasks.Task<Invoices> GetInvoiceAsync (string accessToken, string xeroTenantId, Guid invoiceID, int? unitdp = null);
+        System.Threading.Tasks.Task<Invoices> GetInvoiceAsync (string accessToken, string xeroTenantId, Guid invoiceID);
 
         /// <summary>
         /// Allows you to retrieve a specified sales invoice or purchase bill
@@ -2745,9 +2728,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoiceID">Unique identifier for an Invoice</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Invoices)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Invoices>> GetInvoiceAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid invoiceID, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<Invoices>> GetInvoiceAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid invoiceID);
         /// <summary>
         /// Allows you to retrieve invoices or purchase bills as PDF files
         /// </summary>
@@ -2946,9 +2928,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="itemID">Unique identifier for an Item</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Items</returns>
-        System.Threading.Tasks.Task<Items> GetItemAsync (string accessToken, string xeroTenantId, Guid itemID, int? unitdp = null);
+        System.Threading.Tasks.Task<Items> GetItemAsync (string accessToken, string xeroTenantId, Guid itemID);
 
         /// <summary>
         /// Allows you to retrieve a specified item
@@ -2959,9 +2940,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="itemID">Unique identifier for an Item</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Items)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Items>> GetItemAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid itemID, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<Items>> GetItemAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid itemID);
         /// <summary>
         /// Allows you to retrieve history for items
         /// </summary>
@@ -3737,9 +3717,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receiptID">Unique identifier for a Receipt</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Receipts</returns>
-        System.Threading.Tasks.Task<Receipts> GetReceiptAsync (string accessToken, string xeroTenantId, Guid receiptID, int? unitdp = null);
+        System.Threading.Tasks.Task<Receipts> GetReceiptAsync (string accessToken, string xeroTenantId, Guid receiptID);
 
         /// <summary>
         /// Allows you to retrieve a specified draft expense claim receipts
@@ -3750,9 +3729,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receiptID">Unique identifier for a Receipt</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Receipts)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Receipts>> GetReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid receiptID, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<Receipts>> GetReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid receiptID);
         /// <summary>
         /// Allows you to retrieve Attachments on expense claim receipts by file name
         /// </summary>
@@ -4520,9 +4498,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactionID">Xero generated unique identifier for a bank transaction</param>
         /// <param name="bankTransactions"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of BankTransactions</returns>
-        System.Threading.Tasks.Task<BankTransactions> UpdateBankTransactionAsync (string accessToken, string xeroTenantId, Guid bankTransactionID, BankTransactions bankTransactions, int? unitdp = null);
+        System.Threading.Tasks.Task<BankTransactions> UpdateBankTransactionAsync (string accessToken, string xeroTenantId, Guid bankTransactionID, BankTransactions bankTransactions);
 
         /// <summary>
         /// Allows you to update a single spend or receive money transaction
@@ -4534,9 +4511,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactionID">Xero generated unique identifier for a bank transaction</param>
         /// <param name="bankTransactions"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (BankTransactions)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BankTransactions>> UpdateBankTransactionAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid bankTransactionID, BankTransactions bankTransactions, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<BankTransactions>> UpdateBankTransactionAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid bankTransactionID, BankTransactions bankTransactions);
         /// <summary>
         /// Allows you to update an Attachment on BankTransaction by Filename
         /// </summary>
@@ -4678,9 +4654,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNoteID">Unique identifier for a Credit Note</param>
         /// <param name="creditNotes">an array of Credit Notes containing credit note details to update</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of CreditNotes</returns>
-        System.Threading.Tasks.Task<CreditNotes> UpdateCreditNoteAsync (string accessToken, string xeroTenantId, Guid creditNoteID, CreditNotes creditNotes, int? unitdp = null);
+        System.Threading.Tasks.Task<CreditNotes> UpdateCreditNoteAsync (string accessToken, string xeroTenantId, Guid creditNoteID, CreditNotes creditNotes);
 
         /// <summary>
         /// Allows you to update a specific credit note
@@ -4692,9 +4667,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNoteID">Unique identifier for a Credit Note</param>
         /// <param name="creditNotes">an array of Credit Notes containing credit note details to update</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> UpdateCreditNoteAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid creditNoteID, CreditNotes creditNotes, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> UpdateCreditNoteAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid creditNoteID, CreditNotes creditNotes);
         /// <summary>
         /// Allows you to update Attachments on CreditNote by file name
         /// </summary>
@@ -4782,9 +4756,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoiceID">Unique identifier for an Invoice</param>
         /// <param name="invoices"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Invoices</returns>
-        System.Threading.Tasks.Task<Invoices> UpdateInvoiceAsync (string accessToken, string xeroTenantId, Guid invoiceID, Invoices invoices, int? unitdp = null);
+        System.Threading.Tasks.Task<Invoices> UpdateInvoiceAsync (string accessToken, string xeroTenantId, Guid invoiceID, Invoices invoices);
 
         /// <summary>
         /// Allows you to update a specified sales invoices or purchase bills
@@ -4796,9 +4769,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoiceID">Unique identifier for an Invoice</param>
         /// <param name="invoices"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Invoices)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Invoices>> UpdateInvoiceAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid invoiceID, Invoices invoices, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<Invoices>> UpdateInvoiceAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid invoiceID, Invoices invoices);
         /// <summary>
         /// Allows you to update Attachment on invoices or purchase bills by it&#39;s filename
         /// </summary>
@@ -4836,9 +4808,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="itemID">Unique identifier for an Item</param>
         /// <param name="items"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Items</returns>
-        System.Threading.Tasks.Task<Items> UpdateItemAsync (string accessToken, string xeroTenantId, Guid itemID, Items items, int? unitdp = null);
+        System.Threading.Tasks.Task<Items> UpdateItemAsync (string accessToken, string xeroTenantId, Guid itemID, Items items);
 
         /// <summary>
         /// Allows you to update a specified item
@@ -4850,9 +4821,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="itemID">Unique identifier for an Item</param>
         /// <param name="items"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Items)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Items>> UpdateItemAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid itemID, Items items, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<Items>> UpdateItemAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid itemID, Items items);
         /// <summary>
         /// Allows you to update a specified linked transactions (billable expenses)
         /// </summary>
@@ -4940,9 +4910,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactions"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of BankTransactions</returns>
-        System.Threading.Tasks.Task<BankTransactions> UpdateOrCreateBankTransactionsAsync (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<BankTransactions> UpdateOrCreateBankTransactionsAsync (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null);
 
         /// <summary>
         /// Allows you to update or create one or more spend or receive money transaction
@@ -4954,9 +4923,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactions"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (BankTransactions)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BankTransactions>> UpdateOrCreateBankTransactionsAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<BankTransactions>> UpdateOrCreateBankTransactionsAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null);
         /// <summary>
         /// Allows you to update OR create one or more contacts in a Xero organisation
         /// </summary>
@@ -4992,9 +4960,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNotes">an array of Credit Notes with a single CreditNote object.</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of CreditNotes</returns>
-        System.Threading.Tasks.Task<CreditNotes> UpdateOrCreateCreditNotesAsync (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<CreditNotes> UpdateOrCreateCreditNotesAsync (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null);
 
         /// <summary>
         /// Allows you to update OR create one or more credit notes
@@ -5006,9 +4973,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNotes">an array of Credit Notes with a single CreditNote object.</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> UpdateOrCreateCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<CreditNotes>> UpdateOrCreateCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null);
         /// <summary>
         /// Allows you to update OR create one or more sales invoices or purchase bills
         /// </summary>
@@ -5019,9 +4985,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoices"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Invoices</returns>
-        System.Threading.Tasks.Task<Invoices> UpdateOrCreateInvoicesAsync (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<Invoices> UpdateOrCreateInvoicesAsync (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null);
 
         /// <summary>
         /// Allows you to update OR create one or more sales invoices or purchase bills
@@ -5033,9 +4998,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoices"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Invoices)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Invoices>> UpdateOrCreateInvoicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<Invoices>> UpdateOrCreateInvoicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null);
         /// <summary>
         /// Allows you to update or create one or more items
         /// </summary>
@@ -5046,9 +5010,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="items"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Items</returns>
-        System.Threading.Tasks.Task<Items> UpdateOrCreateItemsAsync (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<Items> UpdateOrCreateItemsAsync (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null);
 
         /// <summary>
         /// Allows you to update or create one or more items
@@ -5060,9 +5023,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="items"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Items)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Items>> UpdateOrCreateItemsAsyncWithHttpInfo (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<Items>> UpdateOrCreateItemsAsyncWithHttpInfo (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null);
         /// <summary>
         /// Allows you to update or create one or more purchase orders
         /// </summary>
@@ -5173,9 +5135,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receiptID">Unique identifier for a Receipt</param>
         /// <param name="receipts"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Receipts</returns>
-        System.Threading.Tasks.Task<Receipts> UpdateReceiptAsync (string accessToken, string xeroTenantId, Guid receiptID, Receipts receipts, int? unitdp = null);
+        System.Threading.Tasks.Task<Receipts> UpdateReceiptAsync (string accessToken, string xeroTenantId, Guid receiptID, Receipts receipts);
 
         /// <summary>
         /// Allows you to retrieve a specified draft expense claim receipts
@@ -5187,9 +5148,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receiptID">Unique identifier for a Receipt</param>
         /// <param name="receipts"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Receipts)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Receipts>> UpdateReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid receiptID, Receipts receipts, int? unitdp = null);
+        System.Threading.Tasks.Task<ApiResponse<Receipts>> UpdateReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid receiptID, Receipts receipts);
         /// <summary>
         /// Allows you to update Attachment on expense claim receipts by file name
         /// </summary>
@@ -5780,11 +5740,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactions">BankTransactions with an array of BankTransaction objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of BankTransactions</returns>
-        public async System.Threading.Tasks.Task<BankTransactions> CreateBankTransactionsAsync (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<BankTransactions> CreateBankTransactionsAsync (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions> localVarResponse = await CreateBankTransactionsAsyncWithHttpInfo(accessToken, xeroTenantId, bankTransactions, summarizeErrors, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions> localVarResponse = await CreateBankTransactionsAsyncWithHttpInfo(accessToken, xeroTenantId, bankTransactions, summarizeErrors);
              return localVarResponse.Data;
 
         }
@@ -5796,9 +5755,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactions">BankTransactions with an array of BankTransaction objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (BankTransactions)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions>> CreateBankTransactionsAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions>> CreateBankTransactionsAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -5829,16 +5787,6 @@ namespace Xero.NetStandard.OAuth2.Api
             if (summarizeErrors != null)
             {
                 foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -7065,11 +7013,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNotes">Credit Notes with array of CreditNote object in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of CreditNotes</returns>
-        public async System.Threading.Tasks.Task<CreditNotes> CreateCreditNotesAsync (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<CreditNotes> CreateCreditNotesAsync (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await CreateCreditNotesAsyncWithHttpInfo(accessToken, xeroTenantId, creditNotes, summarizeErrors, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await CreateCreditNotesAsyncWithHttpInfo(accessToken, xeroTenantId, creditNotes, summarizeErrors);
              return localVarResponse.Data;
 
         }
@@ -7081,9 +7028,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNotes">Credit Notes with array of CreditNote object in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> CreateCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> CreateCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -7114,16 +7060,6 @@ namespace Xero.NetStandard.OAuth2.Api
             if (summarizeErrors != null)
             {
                 foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -7729,11 +7665,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoices">Invoices with an array of invoice objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Invoices</returns>
-        public async System.Threading.Tasks.Task<Invoices> CreateInvoicesAsync (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Invoices> CreateInvoicesAsync (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices> localVarResponse = await CreateInvoicesAsyncWithHttpInfo(accessToken, xeroTenantId, invoices, summarizeErrors, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices> localVarResponse = await CreateInvoicesAsyncWithHttpInfo(accessToken, xeroTenantId, invoices, summarizeErrors);
              return localVarResponse.Data;
 
         }
@@ -7745,9 +7680,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoices">Invoices with an array of invoice objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Invoices)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices>> CreateInvoicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices>> CreateInvoicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -7778,16 +7712,6 @@ namespace Xero.NetStandard.OAuth2.Api
             if (summarizeErrors != null)
             {
                 foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -7911,11 +7835,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="items">Items with an array of Item objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Items</returns>
-        public async System.Threading.Tasks.Task<Items> CreateItemsAsync (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Items> CreateItemsAsync (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Items> localVarResponse = await CreateItemsAsyncWithHttpInfo(accessToken, xeroTenantId, items, summarizeErrors, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Items> localVarResponse = await CreateItemsAsyncWithHttpInfo(accessToken, xeroTenantId, items, summarizeErrors);
              return localVarResponse.Data;
 
         }
@@ -7927,9 +7850,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="items">Items with an array of Item objects in body of request</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Items)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Items>> CreateItemsAsyncWithHttpInfo (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Items>> CreateItemsAsyncWithHttpInfo (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -7960,16 +7882,6 @@ namespace Xero.NetStandard.OAuth2.Api
             if (summarizeErrors != null)
             {
                 foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -9388,11 +9300,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receipts">Receipts with an array of Receipt object in body of request</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Receipts</returns>
-        public async System.Threading.Tasks.Task<Receipts> CreateReceiptAsync (string accessToken, string xeroTenantId, Receipts receipts, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Receipts> CreateReceiptAsync (string accessToken, string xeroTenantId, Receipts receipts)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts> localVarResponse = await CreateReceiptAsyncWithHttpInfo(accessToken, xeroTenantId, receipts, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts> localVarResponse = await CreateReceiptAsyncWithHttpInfo(accessToken, xeroTenantId, receipts);
              return localVarResponse.Data;
 
         }
@@ -9403,9 +9314,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receipts">Receipts with an array of Receipt object in body of request</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Receipts)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts>> CreateReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Receipts receipts, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts>> CreateReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Receipts receipts)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -9433,16 +9343,6 @@ namespace Xero.NetStandard.OAuth2.Api
             foreach (var accept in @accepts)
                 requestOptions.HeaderParameters.Add("Accept", accept);
             
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
             requestOptions.Data = receipts;
@@ -11184,11 +11084,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactionID">Xero generated unique identifier for a bank transaction</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of BankTransactions</returns>
-        public async System.Threading.Tasks.Task<BankTransactions> GetBankTransactionAsync (string accessToken, string xeroTenantId, Guid bankTransactionID, int? unitdp = null)
+        public async System.Threading.Tasks.Task<BankTransactions> GetBankTransactionAsync (string accessToken, string xeroTenantId, Guid bankTransactionID)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions> localVarResponse = await GetBankTransactionAsyncWithHttpInfo(accessToken, xeroTenantId, bankTransactionID, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions> localVarResponse = await GetBankTransactionAsyncWithHttpInfo(accessToken, xeroTenantId, bankTransactionID);
              return localVarResponse.Data;
 
         }
@@ -11199,9 +11098,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactionID">Xero generated unique identifier for a bank transaction</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (BankTransactions)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions>> GetBankTransactionAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid bankTransactionID, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions>> GetBankTransactionAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid bankTransactionID)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -11230,16 +11128,6 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (bankTransactionID != null)
                 requestOptions.PathParameters.Add("BankTransactionID", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(bankTransactionID)); // path parameter
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
 
@@ -13390,11 +13278,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNoteID">Unique identifier for a Credit Note</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of CreditNotes</returns>
-        public async System.Threading.Tasks.Task<CreditNotes> GetCreditNoteAsync (string accessToken, string xeroTenantId, Guid creditNoteID, int? unitdp = null)
+        public async System.Threading.Tasks.Task<CreditNotes> GetCreditNoteAsync (string accessToken, string xeroTenantId, Guid creditNoteID)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await GetCreditNoteAsyncWithHttpInfo(accessToken, xeroTenantId, creditNoteID, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await GetCreditNoteAsyncWithHttpInfo(accessToken, xeroTenantId, creditNoteID);
              return localVarResponse.Data;
 
         }
@@ -13405,9 +13292,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNoteID">Unique identifier for a Credit Note</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> GetCreditNoteAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid creditNoteID, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> GetCreditNoteAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid creditNoteID)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -13436,16 +13322,6 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (creditNoteID != null)
                 requestOptions.PathParameters.Add("CreditNoteID", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(creditNoteID)); // path parameter
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
 
@@ -13895,11 +13771,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="where">Filter by an any element (optional)</param>
         /// <param name="order">Order by an any element (optional)</param>
         /// <param name="page">e.g. page&#x3D;1 – Up to 100 credit notes will be returned in a single API call with line items shown for each credit note (optional)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of CreditNotes</returns>
-        public async System.Threading.Tasks.Task<CreditNotes> GetCreditNotesAsync (string accessToken, string xeroTenantId, DateTime? ifModifiedSince = null, string where = null, string order = null, int? page = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<CreditNotes> GetCreditNotesAsync (string accessToken, string xeroTenantId, DateTime? ifModifiedSince = null, string where = null, string order = null, int? page = null)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await GetCreditNotesAsyncWithHttpInfo(accessToken, xeroTenantId, ifModifiedSince, where, order, page, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await GetCreditNotesAsyncWithHttpInfo(accessToken, xeroTenantId, ifModifiedSince, where, order, page);
              return localVarResponse.Data;
 
         }
@@ -13913,9 +13788,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="where">Filter by an any element (optional)</param>
         /// <param name="order">Order by an any element (optional)</param>
         /// <param name="page">e.g. page&#x3D;1 – Up to 100 credit notes will be returned in a single API call with line items shown for each credit note (optional)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> GetCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, DateTime? ifModifiedSince = null, string where = null, string order = null, int? page = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> GetCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, DateTime? ifModifiedSince = null, string where = null, string order = null, int? page = null)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -13961,16 +13835,6 @@ namespace Xero.NetStandard.OAuth2.Api
             if (page != null)
             {
                 foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "page", page))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -14517,11 +14381,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoiceID">Unique identifier for an Invoice</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Invoices</returns>
-        public async System.Threading.Tasks.Task<Invoices> GetInvoiceAsync (string accessToken, string xeroTenantId, Guid invoiceID, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Invoices> GetInvoiceAsync (string accessToken, string xeroTenantId, Guid invoiceID)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices> localVarResponse = await GetInvoiceAsyncWithHttpInfo(accessToken, xeroTenantId, invoiceID, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices> localVarResponse = await GetInvoiceAsyncWithHttpInfo(accessToken, xeroTenantId, invoiceID);
              return localVarResponse.Data;
 
         }
@@ -14532,9 +14395,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoiceID">Unique identifier for an Invoice</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Invoices)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices>> GetInvoiceAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid invoiceID, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices>> GetInvoiceAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid invoiceID)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -14563,16 +14425,6 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (invoiceID != null)
                 requestOptions.PathParameters.Add("InvoiceID", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(invoiceID)); // path parameter
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
 
@@ -15277,11 +15129,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="itemID">Unique identifier for an Item</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Items</returns>
-        public async System.Threading.Tasks.Task<Items> GetItemAsync (string accessToken, string xeroTenantId, Guid itemID, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Items> GetItemAsync (string accessToken, string xeroTenantId, Guid itemID)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Items> localVarResponse = await GetItemAsyncWithHttpInfo(accessToken, xeroTenantId, itemID, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Items> localVarResponse = await GetItemAsyncWithHttpInfo(accessToken, xeroTenantId, itemID);
              return localVarResponse.Data;
 
         }
@@ -15292,9 +15143,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="itemID">Unique identifier for an Item</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Items)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Items>> GetItemAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid itemID, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Items>> GetItemAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid itemID)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -15323,16 +15173,6 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (itemID != null)
                 requestOptions.PathParameters.Add("ItemID", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(itemID)); // path parameter
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
 
@@ -18034,11 +17874,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receiptID">Unique identifier for a Receipt</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Receipts</returns>
-        public async System.Threading.Tasks.Task<Receipts> GetReceiptAsync (string accessToken, string xeroTenantId, Guid receiptID, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Receipts> GetReceiptAsync (string accessToken, string xeroTenantId, Guid receiptID)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts> localVarResponse = await GetReceiptAsyncWithHttpInfo(accessToken, xeroTenantId, receiptID, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts> localVarResponse = await GetReceiptAsyncWithHttpInfo(accessToken, xeroTenantId, receiptID);
              return localVarResponse.Data;
 
         }
@@ -18049,9 +17888,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <exception cref="Xero.NetStandard.OAuth2.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receiptID">Unique identifier for a Receipt</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Receipts)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts>> GetReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid receiptID, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts>> GetReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid receiptID)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -18080,16 +17918,6 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (receiptID != null)
                 requestOptions.PathParameters.Add("ReceiptID", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(receiptID)); // path parameter
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
 
@@ -20845,11 +20673,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactionID">Xero generated unique identifier for a bank transaction</param>
         /// <param name="bankTransactions"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of BankTransactions</returns>
-        public async System.Threading.Tasks.Task<BankTransactions> UpdateBankTransactionAsync (string accessToken, string xeroTenantId, Guid bankTransactionID, BankTransactions bankTransactions, int? unitdp = null)
+        public async System.Threading.Tasks.Task<BankTransactions> UpdateBankTransactionAsync (string accessToken, string xeroTenantId, Guid bankTransactionID, BankTransactions bankTransactions)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions> localVarResponse = await UpdateBankTransactionAsyncWithHttpInfo(accessToken, xeroTenantId, bankTransactionID, bankTransactions, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions> localVarResponse = await UpdateBankTransactionAsyncWithHttpInfo(accessToken, xeroTenantId, bankTransactionID, bankTransactions);
              return localVarResponse.Data;
 
         }
@@ -20861,9 +20688,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactionID">Xero generated unique identifier for a bank transaction</param>
         /// <param name="bankTransactions"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (BankTransactions)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions>> UpdateBankTransactionAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid bankTransactionID, BankTransactions bankTransactions, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions>> UpdateBankTransactionAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid bankTransactionID, BankTransactions bankTransactions)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -20897,16 +20723,6 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (bankTransactionID != null)
                 requestOptions.PathParameters.Add("BankTransactionID", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(bankTransactionID)); // path parameter
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
             requestOptions.Data = bankTransactions;
@@ -21379,11 +21195,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNoteID">Unique identifier for a Credit Note</param>
         /// <param name="creditNotes">an array of Credit Notes containing credit note details to update</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of CreditNotes</returns>
-        public async System.Threading.Tasks.Task<CreditNotes> UpdateCreditNoteAsync (string accessToken, string xeroTenantId, Guid creditNoteID, CreditNotes creditNotes, int? unitdp = null)
+        public async System.Threading.Tasks.Task<CreditNotes> UpdateCreditNoteAsync (string accessToken, string xeroTenantId, Guid creditNoteID, CreditNotes creditNotes)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await UpdateCreditNoteAsyncWithHttpInfo(accessToken, xeroTenantId, creditNoteID, creditNotes, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await UpdateCreditNoteAsyncWithHttpInfo(accessToken, xeroTenantId, creditNoteID, creditNotes);
              return localVarResponse.Data;
 
         }
@@ -21395,9 +21210,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNoteID">Unique identifier for a Credit Note</param>
         /// <param name="creditNotes">an array of Credit Notes containing credit note details to update</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> UpdateCreditNoteAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid creditNoteID, CreditNotes creditNotes, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> UpdateCreditNoteAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid creditNoteID, CreditNotes creditNotes)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -21431,16 +21245,6 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (creditNoteID != null)
                 requestOptions.PathParameters.Add("CreditNoteID", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(creditNoteID)); // path parameter
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
             requestOptions.Data = creditNotes;
@@ -21731,11 +21535,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoiceID">Unique identifier for an Invoice</param>
         /// <param name="invoices"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Invoices</returns>
-        public async System.Threading.Tasks.Task<Invoices> UpdateInvoiceAsync (string accessToken, string xeroTenantId, Guid invoiceID, Invoices invoices, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Invoices> UpdateInvoiceAsync (string accessToken, string xeroTenantId, Guid invoiceID, Invoices invoices)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices> localVarResponse = await UpdateInvoiceAsyncWithHttpInfo(accessToken, xeroTenantId, invoiceID, invoices, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices> localVarResponse = await UpdateInvoiceAsyncWithHttpInfo(accessToken, xeroTenantId, invoiceID, invoices);
              return localVarResponse.Data;
 
         }
@@ -21747,9 +21550,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoiceID">Unique identifier for an Invoice</param>
         /// <param name="invoices"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Invoices)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices>> UpdateInvoiceAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid invoiceID, Invoices invoices, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices>> UpdateInvoiceAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid invoiceID, Invoices invoices)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -21783,16 +21585,6 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (invoiceID != null)
                 requestOptions.PathParameters.Add("InvoiceID", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(invoiceID)); // path parameter
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
             requestOptions.Data = invoices;
@@ -21917,11 +21709,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="itemID">Unique identifier for an Item</param>
         /// <param name="items"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Items</returns>
-        public async System.Threading.Tasks.Task<Items> UpdateItemAsync (string accessToken, string xeroTenantId, Guid itemID, Items items, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Items> UpdateItemAsync (string accessToken, string xeroTenantId, Guid itemID, Items items)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Items> localVarResponse = await UpdateItemAsyncWithHttpInfo(accessToken, xeroTenantId, itemID, items, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Items> localVarResponse = await UpdateItemAsyncWithHttpInfo(accessToken, xeroTenantId, itemID, items);
              return localVarResponse.Data;
 
         }
@@ -21933,9 +21724,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="itemID">Unique identifier for an Item</param>
         /// <param name="items"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Items)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Items>> UpdateItemAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid itemID, Items items, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Items>> UpdateItemAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid itemID, Items items)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -21969,16 +21759,6 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (itemID != null)
                 requestOptions.PathParameters.Add("ItemID", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(itemID)); // path parameter
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
             requestOptions.Data = items;
@@ -22269,11 +22049,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactions"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of BankTransactions</returns>
-        public async System.Threading.Tasks.Task<BankTransactions> UpdateOrCreateBankTransactionsAsync (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<BankTransactions> UpdateOrCreateBankTransactionsAsync (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions> localVarResponse = await UpdateOrCreateBankTransactionsAsyncWithHttpInfo(accessToken, xeroTenantId, bankTransactions, summarizeErrors, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions> localVarResponse = await UpdateOrCreateBankTransactionsAsyncWithHttpInfo(accessToken, xeroTenantId, bankTransactions, summarizeErrors);
              return localVarResponse.Data;
 
         }
@@ -22285,9 +22064,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="bankTransactions"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (BankTransactions)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions>> UpdateOrCreateBankTransactionsAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<BankTransactions>> UpdateOrCreateBankTransactionsAsyncWithHttpInfo (string accessToken, string xeroTenantId, BankTransactions bankTransactions, bool? summarizeErrors = null)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -22318,16 +22096,6 @@ namespace Xero.NetStandard.OAuth2.Api
             if (summarizeErrors != null)
             {
                 foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -22455,11 +22223,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNotes">an array of Credit Notes with a single CreditNote object.</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of CreditNotes</returns>
-        public async System.Threading.Tasks.Task<CreditNotes> UpdateOrCreateCreditNotesAsync (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<CreditNotes> UpdateOrCreateCreditNotesAsync (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await UpdateOrCreateCreditNotesAsyncWithHttpInfo(accessToken, xeroTenantId, creditNotes, summarizeErrors, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes> localVarResponse = await UpdateOrCreateCreditNotesAsyncWithHttpInfo(accessToken, xeroTenantId, creditNotes, summarizeErrors);
              return localVarResponse.Data;
 
         }
@@ -22471,9 +22238,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="creditNotes">an array of Credit Notes with a single CreditNote object.</param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (CreditNotes)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> UpdateOrCreateCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<CreditNotes>> UpdateOrCreateCreditNotesAsyncWithHttpInfo (string accessToken, string xeroTenantId, CreditNotes creditNotes, bool? summarizeErrors = null)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -22504,16 +22270,6 @@ namespace Xero.NetStandard.OAuth2.Api
             if (summarizeErrors != null)
             {
                 foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -22554,11 +22310,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoices"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Invoices</returns>
-        public async System.Threading.Tasks.Task<Invoices> UpdateOrCreateInvoicesAsync (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Invoices> UpdateOrCreateInvoicesAsync (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices> localVarResponse = await UpdateOrCreateInvoicesAsyncWithHttpInfo(accessToken, xeroTenantId, invoices, summarizeErrors, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices> localVarResponse = await UpdateOrCreateInvoicesAsyncWithHttpInfo(accessToken, xeroTenantId, invoices, summarizeErrors);
              return localVarResponse.Data;
 
         }
@@ -22570,9 +22325,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="invoices"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Invoices)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices>> UpdateOrCreateInvoicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Invoices>> UpdateOrCreateInvoicesAsyncWithHttpInfo (string accessToken, string xeroTenantId, Invoices invoices, bool? summarizeErrors = null)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -22603,16 +22357,6 @@ namespace Xero.NetStandard.OAuth2.Api
             if (summarizeErrors != null)
             {
                 foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -22653,11 +22397,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="items"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Items</returns>
-        public async System.Threading.Tasks.Task<Items> UpdateOrCreateItemsAsync (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Items> UpdateOrCreateItemsAsync (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Items> localVarResponse = await UpdateOrCreateItemsAsyncWithHttpInfo(accessToken, xeroTenantId, items, summarizeErrors, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Items> localVarResponse = await UpdateOrCreateItemsAsyncWithHttpInfo(accessToken, xeroTenantId, items, summarizeErrors);
              return localVarResponse.Data;
 
         }
@@ -22669,9 +22412,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="items"></param>
         /// <param name="summarizeErrors">If false return 200 OK and mix of successfully created obejcts and any with validation errors (optional, default to false)</param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Items)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Items>> UpdateOrCreateItemsAsyncWithHttpInfo (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Items>> UpdateOrCreateItemsAsyncWithHttpInfo (string accessToken, string xeroTenantId, Items items, bool? summarizeErrors = null)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -22702,16 +22444,6 @@ namespace Xero.NetStandard.OAuth2.Api
             if (summarizeErrors != null)
             {
                 foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "summarizeErrors", summarizeErrors))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
                 {
                     foreach (var value in kvp.Value)
                     {
@@ -23092,11 +22824,10 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receiptID">Unique identifier for a Receipt</param>
         /// <param name="receipts"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of Receipts</returns>
-        public async System.Threading.Tasks.Task<Receipts> UpdateReceiptAsync (string accessToken, string xeroTenantId, Guid receiptID, Receipts receipts, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Receipts> UpdateReceiptAsync (string accessToken, string xeroTenantId, Guid receiptID, Receipts receipts)
         {
-             Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts> localVarResponse = await UpdateReceiptAsyncWithHttpInfo(accessToken, xeroTenantId, receiptID, receipts, unitdp);
+             Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts> localVarResponse = await UpdateReceiptAsyncWithHttpInfo(accessToken, xeroTenantId, receiptID, receipts);
              return localVarResponse.Data;
 
         }
@@ -23108,9 +22839,8 @@ namespace Xero.NetStandard.OAuth2.Api
         /// <param name="xeroTenantId">Xero identifier for Tenant</param>
         /// <param name="receiptID">Unique identifier for a Receipt</param>
         /// <param name="receipts"></param>
-        /// <param name="unitdp">e.g. unitdp&#x3D;4 – (Unit Decimal Places) You can opt in to use four decimal places for unit amounts (optional)</param>
         /// <returns>Task of ApiResponse (Receipts)</returns>
-        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts>> UpdateReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid receiptID, Receipts receipts, int? unitdp = null)
+        public async System.Threading.Tasks.Task<Xero.NetStandard.OAuth2.Client.ApiResponse<Receipts>> UpdateReceiptAsyncWithHttpInfo (string accessToken, string xeroTenantId, Guid receiptID, Receipts receipts)
         {
             // verify the required parameter 'xeroTenantId' is set
             if (xeroTenantId == null)
@@ -23144,16 +22874,6 @@ namespace Xero.NetStandard.OAuth2.Api
             
             if (receiptID != null)
                 requestOptions.PathParameters.Add("ReceiptID", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(receiptID)); // path parameter
-            if (unitdp != null)
-            {
-                foreach (var kvp in Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToMultiMap("", "unitdp", unitdp))
-                {
-                    foreach (var value in kvp.Value)
-                    {
-                        requestOptions.QueryParameters.Add(kvp.Key, value);
-                    }
-                }
-            }
             if (xeroTenantId != null)
                 requestOptions.HeaderParameters.Add("xero-tenant-id", Xero.NetStandard.OAuth2.Client.ClientUtils.ParameterToString(xeroTenantId)); // header parameter
             requestOptions.Data = receipts;
