@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using System;
 using Xero.NetStandard.OAuth2.Client;
-using Xero.NetStandard.OAuth2.Test.Model.Accounting;
 
 namespace Xero.NetStandard.OAuth2.Test
 {

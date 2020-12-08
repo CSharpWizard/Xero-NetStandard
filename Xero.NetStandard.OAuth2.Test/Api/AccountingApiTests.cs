@@ -25,7 +25,7 @@ using Xero.NetStandard.OAuth2.Model.Accounting;
 using Xunit.Abstractions;
 
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
-namespace Xero.NetStandard.OAuth2.Test.Api.Accounting
+namespace Xero.NetStandard.OAuth2.Test
 {
   /// <summary>
   ///  Class for testing AccountingApi
