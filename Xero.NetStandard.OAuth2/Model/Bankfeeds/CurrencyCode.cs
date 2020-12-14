@@ -30,7 +30,7 @@ namespace Xero.NetStandard.OAuth2.Model.Bankfeeds
     /// </summary>
     /// <value>3 letter alpha code for the ISO-4217 currency code, e.g. USD, AUD.</value>
     
-    [JsonConverter(typeof(Client.CustomStringEnumConverter))]
+    [JsonConverter(typeof(StringEnumConverter))]
     
     public enum CurrencyCode
     {

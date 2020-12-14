@@ -35,7 +35,7 @@ namespace Xero.NetStandard.OAuth2.Model.Bankfeeds
         /// High level bank account type - BANK CREDITCARD BANK encompasses all bank account types other than credit cards.
         /// </summary>
         /// <value>High level bank account type - BANK CREDITCARD BANK encompasses all bank account types other than credit cards.</value>
-        [JsonConverter(typeof(Client.CustomStringEnumConverter))]
+        [JsonConverter(typeof(StringEnumConverter))]
         public enum AccountTypeEnum
         {
             /// <summary>
@@ -72,7 +72,7 @@ namespace Xero.NetStandard.OAuth2.Model.Bankfeeds
         /// the current status of the feed connection
         /// </summary>
         /// <value>the current status of the feed connection</value>
-        [JsonConverter(typeof(Client.CustomStringEnumConverter))]
+        [JsonConverter(typeof(StringEnumConverter))]
         public enum StatusEnum
         {
             /// <summary>
