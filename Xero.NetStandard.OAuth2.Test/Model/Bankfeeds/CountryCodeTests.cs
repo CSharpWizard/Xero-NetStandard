@@ -20,7 +20,6 @@ using Xero.NetStandard.OAuth2.Model.Bankfeeds;
 using Xero.NetStandard.OAuth2.Client;
 using System.Reflection;
 using Newtonsoft.Json;
-using RestSharp;
 
 namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
 {
@@ -48,36 +47,16 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
         }
 
         /// <summary>
-        /// Test that CountryCode can be deserialised from valid inputs
-        /// </summary>
-        [Theory]
-        [InlineData("AU", CountryCode.AU)]
-        [InlineData("NZ", CountryCode.NZ)]
-        public void CountryCode_ValidInput_Deserialises(string input, CountryCode expected)
-        {
-            var response = new RestResponse();
-            response.Content = $@"""{input}""";
-
-            var deserializer = new CustomJsonCodec(new Configuration());
-            var actual = deserializer.Deserialize<CountryCode>(response);
-
-            Assert.Equal(expected, actual);
-        }
-
-        /// <summary>
-        /// Test that CountryCode can be deserialised from null into 0
+        /// Test an instance of CountryCode
         /// </summary>
         [Fact]
-        public void CountryCode_NullInput_Deserialises()
+        public void CountryCodeInstanceTest()
         {
-            var response = new RestResponse();
-            response.Content = "null";
-
-            var deserializer = new CustomJsonCodec(new Configuration());
-            var actual = deserializer.Deserialize<CountryCode>(response);
-
-            Assert.Equal(0, (int)actual);
+            // TODO uncomment below to test "IsInstanceOfType" CountryCode
+            //Assert.IsInstanceOfType<CountryCode> (instance, "variable 'instance' is a CountryCode");
         }
+
+
 
     }
 
