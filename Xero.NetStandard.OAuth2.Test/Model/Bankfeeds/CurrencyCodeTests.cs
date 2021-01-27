@@ -20,7 +20,6 @@ using Xero.NetStandard.OAuth2.Model.Bankfeeds;
 using Xero.NetStandard.OAuth2.Client;
 using System.Reflection;
 using Newtonsoft.Json;
-using RestSharp;
 
 namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
 {
@@ -48,36 +47,16 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
         }
 
         /// <summary>
-        /// Test that CurrencyCode can be deserialised from valid inputs
-        /// </summary>
-        [Theory]
-        [InlineData("AUD", CurrencyCode.AUD)]
-        [InlineData("NZD", CurrencyCode.NZD)]
-        public void CurrencyCode_ValidInput_Deserialises(string input, CurrencyCode expected)
-        {
-            var response = new RestResponse();
-            response.Content = $@"""{input}""";
-
-            var deserializer = new CustomJsonCodec(new Configuration());
-            var actual = deserializer.Deserialize<CurrencyCode>(response);
-
-            Assert.Equal(expected, actual);
-        }
-
-        /// <summary>
-        /// Test that CurrencyCode can be deserialised from null into 0
+        /// Test an instance of CurrencyCode
         /// </summary>
         [Fact]
-        public void CurrencyCode_NullInput_Deserialises()
+        public void CurrencyCodeInstanceTest()
         {
-            var response = new RestResponse();
-            response.Content = "null";
-
-            var deserializer = new CustomJsonCodec(new Configuration());
-            var actual = deserializer.Deserialize<CurrencyCode>(response);
-
-            Assert.Equal(0, (int)actual);
+            // TODO uncomment below to test "IsInstanceOfType" CurrencyCode
+            //Assert.IsInstanceOfType<CurrencyCode> (instance, "variable 'instance' is a CurrencyCode");
         }
+
+
 
     }
 
