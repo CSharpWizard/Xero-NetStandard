@@ -20,6 +20,7 @@ using Xero.NetStandard.OAuth2.Model.Bankfeeds;
 using Xero.NetStandard.OAuth2.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using RestSharp;
 
 namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
 {
@@ -32,9 +33,6 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
     /// </remarks>
     public class ErrorTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for Error
-        //private Error instance;
-
         public ErrorTests()
         {
             // TODO uncomment below to create an instance of Error
@@ -47,47 +45,72 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
         }
 
         /// <summary>
-        /// Test an instance of Error
+        /// Test the property 'Type' deserialises from valid inputs
         /// </summary>
-        [Fact]
-        public void ErrorInstanceTest()
+        [Theory]
+        [InlineData("invalid-request", Error.TypeEnum.InvalidRequest)]
+        [InlineData("invalid-application", Error.TypeEnum.InvalidApplication)]
+        [InlineData("invalid-feed-connection", Error.TypeEnum.InvalidFeedConnection)]
+        [InlineData("duplicate-statement", Error.TypeEnum.DuplicateStatement)]
+        [InlineData("invalid-end-balance", Error.TypeEnum.InvalidEndBalance)]
+        [InlineData("invalid-start-and-end-date", Error.TypeEnum.InvalidStartAndEndDate)]
+        [InlineData("invalid-start-date", Error.TypeEnum.InvalidStartDate)]
+        [InlineData("internal-error", Error.TypeEnum.InternalError)]
+        [InlineData("feed-already-connected-in-current-organisation", Error.TypeEnum.FeedAlreadyConnectedInCurrentOrganisation)]
+        [InlineData("invalid-end-date", Error.TypeEnum.InvalidEndDate)]
+        [InlineData("statement-not-found", Error.TypeEnum.StatementNotFound)]
+        [InlineData("feed-connected-in-different-organisation", Error.TypeEnum.FeedConnectedInDifferentOrganisation)]
+        [InlineData("feed-already-connected-in-different-organisation", Error.TypeEnum.FeedAlreadyConnectedInDifferentOrganisation)]
+        [InlineData("bank-feed-not-found", Error.TypeEnum.BankFeedNotFound)]
+        [InlineData("invalid-country-specified", Error.TypeEnum.InvalidCountrySpecified)]
+        [InlineData("invalid-organisation-bank-feeds", Error.TypeEnum.InvalidOrganisationBankFeeds)]
+        [InlineData("invalid-organisation-multi-currency", Error.TypeEnum.InvalidOrganisationMultiCurrency)]
+        [InlineData("invalid-feed-connection-for-organisation", Error.TypeEnum.InvalidFeedConnectionForOrganisation)]
+        [InlineData("invalid-user-role", Error.TypeEnum.InvalidUserRole)]
+        [InlineData("account-not-valid", Error.TypeEnum.AccountNotValid)]
+        public void Type_ValidInput_Deserialises(string input, Error.TypeEnum expected)
         {
-            // TODO uncomment below to test "IsInstanceOfType" Error
-            //Assert.IsInstanceOfType<Error> (instance, "variable 'instance' is a Error");
+            var response = new RestResponse();
+            response.Content = $@"{{
+                ""Type"": ""{input}""
+            }}";
+
+            var deserializer = new CustomJsonCodec(new Configuration());
+            var actual = deserializer.Deserialize<Error>(response);
+
+            Assert.Equal(expected, actual.Type);
         }
 
+        /// <summary>
+        /// Test the property 'Type' deserialises from null into 0
+        /// </summary>
+        [Fact]
+        public void Type_NullInput_DeserialisesTo0()
+        {
+            var response = new RestResponse();
+            response.Content = $@"{{
+                ""Type"": null
+            }}";
+
+            var deserializer = new CustomJsonCodec(new Configuration());
+            var actual = deserializer.Deserialize<Error>(response);
+
+            Assert.Equal(0, (int) actual.Type);
+        }
 
         /// <summary>
-        /// Test the property 'Title'
+        /// Test the property 'Type' deserialises to 0 when not present
         /// </summary>
         [Fact]
-        public void TitleTest()
+        public void Type_NotPresentInInput_DeserialisesTo0()
         {
-            // TODO unit test for the property 'Title'
-        }
-        /// <summary>
-        /// Test the property 'Status'
-        /// </summary>
-        [Fact]
-        public void StatusTest()
-        {
-            // TODO unit test for the property 'Status'
-        }
-        /// <summary>
-        /// Test the property 'Detail'
-        /// </summary>
-        [Fact]
-        public void DetailTest()
-        {
-            // TODO unit test for the property 'Detail'
-        }
-        /// <summary>
-        /// Test the property 'Type'
-        /// </summary>
-        [Fact]
-        public void TypeTest()
-        {
-            // TODO unit test for the property 'Type'
+            var response = new RestResponse();
+            response.Content = "{}";
+
+            var deserializer = new CustomJsonCodec(new Configuration());
+            var actual = deserializer.Deserialize<Error>(response);
+
+            Assert.Equal(0, (int) actual.Type);
         }
 
     }

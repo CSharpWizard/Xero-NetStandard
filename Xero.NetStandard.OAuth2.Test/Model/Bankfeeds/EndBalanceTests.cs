@@ -20,6 +20,7 @@ using Xero.NetStandard.OAuth2.Model.Bankfeeds;
 using Xero.NetStandard.OAuth2.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using RestSharp;
 
 namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
 {
@@ -32,9 +33,6 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
     /// </remarks>
     public class EndBalanceTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for EndBalance
-        //private EndBalance instance;
-
         public EndBalanceTests()
         {
             // TODO uncomment below to create an instance of EndBalance
@@ -47,31 +45,36 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
         }
 
         /// <summary>
-        /// Test an instance of EndBalance
+        /// Test the property 'Amount' deserialises from valid decimal numbers
         /// </summary>
-        [Fact]
-        public void EndBalanceInstanceTest()
+        [Theory]
+        [InlineData("20.00")]
+        [InlineData("20")]
+        public void Amount_GivenValidInputs_Deserialises(string input)
         {
-            // TODO uncomment below to test "IsInstanceOfType" EndBalance
-            //Assert.IsInstanceOfType<EndBalance> (instance, "variable 'instance' is a EndBalance");
-        }
+            var response = new RestResponse();
+            response.Content = $@"{{
+                ""Amount"": {input}
+            }}";
 
+            var deserializer = new CustomJsonCodec(new Configuration());
+            var actual = deserializer.Deserialize<EndBalance>(response);
 
-        /// <summary>
-        /// Test the property 'Amount'
-        /// </summary>
-        [Fact]
-        public void AmountTest()
-        {
-            // TODO unit test for the property 'Amount'
+            Assert.Equal(20, (int)actual.Amount);
         }
         /// <summary>
-        /// Test the property 'CreditDebitIndicator'
+        /// Test the property 'CreditDebitIndicator' deserialises to 0 when not present
         /// </summary>
         [Fact]
-        public void CreditDebitIndicatorTest()
+        public void CreditDebitIndicator_NotPresent_DeserialisesTo0()
         {
-            // TODO unit test for the property 'CreditDebitIndicator'
+            var response = new RestResponse();
+            response.Content = "{}";
+
+            var deserializer = new CustomJsonCodec(new Configuration());
+            var actual = deserializer.Deserialize<EndBalance>(response);
+
+            Assert.Equal(0, (int)actual.CreditDebitIndicator);
         }
 
     }

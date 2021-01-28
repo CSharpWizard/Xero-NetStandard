@@ -20,6 +20,7 @@ using Xero.NetStandard.OAuth2.Model.Bankfeeds;
 using Xero.NetStandard.OAuth2.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using RestSharp;
 
 namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
 {
@@ -32,9 +33,6 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
     /// </remarks>
     public class FeedConnectionTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for FeedConnection
-        //private FeedConnection instance;
-
         public FeedConnectionTests()
         {
             // TODO uncomment below to create an instance of FeedConnection
@@ -47,97 +45,57 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
         }
 
         /// <summary>
-        /// Test an instance of FeedConnection
-        /// </summary>
-        [Fact]
-        public void FeedConnectionInstanceTest()
-        {
-            // TODO uncomment below to test "IsInstanceOfType" FeedConnection
-            //Assert.IsInstanceOfType<FeedConnection> (instance, "variable 'instance' is a FeedConnection");
-        }
-
-
-        /// <summary>
-        /// Test the property 'Id'
-        /// </summary>
-        [Fact]
-        public void IdTest()
-        {
-            // TODO unit test for the property 'Id'
-        }
-        /// <summary>
-        /// Test the property 'AccountToken'
-        /// </summary>
-        [Fact]
-        public void AccountTokenTest()
-        {
-            // TODO unit test for the property 'AccountToken'
-        }
-        /// <summary>
-        /// Test the property 'AccountNumber'
-        /// </summary>
-        [Fact]
-        public void AccountNumberTest()
-        {
-            // TODO unit test for the property 'AccountNumber'
-        }
-        /// <summary>
-        /// Test the property 'AccountName'
-        /// </summary>
-        [Fact]
-        public void AccountNameTest()
-        {
-            // TODO unit test for the property 'AccountName'
-        }
-        /// <summary>
-        /// Test the property 'AccountId'
-        /// </summary>
-        [Fact]
-        public void AccountIdTest()
-        {
-            // TODO unit test for the property 'AccountId'
-        }
-        /// <summary>
         /// Test the property 'AccountType'
         /// </summary>
-        [Fact]
-        public void AccountTypeTest()
+        [Theory]
+        [InlineData("BANK", FeedConnection.AccountTypeEnum.BANK)]
+        [InlineData("CREDITCARD", FeedConnection.AccountTypeEnum.CREDITCARD)]
+        public void AccountType_ValidInputs_Deserialises(string input, FeedConnection.AccountTypeEnum expected)
         {
-            // TODO unit test for the property 'AccountType'
+            JsonDoc.Assert<FeedConnection, FeedConnection.AccountTypeEnum>(
+                input: new JsonDoc.String(nameof(FeedConnection.AccountType), input),
+                toProperty: (x) => x.AccountType,
+                shouldBe: expected
+            );
         }
-        /// <summary>
-        /// Test the property 'Currency'
-        /// </summary>
-        [Fact]
-        public void CurrencyTest()
-        {
-            // TODO unit test for the property 'Currency'
-        }
-        /// <summary>
-        /// Test the property 'Country'
-        /// </summary>
-        [Fact]
-        public void CountryTest()
-        {
-            // TODO unit test for the property 'Country'
-        }
+
         /// <summary>
         /// Test the property 'Status'
         /// </summary>
-        [Fact]
-        public void StatusTest()
+        [Theory]
+        [InlineData("PENDING", FeedConnection.StatusEnum.PENDING)]
+        [InlineData("REJECTED", FeedConnection.StatusEnum.REJECTED)]
+        public void Status_ValidInputs_Deserialises(string input, FeedConnection.StatusEnum expected)
         {
-            // TODO unit test for the property 'Status'
+            JsonDoc.Assert<FeedConnection, FeedConnection.StatusEnum>(
+                input: new JsonDoc.String(nameof(FeedConnection.Status), input),
+                toProperty: (x) => x.Status,
+                shouldBe: expected
+            );
         }
         /// <summary>
-        /// Test the property 'Error'
+        /// Test the property 'Error' deserialises from an Error object
         /// </summary>
         [Fact]
-        public void ErrorTest()
+        public void Error_GivenValidInput_Deserialises()
         {
-            // TODO unit test for the property 'Error'
+            var response = new RestResponse();
+            response.Content = $@"{{
+                ""Error"": {{
+                    ""type"": ""invalid-end-balance"",
+                    ""title"": ""Invalid End Balance"",
+                    ""status"": 422,
+                    ""detail"": ""Detail""
+                }}
+            }}";
+
+            var deserializer = new CustomJsonCodec(new Configuration());
+            var actual = deserializer.Deserialize<FeedConnection>(response);
+
+            Assert.Equal(Error.TypeEnum.InvalidEndBalance, actual.Error.Type);
+            Assert.Equal("Invalid End Balance", actual.Error.Title);
+            Assert.Equal(422, actual.Error.Status);
+            Assert.Equal("Detail", actual.Error.Detail);
         }
-
     }
-
 }

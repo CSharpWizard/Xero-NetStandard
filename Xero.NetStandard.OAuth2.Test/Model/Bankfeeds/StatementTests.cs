@@ -20,6 +20,7 @@ using Xero.NetStandard.OAuth2.Model.Bankfeeds;
 using Xero.NetStandard.OAuth2.Client;
 using System.Reflection;
 using Newtonsoft.Json;
+using RestSharp;
 
 namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
 {
@@ -32,9 +33,6 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
     /// </remarks>
     public class StatementTests : IDisposable
     {
-        // TODO uncomment below to declare an instance variable for Statement
-        //private Statement instance;
-
         public StatementTests()
         {
             // TODO uncomment below to create an instance of Statement
@@ -47,97 +45,82 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
         }
 
         /// <summary>
-        /// Test an instance of Statement
+        /// Test the property 'Status' deserialises from valid inputs
         /// </summary>
-        [Fact]
-        public void StatementInstanceTest()
+        [Theory]
+        [InlineData("PENDING", Statement.StatusEnum.PENDING)]
+        [InlineData("REJECTED", Statement.StatusEnum.REJECTED)]
+        [InlineData("DELIVERED", Statement.StatusEnum.DELIVERED)]
+        public void Status_ValidInput_Deserialises(string input, Statement.StatusEnum expected)
         {
-            // TODO uncomment below to test "IsInstanceOfType" Statement
-            //Assert.IsInstanceOfType<Statement> (instance, "variable 'instance' is a Statement");
-        }
+            var response = new RestResponse();
+            response.Content = $@"{{
+                ""Status"": ""{input}""
+            }}";
 
+            var deserializer = new CustomJsonCodec(new Configuration());
+            var actual = deserializer.Deserialize<Statement>(response);
 
-        /// <summary>
-        /// Test the property 'Id'
-        /// </summary>
-        [Fact]
-        public void IdTest()
-        {
-            // TODO unit test for the property 'Id'
+            Assert.Equal(expected, actual.Status);
         }
         /// <summary>
-        /// Test the property 'FeedConnectionId'
+        /// Test the property 'Status' deserialises from null input to 0
         /// </summary>
         [Fact]
-        public void FeedConnectionIdTest()
+        public void Status_NullInput_DeserialisesTo0()
         {
-            // TODO unit test for the property 'FeedConnectionId'
-        }
-        /// <summary>
-        /// Test the property 'Status'
-        /// </summary>
-        [Fact]
-        public void StatusTest()
-        {
-            // TODO unit test for the property 'Status'
-        }
-        /// <summary>
-        /// Test the property 'StartDate'
-        /// </summary>
-        [Fact]
-        public void StartDateTest()
-        {
-            // TODO unit test for the property 'StartDate'
-        }
-        /// <summary>
-        /// Test the property 'EndDate'
-        /// </summary>
-        [Fact]
-        public void EndDateTest()
-        {
-            // TODO unit test for the property 'EndDate'
-        }
-        /// <summary>
-        /// Test the property 'StartBalance'
-        /// </summary>
-        [Fact]
-        public void StartBalanceTest()
-        {
-            // TODO unit test for the property 'StartBalance'
-        }
-        /// <summary>
-        /// Test the property 'EndBalance'
-        /// </summary>
-        [Fact]
-        public void EndBalanceTest()
-        {
-            // TODO unit test for the property 'EndBalance'
-        }
-        /// <summary>
-        /// Test the property 'StatementLines'
-        /// </summary>
-        [Fact]
-        public void StatementLinesTest()
-        {
-            // TODO unit test for the property 'StatementLines'
-        }
-        /// <summary>
-        /// Test the property 'Errors'
-        /// </summary>
-        [Fact]
-        public void ErrorsTest()
-        {
-            // TODO unit test for the property 'Errors'
-        }
-        /// <summary>
-        /// Test the property 'StatementLineCount'
-        /// </summary>
-        [Fact]
-        public void StatementLineCountTest()
-        {
-            // TODO unit test for the property 'StatementLineCount'
-        }
+            var response = new RestResponse();
+            response.Content = $@"{{
+                ""Status"": null
+            }}";
 
+            var deserializer = new CustomJsonCodec(new Configuration());
+            var actual = deserializer.Deserialize<Statement>(response);
+
+            Assert.Equal(0, (int) actual.Status);
+        }
+        /// <summary>
+        /// Test the property 'Status' deserialises to 0 when not present
+        /// </summary>
+        [Fact]
+        public void Status_NotPresentInInput_DeserialisesTo0()
+        {
+            var response = new RestResponse();
+            response.Content = "{}";
+
+            var deserializer = new CustomJsonCodec(new Configuration());
+            var actual = deserializer.Deserialize<Statement>(response);
+
+            Assert.Equal(0, (int) actual.Status);
+        }
+        /// <summary>
+        /// Test the property 'Errors' deserialises from an array of Error objects
+        /// </summary>
+        [Fact]
+        public void Errors_GivenValidInput_Deserialises()
+        {
+            var response = new RestResponse();
+            response.Content = $@"{{
+                ""Errors"": [
+                    {{
+                        ""type"": ""invalid-end-balance"",
+                        ""title"": ""Invalid End Balance"",
+                        ""status"": 422,
+                        ""detail"": ""Detail""
+                    }}
+                ]
+            }}";
+
+            var deserializer = new CustomJsonCodec(new Configuration());
+            var actual = deserializer.Deserialize<Statement>(response);
+
+            Assert.Single(actual.Errors);
+            var error = actual.Errors.First();
+
+            Assert.Equal(Error.TypeEnum.InvalidEndBalance, error.Type);
+            Assert.Equal("Invalid End Balance", error.Title);
+            Assert.Equal(422, error.Status);
+            Assert.Equal("Detail", error.Detail);
+        }
     }
-
 }
