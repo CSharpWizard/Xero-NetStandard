@@ -20,7 +20,6 @@ using Xero.NetStandard.OAuth2.Model.Bankfeeds;
 using Xero.NetStandard.OAuth2.Client;
 using System.Reflection;
 using Newtonsoft.Json;
-using RestSharp;
 
 namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
 {
@@ -33,6 +32,9 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
     /// </remarks>
     public class StartBalanceTests : IDisposable
     {
+        // TODO uncomment below to declare an instance variable for StartBalance
+        //private StartBalance instance;
+
         public StartBalanceTests()
         {
             // TODO uncomment below to create an instance of StartBalance
@@ -45,36 +47,33 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
         }
 
         /// <summary>
-        /// Test the property 'Amount' deserialises from valid decimal numbers
-        /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void Amount_GivenValidInputs_Deserialises(string input)
-        {
-            var response = new RestResponse();
-            response.Content = $@"{{
-                ""Amount"": {input}
-            }}";
-
-            var deserializer = new CustomJsonCodec(new Configuration());
-            var actual = deserializer.Deserialize<EndBalance>(response);
-
-            Assert.Equal(20, (int)actual.Amount);
-        }
-        /// <summary>
-        /// Test the property 'CreditDebitIndicator' deserialises to 0 when not present
+        /// Test an instance of StartBalance
         /// </summary>
         [Fact]
-        public void CreditDebitIndicator_NotPresent_DeserialisesTo0()
+        public void StartBalanceInstanceTest()
         {
-            var response = new RestResponse();
-            response.Content = "{}";
-
-            var deserializer = new CustomJsonCodec(new Configuration());
-            var actual = deserializer.Deserialize<EndBalance>(response);
-
-            Assert.Equal(0, (int)actual.CreditDebitIndicator);
+            // TODO uncomment below to test "IsInstanceOfType" StartBalance
+            //Assert.IsInstanceOfType<StartBalance> (instance, "variable 'instance' is a StartBalance");
         }
+
+
+        /// <summary>
+        /// Test the property 'Amount'
+        /// </summary>
+        [Fact]
+        public void AmountTest()
+        {
+            // TODO unit test for the property 'Amount'
+        }
+        /// <summary>
+        /// Test the property 'CreditDebitIndicator'
+        /// </summary>
+        [Fact]
+        public void CreditDebitIndicatorTest()
+        {
+            // TODO unit test for the property 'CreditDebitIndicator'
+        }
+
     }
+
 }

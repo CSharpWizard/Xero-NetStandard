@@ -32,108 +32,160 @@ namespace Xero.NetStandard.OAuth2.Test.Model.PayrollAu
     /// </remarks>
     public class PayRunTests : IDisposable
     {
+        // TODO uncomment below to declare an instance variable for PayRun
+        //private PayRun instance;
+
+        public PayRunTests()
+        {
+            // TODO uncomment below to create an instance of PayRun
+            //instance = new PayRun();
+        }
+
         public void Dispose()
         {
             // Cleanup when everything is done.
         }
 
         /// <summary>
+        /// Test an instance of PayRun
+        /// </summary>
+        [Fact]
+        public void PayRunInstanceTest()
+        {
+            // TODO uncomment below to test "IsInstanceOfType" PayRun
+            //Assert.IsInstanceOfType<PayRun> (instance, "variable 'instance' is a PayRun");
+        }
+
+
+        /// <summary>
+        /// Test the property 'PayrollCalendarID'
+        /// </summary>
+        [Fact]
+        public void PayrollCalendarIDTest()
+        {
+            // TODO unit test for the property 'PayrollCalendarID'
+        }
+        /// <summary>
+        /// Test the property 'PayRunID'
+        /// </summary>
+        [Fact]
+        public void PayRunIDTest()
+        {
+            // TODO unit test for the property 'PayRunID'
+        }
+        /// <summary>
+        /// Test the property 'PayRunPeriodStartDate'
+        /// </summary>
+        [Fact]
+        public void PayRunPeriodStartDateTest()
+        {
+            // TODO unit test for the property 'PayRunPeriodStartDate'
+        }
+        /// <summary>
+        /// Test the property 'PayRunPeriodEndDate'
+        /// </summary>
+        [Fact]
+        public void PayRunPeriodEndDateTest()
+        {
+            // TODO unit test for the property 'PayRunPeriodEndDate'
+        }
+        /// <summary>
         /// Test the property 'PayRunStatus'
         /// </summary>
-        [Theory]
-        [InlineData("DRAFT", PayRunStatus.DRAFT)]
-        [InlineData("POSTED", PayRunStatus.POSTED)]
-        public void PayRunStatusTest(string input, PayRunStatus expected)
+        [Fact]
+        public void PayRunStatusTest()
         {
-            JsonDoc.Assert<PayRun, PayRunStatus>(
-                input: new JsonDoc.String(nameof(PayRun.PayRunStatus), input),
-                toProperty: x => x.PayRunStatus,
-                shouldBe: expected
-            );
+            // TODO unit test for the property 'PayRunStatus'
+        }
+        /// <summary>
+        /// Test the property 'PaymentDate'
+        /// </summary>
+        [Fact]
+        public void PaymentDateTest()
+        {
+            // TODO unit test for the property 'PaymentDate'
+        }
+        /// <summary>
+        /// Test the property 'PayslipMessage'
+        /// </summary>
+        [Fact]
+        public void PayslipMessageTest()
+        {
+            // TODO unit test for the property 'PayslipMessage'
+        }
+        /// <summary>
+        /// Test the property 'UpdatedDateUTC'
+        /// </summary>
+        [Fact]
+        public void UpdatedDateUTCTest()
+        {
+            // TODO unit test for the property 'UpdatedDateUTC'
+        }
+        /// <summary>
+        /// Test the property 'Payslips'
+        /// </summary>
+        [Fact]
+        public void PayslipsTest()
+        {
+            // TODO unit test for the property 'Payslips'
         }
         /// <summary>
         /// Test the property 'Wages'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void WagesTest(string input)
+        [Fact]
+        public void WagesTest()
         {
-            JsonDoc.Assert<PayRun, decimal?>(
-                input: new JsonDoc.Number(nameof(PayRun.Wages), input),
-                toProperty: x => x.Wages,
-                shouldBe: 20
-            );
+            // TODO unit test for the property 'Wages'
         }
         /// <summary>
         /// Test the property 'Deductions'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void DeductionsTest(string input)
+        [Fact]
+        public void DeductionsTest()
         {
-            JsonDoc.Assert<PayRun, decimal?>(
-                input: new JsonDoc.Number(nameof(PayRun.Deductions), input),
-                toProperty: x => x.Deductions,
-                shouldBe: 20
-            );
+            // TODO unit test for the property 'Deductions'
         }
         /// <summary>
         /// Test the property 'Tax'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void TaxTest(string input)
+        [Fact]
+        public void TaxTest()
         {
-            JsonDoc.Assert<PayRun, decimal?>(
-                input: new JsonDoc.Number(nameof(PayRun.Tax), input),
-                toProperty: x => x.Tax,
-                shouldBe: 20
-            );
+            // TODO unit test for the property 'Tax'
         }
         /// <summary>
         /// Test the property 'Super'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void SuperTest(string input)
+        [Fact]
+        public void SuperTest()
         {
-            JsonDoc.Assert<PayRun, decimal?>(
-                input: new JsonDoc.Number(nameof(PayRun.Super), input),
-                toProperty: x => x.Super,
-                shouldBe: 20
-            );
+            // TODO unit test for the property 'Super'
         }
         /// <summary>
         /// Test the property 'Reimbursement'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void ReimbursementTest(string input)
+        [Fact]
+        public void ReimbursementTest()
         {
-            JsonDoc.Assert<PayRun, decimal?>(
-                input: new JsonDoc.Number(nameof(PayRun.Reimbursement), input),
-                toProperty: x => x.Reimbursement,
-                shouldBe: 20
-            );
+            // TODO unit test for the property 'Reimbursement'
         }
         /// <summary>
         /// Test the property 'NetPay'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void NetPayTest(string input)
+        [Fact]
+        public void NetPayTest()
         {
-            JsonDoc.Assert<PayRun, decimal?>(
-                input: new JsonDoc.Number(nameof(PayRun.NetPay), input),
-                toProperty: x => x.NetPay,
-                shouldBe: 20
-            );
+            // TODO unit test for the property 'NetPay'
         }
+        /// <summary>
+        /// Test the property 'ValidationErrors'
+        /// </summary>
+        [Fact]
+        public void ValidationErrorsTest()
+        {
+            // TODO unit test for the property 'ValidationErrors'
+        }
+
     }
+
 }

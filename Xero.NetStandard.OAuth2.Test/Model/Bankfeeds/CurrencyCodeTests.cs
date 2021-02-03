@@ -33,6 +33,9 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
     /// </remarks>
     public class CurrencyCodeTests : IDisposable
     {
+        // TODO uncomment below to declare an instance variable for CurrencyCode
+        //private CurrencyCode instance;
+
         public CurrencyCodeTests()
         {
             // TODO uncomment below to create an instance of CurrencyCode

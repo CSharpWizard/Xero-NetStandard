@@ -33,6 +33,9 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
     /// </remarks>
     public class FeedConnectionTests : IDisposable
     {
+        // TODO uncomment below to declare an instance variable for FeedConnection
+        //private FeedConnection instance;
+
         public FeedConnectionTests()
         {
             // TODO uncomment below to create an instance of FeedConnection
@@ -45,33 +48,87 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
         }
 
         /// <summary>
-        /// Test the property 'AccountType'
+        /// Test an instance of FeedConnection
         /// </summary>
-        [Theory]
-        [InlineData("BANK", FeedConnection.AccountTypeEnum.BANK)]
-        [InlineData("CREDITCARD", FeedConnection.AccountTypeEnum.CREDITCARD)]
-        public void AccountType_ValidInputs_Deserialises(string input, FeedConnection.AccountTypeEnum expected)
+        [Fact]
+        public void FeedConnectionInstanceTest()
         {
-            JsonDoc.Assert<FeedConnection, FeedConnection.AccountTypeEnum>(
-                input: new JsonDoc.String(nameof(FeedConnection.AccountType), input),
-                toProperty: (x) => x.AccountType,
-                shouldBe: expected
-            );
+            // TODO uncomment below to test "IsInstanceOfType" FeedConnection
+            //Assert.IsInstanceOfType<FeedConnection> (instance, "variable 'instance' is a FeedConnection");
         }
 
+
+        /// <summary>
+        /// Test the property 'Id'
+        /// </summary>
+        [Fact]
+        public void IdTest()
+        {
+            // TODO unit test for the property 'Id'
+        }
+        /// <summary>
+        /// Test the property 'AccountToken'
+        /// </summary>
+        [Fact]
+        public void AccountTokenTest()
+        {
+            // TODO unit test for the property 'AccountToken'
+        }
+        /// <summary>
+        /// Test the property 'AccountNumber'
+        /// </summary>
+        [Fact]
+        public void AccountNumberTest()
+        {
+            // TODO unit test for the property 'AccountNumber'
+        }
+        /// <summary>
+        /// Test the property 'AccountName'
+        /// </summary>
+        [Fact]
+        public void AccountNameTest()
+        {
+            // TODO unit test for the property 'AccountName'
+        }
+        /// <summary>
+        /// Test the property 'AccountId'
+        /// </summary>
+        [Fact]
+        public void AccountIdTest()
+        {
+            // TODO unit test for the property 'AccountId'
+        }
+        /// <summary>
+        /// Test the property 'AccountType'
+        /// </summary>
+        [Fact]
+        public void AccountTypeTest()
+        {
+            // TODO unit test for the property 'AccountType'
+        }
+        /// <summary>
+        /// Test the property 'Currency'
+        /// </summary>
+        [Fact]
+        public void CurrencyTest()
+        {
+            // TODO unit test for the property 'Currency'
+        }
+        /// <summary>
+        /// Test the property 'Country'
+        /// </summary>
+        [Fact]
+        public void CountryTest()
+        {
+            // TODO unit test for the property 'Country'
+        }
         /// <summary>
         /// Test the property 'Status'
         /// </summary>
-        [Theory]
-        [InlineData("PENDING", FeedConnection.StatusEnum.PENDING)]
-        [InlineData("REJECTED", FeedConnection.StatusEnum.REJECTED)]
-        public void Status_ValidInputs_Deserialises(string input, FeedConnection.StatusEnum expected)
+        [Fact]
+        public void StatusTest()
         {
-            JsonDoc.Assert<FeedConnection, FeedConnection.StatusEnum>(
-                input: new JsonDoc.String(nameof(FeedConnection.Status), input),
-                toProperty: (x) => x.Status,
-                shouldBe: expected
-            );
+            // TODO unit test for the property 'Status'
         }
         /// <summary>
         /// Test the property 'Error' deserialises from an Error object
@@ -97,5 +154,7 @@ namespace Xero.NetStandard.OAuth2.Test.Model.Bankfeeds
             Assert.Equal(422, actual.Error.Status);
             Assert.Equal("Detail", actual.Error.Detail);
         }
+
     }
+
 }

@@ -32,6 +32,9 @@ namespace Xero.NetStandard.OAuth2.Test.Model.PayrollAu
     /// </remarks>
     public class EarningsLineTests : IDisposable
     {
+        // TODO uncomment below to declare an instance variable for EarningsLine
+        //private EarningsLine instance;
+
         public EarningsLineTests()
         {
             // TODO uncomment below to create an instance of EarningsLine
@@ -44,141 +47,89 @@ namespace Xero.NetStandard.OAuth2.Test.Model.PayrollAu
         }
 
         /// <summary>
+        /// Test an instance of EarningsLine
+        /// </summary>
+        [Fact]
+        public void EarningsLineInstanceTest()
+        {
+            // TODO uncomment below to test "IsInstanceOfType" EarningsLine
+            //Assert.IsInstanceOfType<EarningsLine> (instance, "variable 'instance' is a EarningsLine");
+        }
+
+
+        /// <summary>
+        /// Test the property 'EarningsRateID'
+        /// </summary>
+        [Fact]
+        public void EarningsRateIDTest()
+        {
+            // TODO unit test for the property 'EarningsRateID'
+        }
+        /// <summary>
+        /// Test the property 'CalculationType'
+        /// </summary>
+        [Fact]
+        public void CalculationTypeTest()
+        {
+            // TODO unit test for the property 'CalculationType'
+        }
+        /// <summary>
         /// Test the property 'AnnualSalary'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void AnnualSalaryTest(string input)
+        [Fact]
+        public void AnnualSalaryTest()
         {
-            JsonDoc.Assert<EarningsLine, decimal?>(
-                input: new JsonDoc.Number(nameof(EarningsLine.AnnualSalary), input),
-                toProperty: x => x.AnnualSalary,
-                shouldBe: 20m
-            );
+            // TODO unit test for the property 'AnnualSalary'
         }
         /// <summary>
         /// Test the property 'NumberOfUnitsPerWeek'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void NumberOfUnitsPerWeekTest(string input)
+        [Fact]
+        public void NumberOfUnitsPerWeekTest()
         {
-            JsonDoc.Assert<EarningsLine, decimal?>(
-                input: new JsonDoc.Number(nameof(EarningsLine.NumberOfUnitsPerWeek), input),
-                toProperty: x => x.NumberOfUnitsPerWeek,
-                shouldBe: 20m
-            );
+            // TODO unit test for the property 'NumberOfUnitsPerWeek'
         }
         /// <summary>
         /// Test the property 'RatePerUnit'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void RatePerUnitTest(string input)
+        [Fact]
+        public void RatePerUnitTest()
         {
-            JsonDoc.Assert<EarningsLine, decimal?>(
-                input: new JsonDoc.Number(nameof(EarningsLine.RatePerUnit), input),
-                toProperty: x => x.RatePerUnit,
-                shouldBe: 20m
-            );
+            // TODO unit test for the property 'RatePerUnit'
         }
         /// <summary>
         /// Test the property 'NormalNumberOfUnits'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void NormalNumberOfUnitsTest(string input)
+        [Fact]
+        public void NormalNumberOfUnitsTest()
         {
-            JsonDoc.Assert<EarningsLine, decimal?>(
-                input: new JsonDoc.Number(nameof(EarningsLine.NormalNumberOfUnits), input),
-                toProperty: x => x.NormalNumberOfUnits,
-                shouldBe: 20m
-            );
+            // TODO unit test for the property 'NormalNumberOfUnits'
         }
         /// <summary>
         /// Test the property 'Amount'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void AmountTest(string input)
+        [Fact]
+        public void AmountTest()
         {
-            JsonDoc.Assert<EarningsLine, decimal?>(
-                input: new JsonDoc.Number(nameof(EarningsLine.Amount), input),
-                toProperty: x => x.Amount,
-                shouldBe: 20m
-            );
+            // TODO unit test for the property 'Amount'
         }
         /// <summary>
         /// Test the property 'NumberOfUnits'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void NumberOfUnitsTest(string input)
+        [Fact]
+        public void NumberOfUnitsTest()
         {
-            JsonDoc.Assert<EarningsLine, decimal?>(
-                input: new JsonDoc.Number(nameof(EarningsLine.NumberOfUnits), input),
-                toProperty: x => x.NumberOfUnits,
-                shouldBe: 20m
-            );
+            // TODO unit test for the property 'NumberOfUnits'
         }
         /// <summary>
         /// Test the property 'FixedAmount'
         /// </summary>
-        [Theory]
-        [InlineData("20.00")]
-        [InlineData("20")]
-        public void FixedAmountTest(string input)
-        {
-            JsonDoc.Assert<EarningsLine, decimal?>(
-                input: new JsonDoc.Number(nameof(EarningsLine.FixedAmount), input),
-                toProperty: x => x.FixedAmount,
-                shouldBe: 20m
-            );
-        }
-        /// <summary>
-        /// Test the property 'CalculationType' deserialises from valid inputs
-        /// </summary>
-        [Theory]
-        [InlineData("USEEARNINGSRATE", EarningsRateCalculationType.USEEARNINGSRATE)]
-        [InlineData("ANNUALSALARY", EarningsRateCalculationType.ANNUALSALARY)]
-        [InlineData("ENTEREARNINGSRATE", EarningsRateCalculationType.ENTEREARNINGSRATE)]
-        public void CalculationType_ValidInputs_Deserialises(string input, EarningsRateCalculationType expected)
-        {
-            JsonDoc.Assert<EarningsLine, EarningsRateCalculationType>(
-                input: new JsonDoc.String(nameof(EarningsLine.CalculationType), input),
-                toProperty: x => x.CalculationType,
-                shouldBe: expected
-            );
-        }
-        /// <summary>
-        /// Test the property 'CalculationType' deserialises from null
-        /// </summary>
         [Fact]
-        public void CalculationType_NullInput_DeserialisesTo0()
+        public void FixedAmountTest()
         {
-            JsonDoc.Assert<EarningsLine, EarningsRateCalculationType>(
-                input: new JsonDoc.Null(nameof(EarningsLine.CalculationType)),
-                toProperty: x => x.CalculationType,
-                shouldBe: 0
-            );
+            // TODO unit test for the property 'FixedAmount'
         }
-        /// <summary>
-        /// Test the property 'CalculationType' deserialises when not present
-        /// </summary>
-        [Fact]
-        public void CalculationType_NotPresent_DeserialisesTo0()
-        {
-            JsonDoc.Assert<EarningsLine, EarningsRateCalculationType>(
-                input: new JsonDoc.NotPresent(nameof(EarningsLine.CalculationType)),
-                toProperty: x => x.CalculationType,
-                shouldBe: 0
-            );
-        }
+
     }
+
 }
