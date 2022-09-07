@@ -9,6 +9,7 @@
 
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
@@ -16,13 +17,16 @@ using System.Threading.Tasks;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
 using RestSharp;
-using RestSharp.Serializers;
+using RestSharp.Deserializers;
+using ErrorEventArgs = Newtonsoft.Json.Serialization.ErrorEventArgs;
 using RestSharpMethod = RestSharp.Method;
-using RestSharp.Serializers.Xml;
 
 [assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("Xero.NetStandard.OAuth2.Test")]
 namespace Xero.NetStandard.OAuth2.Client
@@ -30,9 +34,10 @@ namespace Xero.NetStandard.OAuth2.Client
     /// <summary>
     /// Allows RestSharp to Serialize/Deserialize JSON using our custom logic, but only when ContentType is JSON. 
     /// </summary>
-    internal class CustomJsonCodec : IRestSerializer, ISerializer, IDeserializer
+    internal class CustomJsonCodec : RestSharp.Serializers.ISerializer, RestSharp.Deserializers.IDeserializer
     {
         private readonly IReadableConfiguration _configuration;
+        private readonly JsonSerializer _serializer;
         private string _contentType = "application/json";
         private readonly JsonSerializerSettings _serializerSettings = new JsonSerializerSettings
         {
@@ -70,6 +75,14 @@ namespace Xero.NetStandard.OAuth2.Client
         public CustomJsonCodec(IReadableConfiguration configuration)
         {
             _configuration = configuration;
+            _serializer = JsonSerializer.Create(_serializerSettings);
+        }
+
+        public CustomJsonCodec(JsonSerializerSettings serializerSettings, IReadableConfiguration configuration)
+        {
+            _serializerSettings = serializerSettings;
+            _serializer = JsonSerializer.Create(_serializerSettings);
+            _configuration = configuration;
         }
 
         public string Serialize(object obj)
@@ -103,7 +116,7 @@ namespace Xero.NetStandard.OAuth2.Client
             return result;
         }
 
-        public T Deserialize<T>(RestResponse response)
+        public T Deserialize<T>(IRestResponse response)
         {
             var result = (T) Deserialize(response, typeof(T));
             return result;
@@ -115,9 +128,9 @@ namespace Xero.NetStandard.OAuth2.Client
         /// <param name="response">The HTTP response.</param>
         /// <param name="type">Object type.</param>
         /// <returns>Object representation of the JSON string.</returns>
-        internal object Deserialize(RestResponse response, Type type)
+        internal object Deserialize(IRestResponse response, Type type)
         {
-            IReadOnlyCollection<HeaderParameter> headers = response.Headers;
+            IList<Parameter> headers = response.Headers;
             if (type == typeof(byte[])) // return byte array
             {
                 return response.RawBytes;
@@ -177,29 +190,6 @@ namespace Xero.NetStandard.OAuth2.Client
             get { return _contentType; }
             set { throw new InvalidOperationException("Not allowed to set content type."); }
         }
-
-        public string Serialize(Parameter parameter)
-        {
-            return Serialize(parameter.Value);
-        }
-
-        public ISerializer Serializer => this;
-
-        public IDeserializer Deserializer => this;
-
-        public string[] AcceptedContentTypes => new[]
-        {
-            "application/json",
-            "text/json",
-            "text/x-json",
-            "text/javascript",
-            "*+json",
-            "*"
-        };
-
-        public SupportsContentType SupportsContentType => type => AcceptedContentTypes.Contains(type);
-
-        public DataFormat DataFormat => DataFormat.Json;
     }
 
     /// <summary>
@@ -239,7 +229,7 @@ namespace Xero.NetStandard.OAuth2.Client
         /// Allows for extending request processing for <see cref="ApiClient"/> generated code.
         /// </summary>
         /// <param name="request">The RestSharp request object</param>
-        protected virtual void InterceptRequest(RestRequest request)
+        protected virtual void InterceptRequest(IRestRequest request)
         {
 
         }
@@ -249,7 +239,7 @@ namespace Xero.NetStandard.OAuth2.Client
         /// </summary>
         /// <param name="request">The RestSharp request object</param>
         /// <param name="response">The RestSharp response object</param>
-        protected virtual void InterceptResponse(RestRequest request, RestResponse response)
+        protected virtual void InterceptResponse(IRestRequest request, IRestResponse response)
         {
             
         }
@@ -287,25 +277,25 @@ namespace Xero.NetStandard.OAuth2.Client
             switch (method)
             {
                 case HttpMethod.Get:
-                    other = RestSharpMethod.Get;
+                    other = RestSharpMethod.GET;
                     break;
                 case HttpMethod.Post:
-                    other = RestSharpMethod.Post;
+                    other = RestSharpMethod.POST;
                     break;
                 case HttpMethod.Put:
-                    other = RestSharpMethod.Put;
+                    other = RestSharpMethod.PUT;
                     break;
                 case HttpMethod.Delete:
-                    other = RestSharpMethod.Delete;
+                    other = RestSharpMethod.DELETE;
                     break;
                 case HttpMethod.Head:
-                    other = RestSharpMethod.Head;
+                    other = RestSharpMethod.HEAD;
                     break;
                 case HttpMethod.Options:
-                    other = RestSharpMethod.Options;
+                    other = RestSharpMethod.OPTIONS;
                     break;
                 case HttpMethod.Patch:
-                    other = RestSharpMethod.Patch;
+                    other = RestSharpMethod.PATCH;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException("method", method, null);
@@ -335,10 +325,11 @@ namespace Xero.NetStandard.OAuth2.Client
             if (path == null) throw new ArgumentNullException("path");
             if (options == null) throw new ArgumentNullException("options");
             if (configuration == null) throw new ArgumentNullException("configuration");
-
-            RestRequest request = new RestRequest(path, Method(method))
+            
+            RestRequest request = new RestRequest(Method(method))
             {
-                Timeout = configuration.Timeout
+                Resource = path,
+                JsonSerializer = new CustomJsonCodec(configuration)
             };
 
             if (options.PathParameters != null)
@@ -452,10 +443,18 @@ namespace Xero.NetStandard.OAuth2.Client
                 }
             }
 
+            if (options.Cookies != null && options.Cookies.Count > 0)
+            {
+                foreach (var cookie in options.Cookies)
+                {
+                    request.AddCookie(cookie.Name, cookie.Value);
+                }
+            }
+            
             return request;
         }
 
-        private ApiResponse<T> toApiResponse<T>(RestResponse<T> response)
+        private ApiResponse<T> toApiResponse<T>(IRestResponse<T> response)
         {
             T result = response.Data;
             var transformed = new ApiResponse<T>(response.StatusCode, new Multimap<string, string>(), result)
@@ -475,9 +474,8 @@ namespace Xero.NetStandard.OAuth2.Client
 
             if (response.Cookies != null)
             {
-                for(int i = 0; i < response.Cookies.Count; i++)
+                foreach (var responseCookies in response.Cookies)
                 {
-                    Cookie responseCookies = response.Cookies[i];
                     transformed.Cookies.Add(
                         new Cookie(
                             responseCookies.Name, 
@@ -493,34 +491,40 @@ namespace Xero.NetStandard.OAuth2.Client
 
         private async Task<ApiResponse<T>> Exec<T>(RestRequest req, IReadableConfiguration configuration)
         {
-            RestClientOptions clientOptions = new RestClientOptions(_baseUrl)
+            RestClient client = new RestClient(_baseUrl);
+
+            client.ClearHandlers();
+            var existingDeserializer = req.JsonSerializer as IDeserializer;
+            if (existingDeserializer != null)
             {
-                MaxTimeout = configuration.Timeout
-            };
+                client.AddHandler("application/json", () => existingDeserializer);
+                client.AddHandler("text/json", () => existingDeserializer);
+                client.AddHandler("text/x-json", () => existingDeserializer);
+                client.AddHandler("text/javascript", () => existingDeserializer);
+                client.AddHandler("*+json", () => existingDeserializer);
+                client.AddHandler("*", () => existingDeserializer);
+            }
+            else
+            {
+                var codec = new CustomJsonCodec(configuration);
+                client.AddHandler("application/json", () => codec);
+                client.AddHandler("text/json", () => codec);
+                client.AddHandler("text/x-json", () => codec);
+                client.AddHandler("text/javascript", () => codec);
+                client.AddHandler("*+json", () => codec);
+                client.AddHandler("*", () => codec);
+            }
+
+            client.AddHandler("application/xml", () => new XmlDeserializer());
+            client.AddHandler("text/xml", () => new XmlDeserializer());
+            client.AddHandler("*+xml", () => new XmlDeserializer());
+
+            client.Timeout = configuration.Timeout;
 
             if (configuration.UserAgent != null)
             {
-                clientOptions.UserAgent = configuration.UserAgent;
+                client.UserAgent = configuration.UserAgent;
             }
-
-            RestClient client = new RestClient(clientOptions);
-
-            client
-                .UseSerializer(() =>
-                {
-                    var serializer = new CustomJsonCodec(configuration);
-                    return serializer;
-                })
-                .UseSerializer<XmlRestSerializer>();
-
-            if (configuration.Cookies != null && configuration.Cookies.Count > 0)
-            {
-                foreach (var cookie in configuration.Cookies)
-                {
-                    client.CookieContainer.Add(new Cookie(cookie.Name, cookie.Value));
-                }
-            }
-
 
             InterceptRequest(req);
             var response = await client.ExecuteAsync<T>(req);
@@ -535,9 +539,8 @@ namespace Xero.NetStandard.OAuth2.Client
             if (response.Cookies != null && response.Cookies.Count > 0)
             {
                 if(result.Cookies == null) result.Cookies = new List<Cookie>();
-                for (int i = 0; i < response.Cookies.Count; i++)
+                foreach (var restResponseCookie in response.Cookies)
                 {
-                    var restResponseCookie = response.Cookies[i];
                     var cookie = new Cookie(
                         restResponseCookie.Name,
                         restResponseCookie.Value,

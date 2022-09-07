@@ -16,7 +16,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
-using System.Net;
 
 namespace Xero.NetStandard.OAuth2.Client
 {
@@ -108,7 +107,6 @@ namespace Xero.NetStandard.OAuth2.Client
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
-            Cookies = new List<Cookie>();
 
             // Setting Timeout has side effects (forces ApiClient creation).
             Timeout = 300000;
@@ -192,11 +190,6 @@ namespace Xero.NetStandard.OAuth2.Client
         /// </summary>
         /// <value>The password.</value>
         public virtual string Password { get; set; }
-
-        /// <summary>
-        /// Cookies to be sent along with the request.
-        /// </summary>
-        public virtual List<Cookie> Cookies { get; set; }
 
         /// <summary>
         /// Gets the API key with prefix.
@@ -341,7 +334,7 @@ namespace Xero.NetStandard.OAuth2.Client
         {
             String report = "C# SDK (Xero.NetStandard.OAuth2) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
-            report += "    Version of the API: 2.27.0\n";
+            report += "    Version of the API: 2.29.2\n";
             report += "    SDK Package Version: 3.28.0\n";
 
             return report;
