@@ -93,9 +93,9 @@ namespace Xero.NetStandard.OAuth2.Model.Accounting
         public decimal? TaxAmount { get; private set; }
 
         /// <summary>
-        /// The tax type from taxRates
+        /// The tax type from TaxRates
         /// </summary>
-        /// <value>The tax type from taxRates</value>
+        /// <value>The tax type from TaxRates</value>
         [DataMember(Name="TaxType", EmitDefaultValue=false)]
         public string TaxType { get; set; }
 
